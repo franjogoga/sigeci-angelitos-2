@@ -24,5 +24,11 @@ namespace sigeci_angelitos_2
         {            
             this.Dispose();
         }
+
+        private void btnNuevoUsuario_Click(object sender, EventArgs e)
+        {
+            UsuariosFormulario uf = new UsuariosFormulario();
+            uf.ShowDialog();
+        }
     }
 }
