@@ -112,6 +112,9 @@
     <Compile Include="UsuariosFormulario.Designer.cs">
       <DependentUpon>UsuariosFormulario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CitasForm.resx">
+      <DependentUpon>CitasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,16 +200,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancelarcita.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Controlador\Controlador.csproj">
-      <Project>{ab5be2fb-8a09-4113-b11f-c753955748d3}</Project>
-      <Name>Controlador</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modelo\Modelo.csproj">
-      <Project>{2e17dfc5-4581-410a-8d07-cc5c8202b558}</Project>
-      <Name>Modelo</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
