@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using DevComponents.DotNetBar;
+using Controlador;
+using Modelo;
 
 namespace sigeci_angelitos_2
 {
@@ -21,12 +23,15 @@ namespace sigeci_angelitos_2
         }
 
         private void UsuariosForm_FormClosing(object sender, FormClosingEventArgs e)
-        {            
+        {
             this.Dispose();
         }
 
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
+            //Usuario u = new Usuario();
+            //u.nombres = "juan";
+
             UsuariosFormulario uf = new UsuariosFormulario();
             uf.ShowDialog();
         }
