@@ -25,7 +25,8 @@ namespace sigeci_angelitos_2
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
-
+            CitasForm citasForm = new CitasForm();
+            citasForm.ShowDialog();
         }
 
         private void btnPacientes_Click(object sender, EventArgs e)

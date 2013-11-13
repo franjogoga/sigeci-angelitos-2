@@ -17,5 +17,10 @@ namespace sigeci_angelitos_2
         {
             InitializeComponent();
         }
+
+        private void CitasForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

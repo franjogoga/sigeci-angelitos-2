@@ -273,6 +273,7 @@
             this.DoubleBuffered = true;
             this.Name = "CitasForm";
             this.Text = "CitasForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CitasForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
