@@ -31,17 +31,20 @@ namespace sigeci_angelitos_2
 
         private void btnPacientes_Click(object sender, EventArgs e)
         {
-
+            PacientesForm pacientesForm = new PacientesForm();
+            pacientesForm.ShowDialog();
         }
 
         private void btnServicios_Click(object sender, EventArgs e)
         {
-
+            ServiciosForm serviciosForm = new ServiciosForm();
+            serviciosForm.ShowDialog();
         }
 
         private void btnTerapeutas_Click(object sender, EventArgs e)
         {
-
+            TerapeutaForm terapeutaForm = new TerapeutaForm();
+            terapeutaForm.ShowDialog();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -52,7 +55,8 @@ namespace sigeci_angelitos_2
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-
+            ReportesForm reportesForm = new ReportesForm();
+            reportesForm.ShowDialog();
         }
     }
 }

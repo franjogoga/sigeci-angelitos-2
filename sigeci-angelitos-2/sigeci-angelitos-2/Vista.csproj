@@ -33,16 +33,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar.Design">
-      <HintPath>E:\terapia\DotNetBar\DevComponents.DotNetBar.Design.dll</HintPath>
+      <HintPath>D:\terapia\DotNetBar\DevComponents.DotNetBar.Design.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2">
-      <HintPath>E:\terapia\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
+      <HintPath>D:\terapia\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.Instrumentation">
-      <HintPath>E:\terapia\DotNetBar\DevComponents.Instrumentation.dll</HintPath>
+      <HintPath>D:\terapia\DotNetBar\DevComponents.Instrumentation.dll</HintPath>
     </Reference>
     <Reference Include="DevComponents.Instrumentation.Design">
-      <HintPath>E:\terapia\DotNetBar\DevComponents.Instrumentation.Design.dll</HintPath>
+      <HintPath>D:\terapia\DotNetBar\DevComponents.Instrumentation.Design.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -136,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="ServiciosForm.resx">
       <DependentUpon>ServiciosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerapeutaForm.resx">
+      <DependentUpon>TerapeutaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>

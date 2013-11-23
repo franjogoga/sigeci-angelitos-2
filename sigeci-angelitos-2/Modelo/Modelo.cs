@@ -251,5 +251,138 @@ namespace Modelo
         }      
     }
 
-    
+    public class MenorEdad
+    {
+        private Persona _persona;
+        private string _nombreMadre;
+        private string _nombrePadre;
+        private string _escolaridad;
+        private string _nombreColegio;
+        private string _ubicacionColegio;
+
+        public Persona persona
+        {
+            get { return _persona; }
+            set { _persona = value; }
+        }
+        public string nombreMadre
+        {
+            get { return _nombreMadre; }
+            set { _nombreMadre = value; }
+        }
+        public string nombrePadre
+        {
+            get { return _nombrePadre; }
+            set { _nombrePadre = value; }
+        }
+        public string escolaridad
+        {
+            get { return _escolaridad; }
+            set { _escolaridad = value; }
+        }
+        public string nombreColegio
+        {
+            get { return _nombreColegio; }
+            set { _nombreColegio = value; }
+        }
+        public string ubicacionColegio
+        {
+            get { return _ubicacionColegio; }
+            set { _ubicacionColegio = value; }
+        }        
+    }
+
+    public class MayorEdad
+    {
+        private Persona _persona;
+        private string _ocupacion;
+        private string _gradoInstruccion;
+        private string _lugarLaboral;
+
+        public Persona persona
+        {
+            get { return _persona; }
+            set { _persona = value; }
+        }
+        public string ocupacion
+        {
+            get { return _ocupacion; }
+            set { _ocupacion = value; }
+        }
+        public string gradoInstruccion
+        {
+            get { return _gradoInstruccion; }
+            set { _gradoInstruccion = value; }
+        }
+        public string lugarLaboral
+        {
+            get { return _lugarLaboral; }
+            set { _lugarLaboral = value; }
+        }
+    }
+
+    public class Cita
+    {
+        private int _idCita;
+        private Persona _paciente;
+        private DateTime _fechaCita;
+        private DateTime _horaCita;
+        private int _idServicio;
+        private string _estado;
+        private DateTime _fechaRegistro;
+        private float _pago;
+        private string _estadoEvaluacion;
+        private Persona _terapeuta;
+
+        public int idCita
+        {
+            get { return _idCita; }
+            set { _idCita = value;}
+        }
+        public Persona paciente
+        {
+            get { return _paciente; }
+            set { _paciente = value;}
+        }
+        public DateTime fechaCita
+        {
+            get { return _fechaCita; }
+            set { _fechaCita = value;}
+        }
+        public DateTime horaCita
+        {
+            get { return _horaCita; }
+            set { _horaCita = value;}
+        }
+        public int idServicio
+        {
+            get { return _idCita; }
+            set { _idCita = value;}
+        }
+        public string estado
+        {
+            get { return _estado; }
+            set { _estado = value;}
+        }
+        public DateTime fechaRegistro
+        {
+            get { return _fechaRegistro; }
+            set { _fechaRegistro = value; }
+        }
+        public float pago
+        {
+            get { return _pago; }
+            set { _pago = value; }
+        }
+        public string estadoEvaluacion
+        {
+            get { return _estadoEvaluacion; }
+            set { _estadoEvaluacion = value; }
+        }
+        public Persona terapeuta
+        {
+            get { return _terapeuta; }
+            set { _terapeuta = value; }
+        }
+    }
 }
