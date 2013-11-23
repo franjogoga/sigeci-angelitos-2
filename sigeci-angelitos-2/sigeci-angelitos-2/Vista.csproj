@@ -215,6 +215,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\aceptar.png" />
     <Content Include="Resources\angelico.ico" />
     <Content Include="Resources\angelpng.png" />
   </ItemGroup>
