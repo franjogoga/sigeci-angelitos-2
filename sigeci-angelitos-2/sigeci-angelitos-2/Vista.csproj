@@ -62,6 +62,12 @@
     <Compile Include="CitasForm.Designer.cs">
       <DependentUpon>CitasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CitasFornulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CitasFornulario.Designer.cs">
+      <DependentUpon>CitasFornulario.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,12 @@
     </Compile>
     <Compile Include="PacientesForm.Designer.cs">
       <DependentUpon>PacientesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PacientesFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacientesFormulario.Designer.cs">
+      <DependentUpon>PacientesFormulario.cs</DependentUpon>
     </Compile>
     <Compile Include="PrincipalForm.cs">
       <SubType>Form</SubType>
@@ -115,11 +127,17 @@
     <EmbeddedResource Include="CitasForm.resx">
       <DependentUpon>CitasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CitasFornulario.resx">
+      <DependentUpon>CitasFornulario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PacientesForm.resx">
       <DependentUpon>PacientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacientesFormulario.resx">
+      <DependentUpon>PacientesFormulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
@@ -134,6 +152,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportesForm.resx">
+      <DependentUpon>ReportesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServiciosForm.resx">
       <DependentUpon>ServiciosForm.cs</DependentUpon>
     </EmbeddedResource>
