@@ -11,17 +11,11 @@ using DevComponents.DotNetBar;
 
 namespace sigeci_angelitos_2
 {
-    public partial class PacientesForm : Office2007Form
+    public partial class CitasFornulario : Office2007Form
     {
-        public PacientesForm()
+        public CitasFornulario()
         {
             InitializeComponent();
-        }
-
-        private void btnNuevoPaciente_Click(object sender, EventArgs e)
-        {
-            PacientesFormulario pacientesFormulario = new PacientesFormulario();
-            pacientesFormulario.ShowDialog();
         }
     }
 }

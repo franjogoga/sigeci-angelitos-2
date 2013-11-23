@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosFormulario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.txtDNI = new System.Windows.Forms.TextBox();
@@ -46,6 +47,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.labelX5);
             this.groupBox1.Controls.Add(this.txtDNI);
             this.groupBox1.Controls.Add(this.labelX4);
@@ -199,7 +201,9 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UsuariosFormulario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

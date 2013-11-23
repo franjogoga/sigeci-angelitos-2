@@ -268,6 +268,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PacientesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pacientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
             this.groupBox2.ResumeLayout(false);
