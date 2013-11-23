@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TerapeutaForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarUsuario = new DevComponents.DotNetBar.ButtonX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -37,7 +39,6 @@
             this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.btnBuscarUsuario = new DevComponents.DotNetBar.ButtonX();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +64,19 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Terapeuta";
+            // 
+            // btnBuscarUsuario
+            // 
+            this.btnBuscarUsuario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBuscarUsuario.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBuscarUsuario.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
+            this.btnBuscarUsuario.ImageFixedSize = new System.Drawing.Size(23, 23);
+            this.btnBuscarUsuario.Location = new System.Drawing.Point(129, 108);
+            this.btnBuscarUsuario.Name = "btnBuscarUsuario";
+            this.btnBuscarUsuario.Size = new System.Drawing.Size(100, 32);
+            this.btnBuscarUsuario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBuscarUsuario.TabIndex = 4;
+            this.btnBuscarUsuario.Text = "Buscar";
             // 
             // labelX4
             // 
@@ -144,19 +158,6 @@
             this.txtUsername.Size = new System.Drawing.Size(180, 20);
             this.txtUsername.TabIndex = 0;
             // 
-            // btnBuscarUsuario
-            // 
-            this.btnBuscarUsuario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnBuscarUsuario.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnBuscarUsuario.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
-            this.btnBuscarUsuario.ImageFixedSize = new System.Drawing.Size(23, 23);
-            this.btnBuscarUsuario.Location = new System.Drawing.Point(129, 108);
-            this.btnBuscarUsuario.Name = "btnBuscarUsuario";
-            this.btnBuscarUsuario.Size = new System.Drawing.Size(100, 32);
-            this.btnBuscarUsuario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnBuscarUsuario.TabIndex = 4;
-            this.btnBuscarUsuario.Text = "Buscar";
-            // 
             // dgvUsuarios
             // 
             this.dgvUsuarios.AllowUserToAddRows = false;
@@ -201,6 +202,7 @@
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TerapeutaForm";
             this.Text = "Terapeuta";
             this.groupBox1.ResumeLayout(false);

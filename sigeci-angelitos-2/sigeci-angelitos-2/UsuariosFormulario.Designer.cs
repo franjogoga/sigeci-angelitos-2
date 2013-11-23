@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.txtDNI = new System.Windows.Forms.TextBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -39,8 +41,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.txtDNI = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,26 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Usuario";
+            // 
+            // labelX5
+            // 
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.Class = "";
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Location = new System.Drawing.Point(16, 259);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(107, 23);
+            this.labelX5.TabIndex = 10;
+            this.labelX5.Text = "DNI :";
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(129, 259);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(147, 20);
+            this.txtDNI.TabIndex = 9;
             // 
             // labelX4
             // 
@@ -161,7 +181,7 @@
             // 
             this.btnAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAceptar.Image = global::sigeci_angelitos_2.Properties.Resources.agregar;
+            this.btnAceptar.Image = global::sigeci_angelitos_2.Properties.Resources.aceptar;
             this.btnAceptar.ImageFixedSize = new System.Drawing.Size(25, 25);
             this.btnAceptar.Location = new System.Drawing.Point(63, 345);
             this.btnAceptar.Name = "btnAceptar";
@@ -169,26 +189,6 @@
             this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
-            // 
-            // labelX5
-            // 
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(16, 259);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(107, 23);
-            this.labelX5.TabIndex = 10;
-            this.labelX5.Text = "DNI :";
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(129, 259);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(147, 20);
-            this.txtDNI.TabIndex = 9;
             // 
             // UsuariosFormulario
             // 
