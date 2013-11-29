@@ -49,8 +49,12 @@
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pageNavigator1 = new DevComponents.DotNetBar.Controls.PageNavigator();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -98,7 +102,7 @@
             this.btnBuscarPaciente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnBuscarPaciente.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnBuscarPaciente.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
-            this.btnBuscarPaciente.ImageFixedSize = new System.Drawing.Size(19, 19);
+            this.btnBuscarPaciente.ImageFixedSize = new System.Drawing.Size(17, 17);
             this.btnBuscarPaciente.Location = new System.Drawing.Point(278, 29);
             this.btnBuscarPaciente.Name = "btnBuscarPaciente";
             this.btnBuscarPaciente.Size = new System.Drawing.Size(29, 20);
@@ -265,12 +269,53 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.pageNavigator1);
+            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.labelX9);
             this.groupBox3.Location = new System.Drawing.Point(21, 330);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(649, 182);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cita";
+            // 
+            // labelX9
+            // 
+            // 
+            // 
+            // 
+            this.labelX9.BackgroundStyle.Class = "";
+            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX9.Location = new System.Drawing.Point(8, 29);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(107, 23);
+            this.labelX9.TabIndex = 14;
+            this.labelX9.Text = "Fecha :";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 32);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePicker1.TabIndex = 16;
+            // 
+            // pageNavigator1
+            // 
+            // 
+            // 
+            // 
+            this.pageNavigator1.BackgroundStyle.Class = "";
+            this.pageNavigator1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pageNavigator1.Location = new System.Drawing.Point(310, 32);
+            this.pageNavigator1.Name = "pageNavigator1";
+            this.pageNavigator1.NextPageTooltip = "Día Siguiente";
+            this.pageNavigator1.PreviousPageTooltip = "Día Anterior";
+            this.pageNavigator1.Size = new System.Drawing.Size(69, 20);
+            this.pageNavigator1.TabIndex = 17;
+            this.pageNavigator1.Text = "pageNavigator1";
+            this.pageNavigator1.TodayTooltip = "Hoy";
             // 
             // CitasFornulario
             // 
@@ -289,6 +334,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -315,5 +361,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private DevComponents.DotNetBar.LabelX labelX6;
         private System.Windows.Forms.GroupBox groupBox3;
+        private DevComponents.DotNetBar.Controls.PageNavigator pageNavigator1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private DevComponents.DotNetBar.LabelX labelX9;
     }
 }
