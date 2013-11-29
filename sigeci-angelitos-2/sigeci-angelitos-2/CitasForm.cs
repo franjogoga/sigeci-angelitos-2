@@ -22,5 +22,11 @@ namespace sigeci_angelitos_2
         {
             this.Dispose();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            CitasFornulario citasFormulario = new CitasFornulario();
+            citasFormulario.ShowDialog();
+        }
     }
 }
