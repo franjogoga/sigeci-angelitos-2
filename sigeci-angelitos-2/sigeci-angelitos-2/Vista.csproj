@@ -106,11 +106,23 @@
     <Compile Include="ServiciosForm.Designer.cs">
       <DependentUpon>ServiciosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServiciosFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiciosFormulario.Designer.cs">
+      <DependentUpon>ServiciosFormulario.cs</DependentUpon>
+    </Compile>
     <Compile Include="TerapeutaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TerapeutaForm.Designer.cs">
       <DependentUpon>TerapeutaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TerapeutaFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TerapeutaFormulario.Designer.cs">
+      <DependentUpon>TerapeutaFormulario.cs</DependentUpon>
     </Compile>
     <Compile Include="UsuariosForm.cs">
       <SubType>Form</SubType>
