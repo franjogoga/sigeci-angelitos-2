@@ -8,13 +8,14 @@ namespace Modelo
 {
     public class Persona
     {
-        private string _idPersona;
+        private int _idPersona;
         private string _nombres;
         private string _apellidoPaterno;
         private string _apellidoMaterno;
         private int _dni;
+        private string _estado;
 
-        public string idPersona
+        public int idPersona
         {
             get { return _idPersona; }
             set { _idPersona = value; }
@@ -38,6 +39,11 @@ namespace Modelo
         {
             get { return _dni; }
             set { _dni = value; }
+        }
+        public string estado
+        {
+            get { return _estado; }
+            set { _estado = value; }
         }
     }
 
@@ -68,6 +74,7 @@ namespace Modelo
     {
         private Persona _persona;
         private DateTime _fechaNacimiento;
+        private string _servicio;
 
         public Persona persona
         {
@@ -78,6 +85,11 @@ namespace Modelo
         {
             get { return _fechaNacimiento; }
             set { _fechaNacimiento = value; }
+        }
+        public string servicio
+        {
+            get { return _servicio; }
+            set { _servicio = value; }
         }
     }
 
@@ -120,8 +132,7 @@ namespace Modelo
     {
         private int _idServicio;
         private string _nombreServicio;
-        private int _esGrupal;
-        private int _idPersona;
+        private int _esGrupal;        
         private int _intervaloHora;
         private float _costo;
 
@@ -139,12 +150,7 @@ namespace Modelo
         {
             get { return _esGrupal; }
             set { _esGrupal = value; }
-        }
-        public int idPersona
-        {
-            get { return _idPersona; }
-            set { _idPersona = value; }
-        }
+        }        
         public int intervaloHora
         {
             get { return _intervaloHora; }

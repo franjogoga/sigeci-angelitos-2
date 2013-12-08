@@ -74,6 +74,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PacientesBusquedaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacientesBusquedaForm.Designer.cs">
+      <DependentUpon>PacientesBusquedaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PacientesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacientesBusquedaForm.resx">
+      <DependentUpon>PacientesBusquedaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PacientesForm.resx">
       <DependentUpon>PacientesForm.cs</DependentUpon>
