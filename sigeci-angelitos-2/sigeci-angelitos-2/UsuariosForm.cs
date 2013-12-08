@@ -28,12 +28,9 @@ namespace sigeci_angelitos_2
         }
 
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
-        {
-            //Usuario u = new Usuario();
-            //u.nombres = "juan";
-
-            UsuariosFormulario uf = new UsuariosFormulario();
-            uf.ShowDialog();
+        {            
+            UsuariosFormulario usuariosFormulario = new UsuariosFormulario();
+            usuariosFormulario.ShowDialog();
         }
     }
 }

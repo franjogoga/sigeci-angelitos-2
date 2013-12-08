@@ -17,5 +17,10 @@ namespace sigeci_angelitos_2
         {
             InitializeComponent();
         }
+
+        private void btnBuscarPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
