@@ -10,8 +10,9 @@ using Modelo;
 namespace Controlador
 {
     public class ControladorUsuario
-    {        
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb";
+    {
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        
        
         private List<Usuario> usuarios;
         static ControladorUsuario controladorUsuario = null;
@@ -43,8 +44,8 @@ namespace Controlador
 
             OleDbCommand comando2 = new OleDbCommand("SELECT TOP 1 * FROM persona order by idPersona DESC");
 
-            OleDbCommand comando3 = new OleDbCommand("insert into usuario(persona_idPersona,username,password) " + 
-                                                        "values(@idPersona,@username,@password)");
+            OleDbCommand comando3 = new OleDbCommand("insert into usuario(persona_idPersona,username,pass) " +
+                                                        "values(@persona_idPersona,@username,@pass)");
             
             comando.Parameters.AddRange(new OleDbParameter[]
             {
@@ -70,17 +71,17 @@ namespace Controlador
 
                 while (r.Read())
                 {                    
-                    idPersona = r.GetInt32(0);                                                          
+                    idPersona = r.GetInt32(0);                                                        
                 }
 
                 comando3.Parameters.AddRange(new OleDbParameter[]
                 {
-                    new OleDbParameter("@idPersona",idPersona),
+                    new OleDbParameter("@persona_idPersona",idPersona),
                     new OleDbParameter("@username",usuario.username),
-                    new OleDbParameter("@password",usuario.password), 
+                    new OleDbParameter("@pass",usuario.password), 
                 });
-
-                comando3.Connection = conexion;
+                                
+                comando3.Connection = conexion;               
                 numFilas2 = comando3.ExecuteNonQuery();
 
                 Console.WriteLine("Usuario Insertado: " + numFilas2);
@@ -93,7 +94,7 @@ namespace Controlador
             finally { 
                 conexion.Close(); 
             }
-            resultado = numFilas == 1;
+            resultado = numFilas + numFilas2 == 2;
             return resultado;
         }
 
