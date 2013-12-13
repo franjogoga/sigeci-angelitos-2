@@ -11,9 +11,7 @@ namespace Controlador
 {
     public class ControladorUsuario
     {
-        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
-        
-       
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";               
         private List<Usuario> usuarios;
         static ControladorUsuario controladorUsuario = null;
 
@@ -37,7 +35,7 @@ namespace Controlador
             int numFilas = 0;
             int numFilas2 = 0;
 
-            OleDbConnection conexion = new OleDbConnection(cadenaConexion);            
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
             OleDbCommand comando = new OleDbCommand("insert into persona(nombres,apellidoPaterno,apellidoMaterno,dni,estado) "+
                                                         "values(@nombres,@apellidoPaterno,@apellidoMaterno,@dni,@estado)");
@@ -60,14 +58,10 @@ namespace Controlador
             comando2.Connection = conexion;
                         
             try
-            {
-                Console.WriteLine(cadenaConexion);
-                conexion.Open();
-                Console.WriteLine("Conexion hecha");
-                numFilas = comando.ExecuteNonQuery();
-                Console.WriteLine("Usuario Insertado: "+ numFilas);
-                r = comando2.ExecuteReader();
-                Console.WriteLine("Seleccionar Usuario: ");
+            {                
+                conexion.Open();                
+                numFilas = comando.ExecuteNonQuery();                
+                r = comando2.ExecuteReader();                
 
                 while (r.Read())
                 {                    
@@ -98,7 +92,31 @@ namespace Controlador
             return resultado;
         }
 
+        public List<Usuario> getListaUsuarios(string username, string nombres, string apellidoPaterno, string apellidoMaterno)
+        {            
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
+            OleDbCommand comando = new OleDbCommand(" select * from persona, usuario where usuario.username like @username persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and persona.apellidoMaterno like @apellidoMaterno and persona.estado='activo') ");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@username","%"+username+"%"),
+                new OleDbParameter("@nombres","%"+nombres+"%"),
+                new OleDbParameter("@apellidoPaterno","%"+apellidoPaterno+"%"),
+                new OleDbParameter("@apellidoMaterno","%"+apellidoMaterno+"%"),                
+            });
+
+            try
+            {
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                Console.WriteLine("Error!");
+            }
+
+            return usuarios;
+        }
 
 
     }
