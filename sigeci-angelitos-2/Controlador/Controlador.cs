@@ -85,7 +85,8 @@ namespace Controlador
                 Console.WriteLine(e.ToString());
                 Console.WriteLine("Error!");
             }
-            finally { 
+            finally {
+                r.Close();
                 conexion.Close(); 
             }
             resultado = numFilas + numFilas2 == 2;
@@ -94,25 +95,50 @@ namespace Controlador
 
         public List<Usuario> getListaUsuarios(string username, string nombres, string apellidoPaterno, string apellidoMaterno)
         {            
+            OleDbDataReader r = null;
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
-            OleDbCommand comando = new OleDbCommand(" select * from persona, usuario where usuario.username like @username persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and persona.apellidoMaterno like @apellidoMaterno and persona.estado='activo') ");
+            OleDbCommand comando = new OleDbCommand("select * from persona, usuario where usuario.username like @username and persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and persona.apellidoMaterno like @apellidoMaterno and persona.estado='activo' and persona.idPersona = usuario.persona_idPersona");
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
-                new OleDbParameter("@username","%"+username+"%"),
-                new OleDbParameter("@nombres","%"+nombres+"%"),
-                new OleDbParameter("@apellidoPaterno","%"+apellidoPaterno+"%"),
-                new OleDbParameter("@apellidoMaterno","%"+apellidoMaterno+"%"),                
+                new OleDbParameter("@username","*"+username+"*"),
+                new OleDbParameter("@nombres","*"+nombres+"*"),
+                new OleDbParameter("@apellidoPaterno","*"+apellidoPaterno+"*"),
+                new OleDbParameter("@apellidoMaterno","*"+apellidoMaterno+"*"),                
             });
+
+            comando.Connection = conexion;
 
             try
             {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Persona persona = new Persona();
+                    persona.idPersona = r.GetInt32(0);
+                    persona.nombres = r.GetString(1);
+                    persona.apellidoPaterno = r.GetString(2);
+                    persona.apellidoMaterno = r.GetString(3);
+                    persona.dni = r.GetInt32(4);
+                    persona.estado = r.GetString(5);
+                    Usuario usuario = new Usuario();
+                    usuario.persona = persona;
+                    usuario.username = r.GetString(7);
+                    usuario.password = r.GetString(8);
+
+                    usuarios.Add(usuario);
+                }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
-                Console.WriteLine("Error!");
+                Console.WriteLine(e.ToString());                
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
             }
 
             return usuarios;
