@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -46,14 +47,13 @@
             this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
             this.btnModificar = new DevComponents.DotNetBar.ButtonX();
             this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
-            this.btnBuscarUsuario = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnBuscarUsuario);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.labelX4);
             this.groupBox1.Controls.Add(this.labelX3);
             this.groupBox1.Controls.Add(this.labelX2);
@@ -68,6 +68,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Usuario";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBuscar.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
+            this.btnBuscar.ImageFixedSize = new System.Drawing.Size(23, 23);
+            this.btnBuscar.Location = new System.Drawing.Point(129, 108);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 32);
+            this.btnBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // labelX4
             // 
@@ -233,19 +247,6 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevoUsuario_Click);
             // 
-            // btnBuscarUsuario
-            // 
-            this.btnBuscarUsuario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnBuscarUsuario.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnBuscarUsuario.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
-            this.btnBuscarUsuario.ImageFixedSize = new System.Drawing.Size(23, 23);
-            this.btnBuscarUsuario.Location = new System.Drawing.Point(129, 108);
-            this.btnBuscarUsuario.Name = "btnBuscarUsuario";
-            this.btnBuscarUsuario.Size = new System.Drawing.Size(100, 32);
-            this.btnBuscarUsuario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnBuscarUsuario.TabIndex = 4;
-            this.btnBuscarUsuario.Text = "Buscar";
-            // 
             // UsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,7 +283,7 @@
         private System.Windows.Forms.TextBox txtApellidoPaterno;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtUsername;
-        private DevComponents.DotNetBar.ButtonX btnBuscarUsuario;
+        private DevComponents.DotNetBar.ButtonX btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;

@@ -15,6 +15,8 @@ namespace sigeci_angelitos_2
 {
     public partial class UsuariosForm : Office2007Form
     {
+        private ControladorUsuario controladorUsuario = ControladorUsuario.Instancia();
+        private List<Usuario> usuarios;
         private PrincipalForm principalForm;
         public UsuariosForm(PrincipalForm principalForm)
         {
@@ -31,6 +33,11 @@ namespace sigeci_angelitos_2
         {            
             UsuariosFormulario usuariosFormulario = new UsuariosFormulario();
             usuariosFormulario.ShowDialog();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            usuarios = controladorUsuario.getListaUsuarios(txtUsername.Text, txtNombre.Text, txtApellidoPaterno.Text, txtApellidoMaterno.Text);
         }
     }
 }

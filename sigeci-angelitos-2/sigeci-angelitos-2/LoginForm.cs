@@ -20,7 +20,7 @@ namespace sigeci_angelitos_2
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            PrincipalForm principalForm = new PrincipalForm();            
+            PrincipalForm principalForm = new PrincipalForm();
             principalForm.Show();
             this.Hide();
         }
