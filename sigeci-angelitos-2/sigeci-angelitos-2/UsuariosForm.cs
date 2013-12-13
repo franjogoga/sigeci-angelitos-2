@@ -37,7 +37,14 @@ namespace sigeci_angelitos_2
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            string[] fila;
             usuarios = controladorUsuario.getListaUsuarios(txtUsername.Text, txtNombre.Text, txtApellidoPaterno.Text, txtApellidoMaterno.Text);
+            dgvUsuarios.Rows.Clear();
+            
+            foreach(Usuario usuario in usuarios){
+                fila = new string[] { usuario.username, usuario.persona.nombres, usuario.persona.apellidoPaterno +" "+usuario.persona.apellidoMaterno, ""+usuario.persona.dni};
+                dgvUsuarios.Rows.Add(fila);
+            }
         }
     }
 }
