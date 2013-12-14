@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
@@ -40,13 +41,15 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
+            this.btnModificar = new DevComponents.DotNetBar.ButtonX();
+            this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
-            this.btnModificar = new DevComponents.DotNetBar.ButtonX();
-            this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -169,6 +172,7 @@
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idUsuario,
             this.username,
             this.nombres,
             this.apellidos,
@@ -178,34 +182,6 @@
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.Size = new System.Drawing.Size(593, 160);
             this.dgvUsuarios.TabIndex = 1;
-            // 
-            // username
-            // 
-            this.username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.username.HeaderText = "Username";
-            this.username.Name = "username";
-            this.username.ReadOnly = true;
-            // 
-            // nombres
-            // 
-            this.nombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombres.HeaderText = "Nombres";
-            this.nombres.Name = "nombres";
-            this.nombres.ReadOnly = true;
-            // 
-            // apellidos
-            // 
-            this.apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.apellidos.HeaderText = "Apellidos";
-            this.apellidos.Name = "apellidos";
-            this.apellidos.ReadOnly = true;
-            // 
-            // dni
-            // 
-            this.dni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dni.HeaderText = "DNI";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
             // 
             // btnEliminar
             // 
@@ -247,6 +223,45 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevoUsuario_Click);
             // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.HeaderText = "ID";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.ReadOnly = true;
+            this.idUsuario.Width = 65;
+            // 
+            // username
+            // 
+            this.username.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.username.HeaderText = "Usuario";
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            // 
+            // nombres
+            // 
+            this.nombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombres.HeaderText = "Nombres";
+            this.nombres.Name = "nombres";
+            this.nombres.ReadOnly = true;
+            // 
+            // apellidos
+            // 
+            this.apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.apellidos.HeaderText = "Apellidos";
+            this.apellidos.Name = "apellidos";
+            this.apellidos.ReadOnly = true;
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            this.dni.Width = 75;
+            // 
             // UsuariosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,13 +299,15 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtUsername;
         private DevComponents.DotNetBar.ButtonX btnBuscar;
+        private DevComponents.DotNetBar.ButtonX btnNuevo;
+        private DevComponents.DotNetBar.ButtonX btnModificar;
+        private DevComponents.DotNetBar.ButtonX btnEliminar;
+        private DevComponents.DotNetBar.StyleManager styleManager1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
-        private DevComponents.DotNetBar.ButtonX btnNuevo;
-        private DevComponents.DotNetBar.ButtonX btnModificar;
-        private DevComponents.DotNetBar.ButtonX btnEliminar;
 
     }
 }

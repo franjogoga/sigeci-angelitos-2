@@ -94,7 +94,8 @@ namespace Controlador
         }
 
         public List<Usuario> getListaUsuarios(string username, string nombres, string apellidoPaterno, string apellidoMaterno)
-        {            
+        {
+            usuarios.Clear();
             OleDbDataReader r = null;
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
@@ -102,10 +103,10 @@ namespace Controlador
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
-                new OleDbParameter("@username","*"+username+"*"),
-                new OleDbParameter("@nombres","*"+nombres+"*"),
-                new OleDbParameter("@apellidoPaterno","*"+apellidoPaterno+"*"),
-                new OleDbParameter("@apellidoMaterno","*"+apellidoMaterno+"*"),                
+                new OleDbParameter("@username","%"+username+"%"),
+                new OleDbParameter("@nombres","%"+nombres+"%"),
+                new OleDbParameter("@apellidoPaterno","%"+apellidoPaterno+"%"),
+                new OleDbParameter("@apellidoMaterno","%"+apellidoMaterno+"%"),                
             });
 
             comando.Connection = conexion;

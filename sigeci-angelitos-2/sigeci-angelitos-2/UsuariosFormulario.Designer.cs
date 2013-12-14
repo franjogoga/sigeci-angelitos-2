@@ -34,16 +34,16 @@
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,6 +115,19 @@
             this.labelX3.TabIndex = 7;
             this.labelX3.Text = "Apellido Paterno :";
             // 
+            // labelX6
+            // 
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.Class = "";
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Location = new System.Drawing.Point(16, 66);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(107, 23);
+            this.labelX6.TabIndex = 6;
+            this.labelX6.Text = "Contraseña :";
+            // 
             // labelX2
             // 
             // 
@@ -147,6 +160,14 @@
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.Size = new System.Drawing.Size(147, 20);
             this.txtApellidoMaterno.TabIndex = 3;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(129, 69);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '•';
+            this.txtPassword.Size = new System.Drawing.Size(147, 20);
+            this.txtPassword.TabIndex = 1;
             // 
             // txtApellidoPaterno
             // 
@@ -196,26 +217,6 @@
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(129, 69);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(147, 20);
-            this.txtPassword.TabIndex = 1;
-            // 
-            // labelX6
-            // 
-            // 
-            // 
-            // 
-            this.labelX6.BackgroundStyle.Class = "";
-            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX6.Location = new System.Drawing.Point(16, 66);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(107, 23);
-            this.labelX6.TabIndex = 6;
-            this.labelX6.Text = "Contraseña :";
             // 
             // UsuariosFormulario
             // 
