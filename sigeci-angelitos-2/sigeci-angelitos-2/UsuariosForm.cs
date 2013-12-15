@@ -94,5 +94,27 @@ namespace sigeci_angelitos_2
                 MessageBox.Show("No ha seleccionado un usuario");
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar este usuario?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes)
+            {
+                try
+                {
+                    Usuario usuario = buscarUsuario(int.Parse(dgvUsuarios.CurrentRow.Cells[0].Value.ToString()));
+                    if (controladorUsuario.eliminarUsuario(usuario))
+                    {
+                        MessageBox.Show("Usuario eliminado");
+                        llenarUsuarios("","","","");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("No ha seleccionado un usuario");
+                }
+            }           
+        }
     }
 }

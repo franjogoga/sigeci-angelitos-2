@@ -34,6 +34,7 @@ namespace Controlador
             OleDbDataReader r = null;
             int numFilas = 0;
             int numFilas2 = 0;
+            usuarios.Clear();
 
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
@@ -191,5 +192,39 @@ namespace Controlador
             return resultado;
         }
 
+        public bool eliminarUsuario(Usuario usuario)
+        {
+            bool resultado = false;
+            int numFilas = 0;
+            usuarios.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update persona set estado=@estado " +
+                                                    "where idPersona=@idPersona");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@estado","inactivo"),
+                new OleDbParameter("@idPersona",usuario.persona.idPersona),                               
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            resultado = numFilas == 1;
+            return resultado;
+        }
     }
 }

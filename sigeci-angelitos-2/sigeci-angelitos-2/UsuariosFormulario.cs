@@ -26,11 +26,11 @@ namespace sigeci_angelitos_2
             InitializeComponent();
             this.padre = usuariosForm;
             this.modo = modo;
-            if (modo == 2)
+            if (modo == 2) //modificar
             {                
                 llenaFormularioUsuario(usuario);
             }
-            if (modo == 1)
+            if (modo == 1) //ver
             {
                 llenaFormularioUsuario(usuario);
                 bloqueaFormularioUsuario();
@@ -60,7 +60,7 @@ namespace sigeci_angelitos_2
                 usuario.username = txtUsername.Text;
                 usuario.password = txtPassword.Text;
 
-                if (controladorUsuario.modificarUsuario(usuario))
+                if (controladorUsuario.agregarUsuario(usuario))
                 {
                     MessageBox.Show("Usuario Agregado");
                     this.Dispose();
