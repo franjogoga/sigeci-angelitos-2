@@ -60,7 +60,7 @@ namespace sigeci_angelitos_2
                 usuario.username = txtUsername.Text;
                 usuario.password = txtPassword.Text;
 
-                if (controladorUsuario.agregarUsuario(usuario))
+                if (controladorUsuario.modificarUsuario(usuario))
                 {
                     MessageBox.Show("Usuario Agregado");
                     this.Dispose();
@@ -71,7 +71,21 @@ namespace sigeci_angelitos_2
             }
             else
             {
-                MessageBox.Show("entro");
+                usuario.username = txtUsername.Text;
+                usuario.password = txtPassword.Text;
+                usuario.persona.nombres = txtNombres.Text;
+                usuario.persona.apellidoPaterno = txtApellidoPaterno.Text;
+                usuario.persona.apellidoMaterno = txtApellidoMaterno.Text;
+                usuario.persona.dni = int.Parse(txtDNI.Text);
+
+                if (controladorUsuario.modificarUsuario(usuario))
+                {
+                    MessageBox.Show("Usuario Modificado");
+                    this.Dispose();
+                    padre.llenarUsuarios("","","","");
+                }
+                else
+                    MessageBox.Show("Ha ocurrido un error");
             }
         }
 
