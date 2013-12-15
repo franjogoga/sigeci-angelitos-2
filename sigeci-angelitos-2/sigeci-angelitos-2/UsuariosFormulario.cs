@@ -26,13 +26,18 @@ namespace sigeci_angelitos_2
             InitializeComponent();
             this.padre = usuariosForm;
             this.modo = modo;
+            if (modo == 2)
+            {                
+                llenaFormularioUsuario(usuario);
+            }
             if (modo == 1)
             {
                 llenaFormularioUsuario(usuario);
-                btnAceptar.Enabled = false;
+                bloqueaFormularioUsuario();
+                btnAceptar.Enabled = false;                
             }
-            else
-                btnAceptar.Enabled = true;
+            else            
+                btnAceptar.Enabled = true;                            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -63,12 +68,26 @@ namespace sigeci_angelitos_2
                 }
                 else
                     MessageBox.Show("Ha ocurrido un error");
-            }            
+            }
+            else
+            {
+                MessageBox.Show("entro");
+            }
+        }
+
+        private void bloqueaFormularioUsuario()
+        {
+            txtNombres.ReadOnly = true;
+            txtPassword.ReadOnly = true;
+            txtUsername.ReadOnly = true;
+            txtApellidoPaterno.ReadOnly = true;
+            txtApellidoMaterno.ReadOnly = true;
+            txtDNI.ReadOnly = true;
         }
 
         private void llenaFormularioUsuario(Usuario usuario)
-        {
-            txtNombres.Text = usuario.persona.nombres;
+        {            
+            txtNombres.Text = usuario.persona.nombres;            
             txtPassword.Text = usuario.password;
             txtApellidoPaterno.Text = usuario.persona.apellidoPaterno;
             txtApellidoMaterno.Text = usuario.persona.apellidoMaterno;

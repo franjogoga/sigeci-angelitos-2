@@ -79,5 +79,20 @@ namespace sigeci_angelitos_2
                 MessageBox.Show("No ha seleccionado un usuario");
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Usuario usuario = buscarUsuario(int.Parse(dgvUsuarios.CurrentRow.Cells[0].Value.ToString()));
+                UsuariosFormulario usuariosFormulario = new UsuariosFormulario(this, 2, usuario);
+                usuariosFormulario.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("No ha seleccionado un usuario");
+            }
+        }
     }
 }
