@@ -29,7 +29,7 @@ namespace Controlador
 
         public bool agregarUsuario(Usuario usuario)
         {
-            bool resultado = true;
+            bool resultado = false;
             int idPersona=0;
             OleDbDataReader r = null;
             int numFilas = 0;
@@ -76,14 +76,11 @@ namespace Controlador
                 });
                                 
                 comando3.Connection = conexion;               
-                numFilas2 = comando3.ExecuteNonQuery();
-
-                Console.WriteLine("Usuario Insertado: " + numFilas2);
+                numFilas2 = comando3.ExecuteNonQuery();                
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
-                Console.WriteLine("Error!");
+                Console.WriteLine(e.ToString());                
             }
             finally {
                 r.Close();
@@ -145,6 +142,54 @@ namespace Controlador
             return usuarios;
         }
 
+        public bool modificarUsuario(Usuario usuario)
+        {
+            bool resultado = false;
+            int numFilas = 0;
+            int numFilas2 = 0;
+            usuarios.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update persona set nombres=@nombres,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,dni=@dni " +
+                                                    "where idPersona=@idPersona");
+            OleDbCommand comando2 = new OleDbCommand("update usuario set username=@username,pass=@pass " +
+                                                        "where persona_idPersona=@persona_idPersona");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombres",usuario.persona.nombres),
+                new OleDbParameter("@apellidoPaterno",usuario.persona.apellidoPaterno),
+                new OleDbParameter("@apellidoMaterno",usuario.persona.apellidoMaterno),
+                new OleDbParameter("@dni",usuario.persona.dni),
+                new OleDbParameter("@idPersona",usuario.persona.idPersona),                
+            });
+
+            comando2.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@username",usuario.username),
+                new OleDbParameter("@pass",usuario.password),                
+                new OleDbParameter("@persona_idPersona",usuario.persona.idPersona),                
+            });
+
+            comando.Connection = conexion;
+            comando2.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+                numFilas2 = comando2.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close(); 
+            }
+            resultado = numFilas + numFilas2 == 2;
+            return resultado;
+        }
 
     }
 }
