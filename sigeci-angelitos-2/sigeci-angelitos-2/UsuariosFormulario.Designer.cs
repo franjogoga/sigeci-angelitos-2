@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuariosFormulario));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbUsuario = new System.Windows.Forms.GroupBox();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
@@ -44,30 +44,30 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
-            this.groupBox1.SuspendLayout();
+            this.gbUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbUsuario
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.labelX5);
-            this.groupBox1.Controls.Add(this.txtDNI);
-            this.groupBox1.Controls.Add(this.labelX4);
-            this.groupBox1.Controls.Add(this.labelX3);
-            this.groupBox1.Controls.Add(this.labelX6);
-            this.groupBox1.Controls.Add(this.labelX2);
-            this.groupBox1.Controls.Add(this.labelX1);
-            this.groupBox1.Controls.Add(this.txtApellidoMaterno);
-            this.groupBox1.Controls.Add(this.txtPassword);
-            this.groupBox1.Controls.Add(this.txtApellidoPaterno);
-            this.groupBox1.Controls.Add(this.txtNombres);
-            this.groupBox1.Controls.Add(this.txtUsername);
-            this.groupBox1.Location = new System.Drawing.Point(21, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(348, 281);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos de Usuario";
+            this.gbUsuario.BackColor = System.Drawing.Color.White;
+            this.gbUsuario.Controls.Add(this.labelX5);
+            this.gbUsuario.Controls.Add(this.txtDNI);
+            this.gbUsuario.Controls.Add(this.labelX4);
+            this.gbUsuario.Controls.Add(this.labelX3);
+            this.gbUsuario.Controls.Add(this.labelX6);
+            this.gbUsuario.Controls.Add(this.labelX2);
+            this.gbUsuario.Controls.Add(this.labelX1);
+            this.gbUsuario.Controls.Add(this.txtApellidoMaterno);
+            this.gbUsuario.Controls.Add(this.txtPassword);
+            this.gbUsuario.Controls.Add(this.txtApellidoPaterno);
+            this.gbUsuario.Controls.Add(this.txtNombres);
+            this.gbUsuario.Controls.Add(this.txtUsername);
+            this.gbUsuario.Location = new System.Drawing.Point(21, 12);
+            this.gbUsuario.Name = "gbUsuario";
+            this.gbUsuario.Size = new System.Drawing.Size(348, 281);
+            this.gbUsuario.TabIndex = 1;
+            this.gbUsuario.TabStop = false;
+            this.gbUsuario.Text = "Datos de Usuario";
             // 
             // labelX5
             // 
@@ -222,24 +222,26 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(396, 361);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbUsuario);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UsuariosFormulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbUsuario.ResumeLayout(false);
+            this.gbUsuario.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbUsuario;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
