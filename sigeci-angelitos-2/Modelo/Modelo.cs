@@ -189,13 +189,16 @@ namespace Modelo
     public class Paciente
     {
         private Persona _persona;
+        private MenorEdad _menorEdad;
+        private MayorEdad _mayorEdad;
         private int _numeroHistoria;
         private DateTime _fechaNacimiento;
         private string _lugarNacimiento;
         private string _domicilio;
         private string _distrito;
-        private int _telefonoCasa;
-        private int _celular;
+        private string _telefonoCasa;
+        private string _celularPapa;
+        private string _celularMama;
         private string _correo;
         private string _comoEntero;
         private string _obs;        
@@ -204,6 +207,16 @@ namespace Modelo
         {
             get { return _persona; }
             set { _persona = value; }
+        }
+        public MenorEdad menorEdad
+        {
+            get { return _menorEdad; }
+            set { _menorEdad = value; }
+        }
+        public MayorEdad mayorEdad
+        {
+            get { return _mayorEdad; }
+            set { _mayorEdad = value; }
         }
         public int numeroHistoria
         {
@@ -230,15 +243,20 @@ namespace Modelo
             get { return _distrito; }
             set { _distrito = value; }
         }
-        public int telefonoCasa
+        public string telefonoCasa
         {
             get { return _telefonoCasa; }
             set { _telefonoCasa = value; }
         }
-        public int celular
+        public string celularPapa
         {
-            get { return _celular; }
-            set { _celular= value; }
+            get { return _celularPapa; }
+            set { _celularPapa= value; }
+        }
+        public string celularMama
+        {
+            get { return _celularMama; }
+            set { _celularMama = value; }
         }
         public string correo
         {
@@ -362,8 +380,8 @@ namespace Modelo
         }
         public int idServicio
         {
-            get { return _idCita; }
-            set { _idCita = value;}
+            get { return _idServicio; }
+            set { _idServicio = value;}
         }
         public string estado
         {
