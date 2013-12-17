@@ -16,12 +16,10 @@ namespace sigeci_angelitos_2
     public partial class UsuariosForm : Office2007Form
     {
         private ControladorUsuario controladorUsuario = ControladorUsuario.Instancia();
-        private List<Usuario> usuarios;
-        private PrincipalForm principalForm;
-        public UsuariosForm(PrincipalForm principalForm)
+        private List<Usuario> usuarios;        
+        public UsuariosForm()
         {
-            InitializeComponent();
-            this.principalForm = principalForm;
+            InitializeComponent();            
         }
 
         private void UsuariosForm_FormClosing(object sender, FormClosingEventArgs e)

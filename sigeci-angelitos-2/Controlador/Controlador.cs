@@ -227,4 +227,38 @@ namespace Controlador
             return resultado;
         }
     }
+
+    public class ControladorPaciente
+    {
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";               
+        private List<Paciente> pacientes;
+        static ControladorPaciente controladorPaciente = null;
+
+        private ControladorPaciente()
+        {            
+            pacientes = new List<Paciente>();
+        }
+
+        static public ControladorPaciente Instancia()
+        {
+            if (controladorPaciente == null)
+                controladorPaciente = new ControladorPaciente();
+            return controladorPaciente;
+        }
+
+        public List<Paciente> getListaPacientes(string strHistoria, string strDNI, string nombres, string apellidoPaterno, string apellidoMaterno)
+        {
+            pacientes.Clear();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("select * from persona, usuario where usuario.username like @username and persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and persona.apellidoMaterno like @apellidoMaterno and persona.estado='activo' and persona.idPersona = usuario.persona_idPersona");
+
+
+            return pacientes;
+        }
+
+
+
+    }
 }

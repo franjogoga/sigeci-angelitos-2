@@ -49,7 +49,7 @@ namespace sigeci_angelitos_2
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            UsuariosForm usuariosForm = new UsuariosForm(this);
+            UsuariosForm usuariosForm = new UsuariosForm();
             usuariosForm.ShowDialog();
         }
 
