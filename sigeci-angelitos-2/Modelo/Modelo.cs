@@ -196,9 +196,7 @@ namespace Modelo
         private string _lugarNacimiento;
         private string _domicilio;
         private string _distrito;
-        private string _telefonoCasa;
-        private string _celularPapa;
-        private string _celularMama;
+        private string _telefonoCasa;        
         private string _correo;
         private string _comoEntero;
         private string _obs;        
@@ -247,17 +245,7 @@ namespace Modelo
         {
             get { return _telefonoCasa; }
             set { _telefonoCasa = value; }
-        }
-        public string celularPapa
-        {
-            get { return _celularPapa; }
-            set { _celularPapa= value; }
-        }
-        public string celularMama
-        {
-            get { return _celularMama; }
-            set { _celularMama = value; }
-        }
+        }        
         public string correo
         {
             get { return _correo; }
@@ -276,19 +264,15 @@ namespace Modelo
     }
 
     public class MenorEdad
-    {
-        private Persona _persona;
+    {        
         private string _nombreMadre;
         private string _nombrePadre;
+        private string _celularMadre;
+        private string _celularPadre;
         private string _escolaridad;
         private string _nombreColegio;
         private string _ubicacionColegio;
-
-        public Persona persona
-        {
-            get { return _persona; }
-            set { _persona = value; }
-        }
+        
         public string nombreMadre
         {
             get { return _nombreMadre; }
@@ -298,6 +282,16 @@ namespace Modelo
         {
             get { return _nombrePadre; }
             set { _nombrePadre = value; }
+        }
+        public string celularMadre
+        {
+            get { return _celularMadre; }
+            set { _celularMadre = value; }
+        }
+        public string celularPadre
+        {
+            get { return _celularPadre; }
+            set { _celularPadre = value; }
         }
         public string escolaridad
         {
@@ -318,15 +312,15 @@ namespace Modelo
 
     public class MayorEdad
     {
-        private Persona _persona;
+        private string _celular;
         private string _ocupacion;
         private string _gradoInstruccion;
         private string _lugarLaboral;
 
-        public Persona persona
+        public string celular
         {
-            get { return _persona; }
-            set { _persona = value; }
+            get { return _celular; }
+            set { _celular = value; }
         }
         public string ocupacion
         {

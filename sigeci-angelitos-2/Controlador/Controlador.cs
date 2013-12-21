@@ -263,6 +263,26 @@ namespace Controlador
                 new OleDbParameter("@apellidoMaterno",apellidoMaterno),
             });
 
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Persona persona = new Persona();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally 
+            {
+                conexion.Close();
+            }
 
 
             return pacientes;
