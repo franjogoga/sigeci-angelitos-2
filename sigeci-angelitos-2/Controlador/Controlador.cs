@@ -252,7 +252,17 @@ namespace Controlador
             OleDbDataReader r = null;
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
-            OleDbCommand comando = new OleDbCommand("select * from persona, usuario where usuario.username like @username and persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and persona.apellidoMaterno like @apellidoMaterno and persona.estado='activo' and persona.idPersona = usuario.persona_idPersona");
+            OleDbCommand comando = new OleDbCommand("select * from persona, paciente, menorEdad, mayorEdad where paciente.numeroHistoria = @numeroHistoria and persona.idPersona = paciente.persona_idPersona and paciente.persona_idPersona = menorEdad.paciente_persona_idPersona and paciente.persona_idPersona = mayorEdad.paciente_persona_idPersona");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@numeroHistoria",int.Parse(strHistoria)),
+                new OleDbParameter("@dni",int.Parse(strDNI)),
+                new OleDbParameter("@nombres",nombres),
+                new OleDbParameter("@apellidoPaterno",apellidoPaterno),
+                new OleDbParameter("@apellidoMaterno",apellidoMaterno),
+            });
+
 
 
             return pacientes;
