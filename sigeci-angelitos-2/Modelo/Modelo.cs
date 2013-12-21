@@ -199,7 +199,7 @@ namespace Modelo
         private string _telefonoCasa;        
         private string _correo;
         private string _comoEntero;
-        private string _obs;        
+        private string _observacion;        
 
         public Persona persona
         {
@@ -256,10 +256,10 @@ namespace Modelo
             get { return _comoEntero; }
             set { _comoEntero = value; }
         }
-        public string obs
+        public string observacion
         {
-            get { return _obs; }
-            set { _obs = value; }
+            get { return _observacion; }
+            set { _observacion = value; }
         }      
     }
 
