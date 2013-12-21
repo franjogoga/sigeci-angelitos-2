@@ -251,17 +251,37 @@ namespace Controlador
             pacientes.Clear();
             OleDbDataReader r = null;
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            string hist = "", dn = "";
+            int numeroHistoria=0, dni=0;
 
-            OleDbCommand comando = new OleDbCommand("select * from persona, paciente, menorEdad, mayorEdad where paciente.numeroHistoria = @numeroHistoria and persona.idPersona = paciente.persona_idPersona and paciente.persona_idPersona = menorEdad.paciente_persona_idPersona and paciente.persona_idPersona = mayorEdad.paciente_persona_idPersona");
+            if (!strHistoria.Equals(""))
+            {
+                hist = " and paciente.numeroHistoria = @numeroHistoria";
+                numeroHistoria = int.Parse(strHistoria);
+            }            
+            if (!strDNI.Equals(""))
+            {
+                dn = " and persona.dni = @dni";
+                dni = int.Parse(strDNI);
+            }
+            
+            OleDbCommand comando = new OleDbCommand("select * from persona, paciente, menorEdad, mayorEdad where persona.idPersona = paciente.persona_idPersona and paciente.persona_idPersona = menorEdad.paciente_persona_idPersona and paciente.persona_idPersona = mayorEdad.paciente_persona_idPersona and  persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and persona.apellidoMaterno like @apellidoMaterno and persona.estado like 'activo' "+hist+dn);            
 
             comando.Parameters.AddRange(new OleDbParameter[]
-            {
-                new OleDbParameter("@numeroHistoria",int.Parse(strHistoria)),
-                new OleDbParameter("@dni",int.Parse(strDNI)),
-                new OleDbParameter("@nombres",nombres),
-                new OleDbParameter("@apellidoPaterno",apellidoPaterno),
-                new OleDbParameter("@apellidoMaterno",apellidoMaterno),
+            {                
+                new OleDbParameter("@nombres","%"+nombres+"%"),
+                new OleDbParameter("@apellidoPaterno","%"+apellidoPaterno+"%"),
+                new OleDbParameter("@apellidoMaterno","%"+apellidoMaterno+"%"),
             });
+
+            if (!strHistoria.Equals("")) 
+            {
+                comando.Parameters.AddWithValue("@numeroHistoria", numeroHistoria);
+            }
+            if (!strDNI.Equals(""))
+            {
+                comando.Parameters.AddWithValue("@dni", dni);
+            }
 
             comando.Connection = conexion;
 
@@ -272,18 +292,51 @@ namespace Controlador
                 while (r.Read())
                 {
                     Persona persona = new Persona();
+                    persona.idPersona = r.GetInt32(0);
+                    persona.nombres = r.GetString(1);
+                    persona.apellidoPaterno = r.GetString(2);
+                    persona.apellidoMaterno = r.GetString(3);
+                    persona.dni = r.GetInt32(4);
+                    persona.estado = r.GetString(5);
+                    Paciente paciente = new Paciente();
+                    paciente.numeroHistoria = r.GetInt32(7);
+                    paciente.fechaNacimiento = r.GetDateTime(8);
+                    paciente.lugarNacimiento = r.GetString(9);
+                    paciente.domicilio = r.GetString(10);
+                    paciente.distrito = r.GetString(11);
+                    paciente.telefonoCasa = r.GetString(12);
+                    paciente.correo = r.GetString(13);
+                    paciente.comoEntero = r.GetString(14);
+                    paciente.observacion = r.GetString(15);
+                    MenorEdad menorEdad = new MenorEdad();
+                    menorEdad.nombreMadre = r.GetString(17);
+                    menorEdad.nombrePadre = r.GetString(18);
+                    menorEdad.celularMadre = r.GetString(19);
+                    menorEdad.celularPadre = r.GetString(20);
+                    menorEdad.escolaridad = r.GetString(21);
+                    menorEdad.nombreColegio = r.GetString(22);
+                    menorEdad.ubicacionColegio = r.GetString(23);
+                    MayorEdad mayorEdad = new MayorEdad();
+                    mayorEdad.celular = r.GetString(25);
+                    mayorEdad.ocupacion = r.GetString(26);
+                    mayorEdad.gradoInstruccion = r.GetString(27);
+                    mayorEdad.lugarLaboral = r.GetString(28);
+                    paciente.persona = persona;
+                    paciente.menorEdad = menorEdad;
+                    paciente.mayorEdad = mayorEdad;
 
+                    pacientes.Add(paciente);
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
-            finally 
+            finally
             {
+                r.Close();
                 conexion.Close();
             }
-
 
             return pacientes;
         }
