@@ -31,9 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CitasFornulario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -49,25 +51,19 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pageNavigator1 = new DevComponents.DotNetBar.Controls.PageNavigator();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.fechaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turno12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -109,6 +105,19 @@
             this.labelX4.TabIndex = 12;
             this.labelX4.Text = "Apellido Materno :";
             // 
+            // labelX10
+            // 
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.Class = "";
+            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX10.Location = new System.Drawing.Point(327, 104);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(107, 23);
+            this.labelX10.TabIndex = 12;
+            this.labelX10.Text = "Evaluacion :";
+            // 
             // labelX5
             // 
             // 
@@ -141,6 +150,13 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(189, 20);
             this.textBox2.TabIndex = 11;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(440, 107);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(182, 20);
+            this.textBox4.TabIndex = 11;
             // 
             // textBox3
             // 
@@ -211,7 +227,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboBox4);
             this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.labelX11);
             this.groupBox2.Controls.Add(this.labelX7);
             this.groupBox2.Controls.Add(this.comboBox3);
             this.groupBox2.Controls.Add(this.labelX8);
@@ -243,7 +261,7 @@
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(107, 23);
             this.labelX7.TabIndex = 14;
-            this.labelX7.Text = "Modalidad :";
+            this.labelX7.Text = "Turno :";
             // 
             // comboBox3
             // 
@@ -300,6 +318,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cita";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.horaCita,
+            this.lunes,
+            this.martes,
+            this.miercoles,
+            this.jueves,
+            this.viernes,
+            this.sabado});
+            this.dataGridView1.Location = new System.Drawing.Point(11, 65);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(629, 166);
+            this.dataGridView1.TabIndex = 18;
+            // 
             // pageNavigator1
             // 
             // 
@@ -338,112 +375,68 @@
             this.labelX9.TabIndex = 14;
             this.labelX9.Text = "Fecha :";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fechaCita,
-            this.turno1,
-            this.turno2,
-            this.turno3,
-            this.turno4,
-            this.turno5,
-            this.turno6,
-            this.turno7,
-            this.turno8,
-            this.turno9,
-            this.turno10,
-            this.turno11,
-            this.turno12});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(629, 166);
-            this.dataGridView1.TabIndex = 18;
-            // 
-            // fechaCita
-            // 
-            this.fechaCita.HeaderText = "Fecha";
-            this.fechaCita.Name = "fechaCita";
-            // 
-            // turno1
-            // 
-            this.turno1.HeaderText = "Turno 1";
-            this.turno1.Name = "turno1";
-            // 
-            // turno2
-            // 
-            this.turno2.HeaderText = "Turno 2";
-            this.turno2.Name = "turno2";
-            // 
-            // turno3
-            // 
-            this.turno3.HeaderText = "Turno 3";
-            this.turno3.Name = "turno3";
-            // 
-            // turno4
-            // 
-            this.turno4.HeaderText = "Turno 4";
-            this.turno4.Name = "turno4";
-            // 
-            // turno5
-            // 
-            this.turno5.HeaderText = "Turno 5";
-            this.turno5.Name = "turno5";
-            // 
-            // turno6
-            // 
-            this.turno6.HeaderText = "Turno 6";
-            this.turno6.Name = "turno6";
-            // 
-            // turno7
-            // 
-            this.turno7.HeaderText = "Turno 7";
-            this.turno7.Name = "turno7";
-            // 
-            // turno8
-            // 
-            this.turno8.HeaderText = "Turno 8";
-            this.turno8.Name = "turno8";
-            // 
-            // turno9
-            // 
-            this.turno9.HeaderText = "Turno 9";
-            this.turno9.Name = "turno9";
-            // 
-            // turno10
-            // 
-            this.turno10.HeaderText = "Turno 10";
-            this.turno10.Name = "turno10";
-            // 
-            // turno11
-            // 
-            this.turno11.HeaderText = "Turno 11";
-            this.turno11.Name = "turno11";
-            // 
-            // turno12
-            // 
-            this.turno12.HeaderText = "Turno 12";
-            this.turno12.Name = "turno12";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(440, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(182, 20);
-            this.textBox4.TabIndex = 11;
-            // 
-            // labelX10
+            // labelX11
             // 
             // 
             // 
             // 
-            this.labelX10.BackgroundStyle.Class = "";
-            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(327, 104);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(107, 23);
-            this.labelX10.TabIndex = 12;
-            this.labelX10.Text = "Evaluacion :";
+            this.labelX11.BackgroundStyle.Class = "";
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Location = new System.Drawing.Point(325, 70);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(107, 23);
+            this.labelX11.TabIndex = 14;
+            this.labelX11.Text = "Modalidad :";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(439, 72);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(189, 21);
+            this.comboBox4.TabIndex = 15;
+            // 
+            // horaCita
+            // 
+            this.horaCita.HeaderText = "Hora";
+            this.horaCita.Name = "horaCita";
+            this.horaCita.ReadOnly = true;
+            // 
+            // lunes
+            // 
+            this.lunes.HeaderText = "Lunes";
+            this.lunes.Name = "lunes";
+            this.lunes.ReadOnly = true;
+            // 
+            // martes
+            // 
+            this.martes.HeaderText = "Martes";
+            this.martes.Name = "martes";
+            this.martes.ReadOnly = true;
+            // 
+            // miercoles
+            // 
+            this.miercoles.HeaderText = "Miércoles";
+            this.miercoles.Name = "miercoles";
+            this.miercoles.ReadOnly = true;
+            // 
+            // jueves
+            // 
+            this.jueves.HeaderText = "Jueves";
+            this.jueves.Name = "jueves";
+            this.jueves.ReadOnly = true;
+            // 
+            // viernes
+            // 
+            this.viernes.HeaderText = "Viernes";
+            this.viernes.Name = "viernes";
+            this.viernes.ReadOnly = true;
+            // 
+            // sabado
+            // 
+            this.sabado.HeaderText = "Sabado";
+            this.sabado.Name = "sabado";
+            this.sabado.ReadOnly = true;
             // 
             // CitasFornulario
             // 
@@ -494,20 +487,16 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private DevComponents.DotNetBar.LabelX labelX9;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaCita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turno12;
         private DevComponents.DotNetBar.LabelX labelX10;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private DevComponents.DotNetBar.LabelX labelX11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horaCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lunes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn martes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miercoles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jueves;
+        private System.Windows.Forms.DataGridViewTextBoxColumn viernes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sabado;
     }
 }
