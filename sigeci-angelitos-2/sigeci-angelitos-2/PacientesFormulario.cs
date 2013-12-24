@@ -48,8 +48,7 @@ namespace sigeci_angelitos_2
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (modo == 0)
-            {                
-                
+            {                                
                 Persona persona = new Persona();
                 persona.nombres = txtNombres.Text;
                 persona.apellidoPaterno = txtApellidoPaterno.Text;
@@ -58,7 +57,7 @@ namespace sigeci_angelitos_2
                 persona.estado = "activo";
                 Paciente paciente = new Paciente();
                 paciente.numeroHistoria = int.Parse(txtNumeroHistoria.Text);
-                paciente.fechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
+                paciente.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
                 paciente.lugarNacimiento = txtLugarNacimiento.Text;
                 paciente.domicilio = txtDomicilio.Text;
                 paciente.distrito = txtDistrito.Text;
@@ -70,8 +69,17 @@ namespace sigeci_angelitos_2
                 menorEdad.nombreMadre = txtNombreMadre.Text;
                 menorEdad.celularPadre = txtCelularPadre.Text;
                 menorEdad.celularMadre = txtCelularMadre.Text;
-                
-
+                menorEdad.nombreColegio = txtNombreColegio.Text;
+                menorEdad.ubicacionColegio = txtUbicacionColegio.Text;
+                if (rbSi.Checked) menorEdad.escolaridad = "si"; else menorEdad.escolaridad = "no";
+                MayorEdad mayorEdad = new MayorEdad();
+                mayorEdad.celular = txtCelular.Text;
+                mayorEdad.gradoInstruccion = txtGradoInstruccion.Text;
+                mayorEdad.ocupacion = txtOcupacion.Text;
+                mayorEdad.lugarLaboral = txtLugarLaboral.Text;
+                paciente.persona = persona;
+                paciente.menorEdad = menorEdad;
+                paciente.mayorEdad = mayorEdad;
                 
                 if (controladorPaciente.agregarPaciente(paciente))
                 {
@@ -105,7 +113,7 @@ namespace sigeci_angelitos_2
             txtApellidoMaterno.ReadOnly = true;
             txtDNI.ReadOnly = true;
             txtLugarNacimiento.ReadOnly = true;
-            txtFechaNacimiento.ReadOnly = true;
+            dateFechaNacimiento.Enabled = false;
             txtDomicilio.ReadOnly = true;
             txtDistrito.ReadOnly = true;
             txtTelefonoCasa.ReadOnly = true;
