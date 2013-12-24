@@ -343,14 +343,88 @@ namespace Controlador
 
         public bool agregarPaciente(Paciente paciente)
         {
+            bool resultado = false;
+            int idPersona = 0, numeroHistoria =0,numFilas = 0, numFilas2 = 0;
+            OleDbDataReader r = null;            
+            pacientes.Clear();
 
-            return false;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("insert into persona(nombres,apellidoPaterno,apellidoMaterno,dni,estado) " +
+                                                        "values(@nombres,@apellidoPaterno,@apellidoMaterno,@dni,@estado)");
+
+            OleDbCommand comando2 = new OleDbCommand("SELECT TOP 1 * FROM persona order by idPersona DESC");
+            OleDbCommand comando4 = new OleDbCommand("SELECT TOP 1 * FROM paciente order by persona_idPersona DESC");
+
+            OleDbCommand comando3 = new OleDbCommand("insert into paciente(persona_idPersona,numeroHistoria,fechaNacimiento,lugarNacimiento,domicilio,distrito,telefonoCasa,correo,comoEntero,observacion) " +
+                                                        "values(@persona_idPersona,@numeroHistoria,@fechaNacimiento,@lugarNacimiento,@domicilio,@distrito,@telefonoCasa,@correo,@comoEntero,@observacion)");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombres",paciente.persona.nombres),
+                new OleDbParameter("@apellidoPaterno",paciente.persona.apellidoPaterno),
+                new OleDbParameter("@apellidoMaterno",paciente.persona.apellidoMaterno),
+                new OleDbParameter("@dni",paciente.persona.dni),
+                new OleDbParameter("@estado",paciente.persona.estado),                
+            });
+
+            comando.Connection = conexion;
+            comando2.Connection = conexion;
+            comando4.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+                r = comando2.ExecuteReader();
+
+                while (r.Read())
+                {
+                    idPersona = r.GetInt32(0);
+                }
+
+                r = comando4.ExecuteReader();
+                while (r.Read())
+                {
+                    numeroHistoria = r.GetInt32(1)+1;
+                }
+
+                comando3.Parameters.AddRange(new OleDbParameter[]
+                {
+                    new OleDbParameter("@persona_idPersona",idPersona),
+                    new OleDbParameter("@numeroHistoria",numeroHistoria),
+                    new OleDbParameter("@fechaNacimiento",paciente.fechaNacimiento),
+                    new OleDbParameter("@lugarNacimiento",paciente.lugarNacimiento),
+                    new OleDbParameter("@domicilio",paciente.domicilio),
+                    new OleDbParameter("@distrito",paciente.distrito),
+                    new OleDbParameter("@telefonoCasa",paciente.telefonoCasa),
+                    new OleDbParameter("@fechaNacimiento",paciente.fechaNacimiento),
+                    new OleDbParameter("@correo",paciente.correo), 
+                    new OleDbParameter("@comoEntero",paciente.comoEntero),
+                    new OleDbParameter("@observacion","-"),
+                });
+
+                comando3.Connection = conexion;
+                numFilas2 = comando3.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            resultado = numFilas + numFilas2 == 2;
+            return resultado;
         }
 
         public bool modificarPaciente(Paciente paciente)
         {
+            bool resultado = false;
 
-            return false;
+
+            return resultado;
         }
 
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PacientesFormulario));
             this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
@@ -35,14 +36,15 @@
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.labelX23 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.txtComoEntero = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtTelefonoCasa = new System.Windows.Forms.TextBox();
             this.txtDistrito = new System.Windows.Forms.TextBox();
-            this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
@@ -57,17 +59,12 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtNumeroHistoria = new System.Windows.Forms.TextBox();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.labelX20 = new DevComponents.DotNetBar.LabelX();
-            this.labelX19 = new DevComponents.DotNetBar.LabelX();
-            this.labelX18 = new DevComponents.DotNetBar.LabelX();
-            this.txtLugarLaboral = new System.Windows.Forms.TextBox();
-            this.txtGradoInstruccion = new System.Windows.Forms.TextBox();
-            this.txtOcupacion = new System.Windows.Forms.TextBox();
-            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelX21 = new DevComponents.DotNetBar.LabelX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.txtCelularMadre = new System.Windows.Forms.TextBox();
+            this.txtCelularPadre = new System.Windows.Forms.TextBox();
             this.rbNo = new System.Windows.Forms.RadioButton();
             this.rbSi = new System.Windows.Forms.RadioButton();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
@@ -80,22 +77,27 @@
             this.txtNombreMadre = new System.Windows.Forms.TextBox();
             this.txtNombrePadre = new System.Windows.Forms.TextBox();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.txtCelularPadre = new System.Windows.Forms.TextBox();
-            this.txtCelularMadre = new System.Windows.Forms.TextBox();
-            this.labelX21 = new DevComponents.DotNetBar.LabelX();
-            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.labelX20 = new DevComponents.DotNetBar.LabelX();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
             this.labelX22 = new DevComponents.DotNetBar.LabelX();
-            this.txtComoEntero = new System.Windows.Forms.TextBox();
-            this.labelX23 = new DevComponents.DotNetBar.LabelX();
+            this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.txtLugarLaboral = new System.Windows.Forms.TextBox();
+            this.txtGradoInstruccion = new System.Windows.Forms.TextBox();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.txtOcupacion = new System.Windows.Forms.TextBox();
+            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.superTabControlPanel3.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.superTabControlPanel3.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -173,6 +175,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.dateFechaNacimiento);
             this.groupBox1.Controls.Add(this.labelX8);
             this.groupBox1.Controls.Add(this.labelX23);
             this.groupBox1.Controls.Add(this.labelX12);
@@ -183,7 +186,6 @@
             this.groupBox1.Controls.Add(this.txtCorreo);
             this.groupBox1.Controls.Add(this.txtTelefonoCasa);
             this.groupBox1.Controls.Add(this.txtDistrito);
-            this.groupBox1.Controls.Add(this.txtFechaNacimiento);
             this.groupBox1.Controls.Add(this.txtApellidoMaterno);
             this.groupBox1.Controls.Add(this.labelX9);
             this.groupBox1.Controls.Add(this.labelX7);
@@ -216,6 +218,19 @@
             this.labelX8.Size = new System.Drawing.Size(103, 23);
             this.labelX8.TabIndex = 9;
             this.labelX8.Text = "Distrito :";
+            // 
+            // labelX23
+            // 
+            // 
+            // 
+            // 
+            this.labelX23.BackgroundStyle.Class = "";
+            this.labelX23.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX23.Location = new System.Drawing.Point(331, 271);
+            this.labelX23.Name = "labelX23";
+            this.labelX23.Size = new System.Drawing.Size(112, 23);
+            this.labelX23.TabIndex = 9;
+            this.labelX23.Text = "Cómo se enteró :";
             // 
             // labelX12
             // 
@@ -269,6 +284,13 @@
             this.labelX4.TabIndex = 9;
             this.labelX4.Text = "Apellido Materno :";
             // 
+            // txtComoEntero
+            // 
+            this.txtComoEntero.Location = new System.Drawing.Point(449, 274);
+            this.txtComoEntero.Name = "txtComoEntero";
+            this.txtComoEntero.Size = new System.Drawing.Size(179, 20);
+            this.txtComoEntero.TabIndex = 8;
+            // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(139, 274);
@@ -289,13 +311,6 @@
             this.txtDistrito.Name = "txtDistrito";
             this.txtDistrito.Size = new System.Drawing.Size(160, 20);
             this.txtDistrito.TabIndex = 8;
-            // 
-            // txtFechaNacimiento
-            // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(449, 156);
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(180, 20);
-            this.txtFechaNacimiento.TabIndex = 8;
             // 
             // txtApellidoMaterno
             // 
@@ -431,108 +446,13 @@
             this.superTabItem1.Name = "superTabItem1";
             this.superTabItem1.Text = "Datos Principales";
             // 
-            // superTabControlPanel3
-            // 
-            this.superTabControlPanel3.Controls.Add(this.groupBox3);
-            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 25);
-            this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(687, 332);
-            this.superTabControlPanel3.TabIndex = 0;
-            this.superTabControlPanel3.TabItem = this.superTabItem3;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.labelX20);
-            this.groupBox3.Controls.Add(this.labelX19);
-            this.groupBox3.Controls.Add(this.labelX22);
-            this.groupBox3.Controls.Add(this.labelX18);
-            this.groupBox3.Controls.Add(this.txtLugarLaboral);
-            this.groupBox3.Controls.Add(this.txtGradoInstruccion);
-            this.groupBox3.Controls.Add(this.txtCelular);
-            this.groupBox3.Controls.Add(this.txtOcupacion);
-            this.groupBox3.Location = new System.Drawing.Point(10, 8);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(667, 311);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Datos de Mayor de Edad";
-            // 
-            // labelX20
-            // 
-            // 
-            // 
-            // 
-            this.labelX20.BackgroundStyle.Class = "";
-            this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX20.Location = new System.Drawing.Point(32, 158);
-            this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(108, 23);
-            this.labelX20.TabIndex = 11;
-            this.labelX20.Text = "Lugar Laboral :";
-            // 
-            // labelX19
-            // 
-            // 
-            // 
-            // 
-            this.labelX19.BackgroundStyle.Class = "";
-            this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX19.Location = new System.Drawing.Point(32, 117);
-            this.labelX19.Name = "labelX19";
-            this.labelX19.Size = new System.Drawing.Size(108, 23);
-            this.labelX19.TabIndex = 11;
-            this.labelX19.Text = "Grado de Instrucción :";
-            // 
-            // labelX18
-            // 
-            // 
-            // 
-            // 
-            this.labelX18.BackgroundStyle.Class = "";
-            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX18.Location = new System.Drawing.Point(32, 75);
-            this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(108, 23);
-            this.labelX18.TabIndex = 11;
-            this.labelX18.Text = "Ocupación :";
-            // 
-            // txtLugarLaboral
-            // 
-            this.txtLugarLaboral.Location = new System.Drawing.Point(158, 161);
-            this.txtLugarLaboral.Name = "txtLugarLaboral";
-            this.txtLugarLaboral.Size = new System.Drawing.Size(176, 20);
-            this.txtLugarLaboral.TabIndex = 10;
-            // 
-            // txtGradoInstruccion
-            // 
-            this.txtGradoInstruccion.Location = new System.Drawing.Point(158, 120);
-            this.txtGradoInstruccion.Name = "txtGradoInstruccion";
-            this.txtGradoInstruccion.Size = new System.Drawing.Size(176, 20);
-            this.txtGradoInstruccion.TabIndex = 10;
-            // 
-            // txtOcupacion
-            // 
-            this.txtOcupacion.Location = new System.Drawing.Point(158, 78);
-            this.txtOcupacion.Name = "txtOcupacion";
-            this.txtOcupacion.Size = new System.Drawing.Size(176, 20);
-            this.txtOcupacion.TabIndex = 10;
-            // 
-            // superTabItem3
-            // 
-            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
-            this.superTabItem3.GlobalItem = false;
-            this.superTabItem3.Name = "superTabItem3";
-            this.superTabItem3.Text = "Datos de Mayor Edad";
-            // 
             // superTabControlPanel2
             // 
             this.superTabControlPanel2.Controls.Add(this.groupBox2);
             this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(687, 332);
+            this.superTabControlPanel2.Size = new System.Drawing.Size(687, 357);
             this.superTabControlPanel2.TabIndex = 0;
             this.superTabControlPanel2.TabItem = this.superTabItem2;
             // 
@@ -560,6 +480,46 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Menor de Edad";
+            // 
+            // labelX21
+            // 
+            // 
+            // 
+            // 
+            this.labelX21.BackgroundStyle.Class = "";
+            this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX21.Location = new System.Drawing.Point(28, 126);
+            this.labelX21.Name = "labelX21";
+            this.labelX21.Size = new System.Drawing.Size(112, 23);
+            this.labelX21.TabIndex = 13;
+            this.labelX21.Text = "Celular del Padre:";
+            // 
+            // labelX11
+            // 
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.Class = "";
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Location = new System.Drawing.Point(344, 126);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(112, 23);
+            this.labelX11.TabIndex = 13;
+            this.labelX11.Text = "Celular de la Madre:";
+            // 
+            // txtCelularMadre
+            // 
+            this.txtCelularMadre.Location = new System.Drawing.Point(475, 126);
+            this.txtCelularMadre.Name = "txtCelularMadre";
+            this.txtCelularMadre.Size = new System.Drawing.Size(160, 20);
+            this.txtCelularMadre.TabIndex = 12;
+            // 
+            // txtCelularPadre
+            // 
+            this.txtCelularPadre.Location = new System.Drawing.Point(154, 126);
+            this.txtCelularPadre.Name = "txtCelularPadre";
+            this.txtCelularPadre.Size = new System.Drawing.Size(160, 20);
+            this.txtCelularPadre.TabIndex = 12;
             // 
             // rbNo
             // 
@@ -683,52 +643,59 @@
             this.superTabItem2.Name = "superTabItem2";
             this.superTabItem2.Text = "Datos de Menor de Edad";
             // 
-            // labelX11
+            // superTabControlPanel3
+            // 
+            this.superTabControlPanel3.Controls.Add(this.groupBox3);
+            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlPanel3.Name = "superTabControlPanel3";
+            this.superTabControlPanel3.Size = new System.Drawing.Size(687, 357);
+            this.superTabControlPanel3.TabIndex = 0;
+            this.superTabControlPanel3.TabItem = this.superTabItem3;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.labelX20);
+            this.groupBox3.Controls.Add(this.labelX19);
+            this.groupBox3.Controls.Add(this.labelX22);
+            this.groupBox3.Controls.Add(this.labelX18);
+            this.groupBox3.Controls.Add(this.txtLugarLaboral);
+            this.groupBox3.Controls.Add(this.txtGradoInstruccion);
+            this.groupBox3.Controls.Add(this.txtCelular);
+            this.groupBox3.Controls.Add(this.txtOcupacion);
+            this.groupBox3.Location = new System.Drawing.Point(10, 8);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(667, 311);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Datos de Mayor de Edad";
+            // 
+            // labelX20
             // 
             // 
             // 
             // 
-            this.labelX11.BackgroundStyle.Class = "";
-            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(344, 126);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(112, 23);
-            this.labelX11.TabIndex = 13;
-            this.labelX11.Text = "Celular de la Madre:";
+            this.labelX20.BackgroundStyle.Class = "";
+            this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX20.Location = new System.Drawing.Point(32, 158);
+            this.labelX20.Name = "labelX20";
+            this.labelX20.Size = new System.Drawing.Size(108, 23);
+            this.labelX20.TabIndex = 11;
+            this.labelX20.Text = "Lugar Laboral :";
             // 
-            // txtCelularPadre
-            // 
-            this.txtCelularPadre.Location = new System.Drawing.Point(154, 126);
-            this.txtCelularPadre.Name = "txtCelularPadre";
-            this.txtCelularPadre.Size = new System.Drawing.Size(160, 20);
-            this.txtCelularPadre.TabIndex = 12;
-            // 
-            // txtCelularMadre
-            // 
-            this.txtCelularMadre.Location = new System.Drawing.Point(475, 126);
-            this.txtCelularMadre.Name = "txtCelularMadre";
-            this.txtCelularMadre.Size = new System.Drawing.Size(160, 20);
-            this.txtCelularMadre.TabIndex = 12;
-            // 
-            // labelX21
+            // labelX19
             // 
             // 
             // 
             // 
-            this.labelX21.BackgroundStyle.Class = "";
-            this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX21.Location = new System.Drawing.Point(28, 126);
-            this.labelX21.Name = "labelX21";
-            this.labelX21.Size = new System.Drawing.Size(112, 23);
-            this.labelX21.TabIndex = 13;
-            this.labelX21.Text = "Celular del Padre:";
-            // 
-            // txtCelular
-            // 
-            this.txtCelular.Location = new System.Drawing.Point(158, 36);
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(176, 20);
-            this.txtCelular.TabIndex = 10;
+            this.labelX19.BackgroundStyle.Class = "";
+            this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX19.Location = new System.Drawing.Point(32, 117);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(108, 23);
+            this.labelX19.TabIndex = 11;
+            this.labelX19.Text = "Grado de Instrucción :";
             // 
             // labelX22
             // 
@@ -743,25 +710,65 @@
             this.labelX22.TabIndex = 11;
             this.labelX22.Text = "Celular :";
             // 
-            // txtComoEntero
-            // 
-            this.txtComoEntero.Location = new System.Drawing.Point(449, 274);
-            this.txtComoEntero.Name = "txtComoEntero";
-            this.txtComoEntero.Size = new System.Drawing.Size(179, 20);
-            this.txtComoEntero.TabIndex = 8;
-            // 
-            // labelX23
+            // labelX18
             // 
             // 
             // 
             // 
-            this.labelX23.BackgroundStyle.Class = "";
-            this.labelX23.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX23.Location = new System.Drawing.Point(331, 271);
-            this.labelX23.Name = "labelX23";
-            this.labelX23.Size = new System.Drawing.Size(112, 23);
-            this.labelX23.TabIndex = 9;
-            this.labelX23.Text = "Cómo se enteró :";
+            this.labelX18.BackgroundStyle.Class = "";
+            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX18.Location = new System.Drawing.Point(32, 75);
+            this.labelX18.Name = "labelX18";
+            this.labelX18.Size = new System.Drawing.Size(108, 23);
+            this.labelX18.TabIndex = 11;
+            this.labelX18.Text = "Ocupación :";
+            // 
+            // txtLugarLaboral
+            // 
+            this.txtLugarLaboral.Location = new System.Drawing.Point(158, 161);
+            this.txtLugarLaboral.Name = "txtLugarLaboral";
+            this.txtLugarLaboral.Size = new System.Drawing.Size(176, 20);
+            this.txtLugarLaboral.TabIndex = 10;
+            // 
+            // txtGradoInstruccion
+            // 
+            this.txtGradoInstruccion.Location = new System.Drawing.Point(158, 120);
+            this.txtGradoInstruccion.Name = "txtGradoInstruccion";
+            this.txtGradoInstruccion.Size = new System.Drawing.Size(176, 20);
+            this.txtGradoInstruccion.TabIndex = 10;
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(158, 36);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(176, 20);
+            this.txtCelular.TabIndex = 10;
+            // 
+            // txtOcupacion
+            // 
+            this.txtOcupacion.Location = new System.Drawing.Point(158, 78);
+            this.txtOcupacion.Name = "txtOcupacion";
+            this.txtOcupacion.Size = new System.Drawing.Size(176, 20);
+            this.txtOcupacion.TabIndex = 10;
+            // 
+            // superTabItem3
+            // 
+            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
+            this.superTabItem3.GlobalItem = false;
+            this.superTabItem3.Name = "superTabItem3";
+            this.superTabItem3.Text = "Datos de Mayor Edad";
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
+            // 
+            // dateFechaNacimiento
+            // 
+            this.dateFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(448, 156);
+            this.dateFechaNacimiento.Name = "dateFechaNacimiento";
+            this.dateFechaNacimiento.Size = new System.Drawing.Size(180, 20);
+            this.dateFechaNacimiento.TabIndex = 10;
             // 
             // PacientesFormulario
             // 
@@ -781,12 +788,12 @@
             this.superTabControlPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.superTabControlPanel3.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.superTabControlPanel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.superTabControlPanel3.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -806,7 +813,6 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtTelefonoCasa;
         private System.Windows.Forms.TextBox txtDistrito;
-        private System.Windows.Forms.TextBox txtFechaNacimiento;
         private System.Windows.Forms.TextBox txtApellidoMaterno;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX7;
@@ -852,5 +858,7 @@
         private System.Windows.Forms.TextBox txtCelularPadre;
         private DevComponents.DotNetBar.LabelX labelX23;
         private System.Windows.Forms.TextBox txtComoEntero;
+        private DevComponents.DotNetBar.StyleManager styleManager1;
+        private System.Windows.Forms.DateTimePicker dateFechaNacimiento;
     }
 }
