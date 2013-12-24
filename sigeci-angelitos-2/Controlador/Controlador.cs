@@ -359,6 +359,13 @@ namespace Controlador
             OleDbCommand comando3 = new OleDbCommand("insert into paciente(persona_idPersona,numeroHistoria,fechaNacimiento,lugarNacimiento,domicilio,distrito,telefonoCasa,correo,comoEntero,observacion) " +
                                                         "values(@persona_idPersona,@numeroHistoria,@fechaNacimiento,@lugarNacimiento,@domicilio,@distrito,@telefonoCasa,@correo,@comoEntero,@observacion)");
 
+
+            OleDbCommand comando5 = new OleDbCommand("insert into menorEdad(paciente_persona_idPersona,nombreMadre,nombrePadre,celularMadre,celularPadre,escolaridad,nombreColegio,ubicacionColegio) " +
+                                                        "values(@paciente_persona_idPersona,@nombreMadre,@nombrePadre,@celularMadre,@celularPadre,@escolaridad,@nombreColegio,@ubicacionColegio)");
+
+            OleDbCommand comando6 = new OleDbCommand("insert into mayorEdad(paciente_persona_idPersona,celular,ocupacion,gradoInstruccion,lugarLaboral) " +
+                                                        "values(@paciente_persona_idPersona,@celular,@ocupacion,@gradoInstruccion,@lugarLaboral)");
+
             comando.Parameters.AddRange(new OleDbParameter[]
             {
                 new OleDbParameter("@nombres",paciente.persona.nombres),
