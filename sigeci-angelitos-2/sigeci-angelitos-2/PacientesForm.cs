@@ -24,7 +24,7 @@ namespace sigeci_angelitos_2
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            PacientesFormulario pacientesFormulario = new PacientesFormulario();
+            PacientesFormulario pacientesFormulario = new PacientesFormulario(this,0,null);
             pacientesFormulario.ShowDialog();
         }
 

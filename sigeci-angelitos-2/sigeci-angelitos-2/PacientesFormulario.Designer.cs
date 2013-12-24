@@ -32,64 +32,70 @@
             this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
-            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.labelX17 = new DevComponents.DotNetBar.LabelX();
-            this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.labelX20 = new DevComponents.DotNetBar.LabelX();
-            this.labelX19 = new DevComponents.DotNetBar.LabelX();
-            this.labelX18 = new DevComponents.DotNetBar.LabelX();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtTelefonoCasa = new System.Windows.Forms.TextBox();
+            this.txtDistrito = new System.Windows.Forms.TextBox();
+            this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
+            this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDomicilio = new System.Windows.Forms.TextBox();
+            this.txtLugarNacimiento = new System.Windows.Forms.TextBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtNumeroHistoria = new System.Windows.Forms.TextBox();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.labelX20 = new DevComponents.DotNetBar.LabelX();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
+            this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.txtLugarLaboral = new System.Windows.Forms.TextBox();
+            this.txtGradoInstruccion = new System.Windows.Forms.TextBox();
+            this.txtOcupacion = new System.Windows.Forms.TextBox();
+            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbNo = new System.Windows.Forms.RadioButton();
+            this.rbSi = new System.Windows.Forms.RadioButton();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.labelX17 = new DevComponents.DotNetBar.LabelX();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.txtUbicacionColegio = new System.Windows.Forms.TextBox();
+            this.txtNombreColegio = new System.Windows.Forms.TextBox();
+            this.txtNombreMadre = new System.Windows.Forms.TextBox();
+            this.txtNombrePadre = new System.Windows.Forms.TextBox();
+            this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.txtCelularPadre = new System.Windows.Forms.TextBox();
+            this.txtCelularMadre = new System.Windows.Forms.TextBox();
+            this.labelX21 = new DevComponents.DotNetBar.LabelX();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.labelX22 = new DevComponents.DotNetBar.LabelX();
+            this.txtComoEntero = new System.Windows.Forms.TextBox();
+            this.labelX23 = new DevComponents.DotNetBar.LabelX();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
-            this.superTabControlPanel2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.superTabControlPanel3.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.superTabControlPanel3.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.superTabControlPanel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -104,6 +110,7 @@
             this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -117,6 +124,7 @@
             this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAceptar.TabIndex = 8;
             this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // superTabControl1
             // 
@@ -136,8 +144,8 @@
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
             this.superTabControl1.Controls.Add(this.superTabControlPanel1);
-            this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.Location = new System.Drawing.Point(3, 3);
             this.superTabControl1.Name = "superTabControl1";
             this.superTabControl1.ReorderTabsEnabled = true;
@@ -151,252 +159,6 @@
             this.superTabItem2,
             this.superTabItem3});
             this.superTabControl1.Text = "Datos de Mayor de Edad";
-            // 
-            // superTabControlPanel2
-            // 
-            this.superTabControlPanel2.Controls.Add(this.groupBox2);
-            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 25);
-            this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(687, 332);
-            this.superTabControlPanel2.TabIndex = 0;
-            this.superTabControlPanel2.TabItem = this.superTabItem2;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Controls.Add(this.labelX15);
-            this.groupBox2.Controls.Add(this.labelX17);
-            this.groupBox2.Controls.Add(this.labelX16);
-            this.groupBox2.Controls.Add(this.labelX14);
-            this.groupBox2.Controls.Add(this.labelX13);
-            this.groupBox2.Controls.Add(this.textBox15);
-            this.groupBox2.Controls.Add(this.textBox14);
-            this.groupBox2.Controls.Add(this.textBox13);
-            this.groupBox2.Controls.Add(this.textBox12);
-            this.groupBox2.Location = new System.Drawing.Point(10, 8);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(667, 307);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos de Menor de Edad";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(207, 130);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "No";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(154, 130);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(34, 17);
-            this.radioButton1.TabIndex = 11;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Si";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // labelX15
-            // 
-            // 
-            // 
-            // 
-            this.labelX15.BackgroundStyle.Class = "";
-            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(28, 124);
-            this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(108, 23);
-            this.labelX15.TabIndex = 10;
-            this.labelX15.Text = "Escolaridad :";
-            // 
-            // labelX17
-            // 
-            // 
-            // 
-            // 
-            this.labelX17.BackgroundStyle.Class = "";
-            this.labelX17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX17.Location = new System.Drawing.Point(28, 210);
-            this.labelX17.Name = "labelX17";
-            this.labelX17.Size = new System.Drawing.Size(108, 23);
-            this.labelX17.TabIndex = 9;
-            this.labelX17.Text = "Ubicación de Colegio :";
-            // 
-            // labelX16
-            // 
-            // 
-            // 
-            // 
-            this.labelX16.BackgroundStyle.Class = "";
-            this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX16.Location = new System.Drawing.Point(28, 166);
-            this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(108, 23);
-            this.labelX16.TabIndex = 9;
-            this.labelX16.Text = "Nombre de Colegio :";
-            // 
-            // labelX14
-            // 
-            // 
-            // 
-            // 
-            this.labelX14.BackgroundStyle.Class = "";
-            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Location = new System.Drawing.Point(28, 80);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(108, 23);
-            this.labelX14.TabIndex = 9;
-            this.labelX14.Text = "Nombre de la Madre :";
-            // 
-            // labelX13
-            // 
-            // 
-            // 
-            // 
-            this.labelX13.BackgroundStyle.Class = "";
-            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Location = new System.Drawing.Point(28, 37);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(108, 23);
-            this.labelX13.TabIndex = 9;
-            this.labelX13.Text = "Nombre del Padre :";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(154, 213);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(176, 20);
-            this.textBox15.TabIndex = 8;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(154, 169);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(176, 20);
-            this.textBox14.TabIndex = 8;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(154, 83);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(481, 20);
-            this.textBox13.TabIndex = 8;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(154, 40);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(481, 20);
-            this.textBox12.TabIndex = 8;
-            // 
-            // superTabItem2
-            // 
-            this.superTabItem2.AttachedControl = this.superTabControlPanel2;
-            this.superTabItem2.GlobalItem = false;
-            this.superTabItem2.Name = "superTabItem2";
-            this.superTabItem2.Text = "Datos de Menor de Edad";
-            // 
-            // superTabControlPanel3
-            // 
-            this.superTabControlPanel3.Controls.Add(this.groupBox3);
-            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 25);
-            this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(687, 332);
-            this.superTabControlPanel3.TabIndex = 0;
-            this.superTabControlPanel3.TabItem = this.superTabItem3;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.labelX20);
-            this.groupBox3.Controls.Add(this.labelX19);
-            this.groupBox3.Controls.Add(this.labelX18);
-            this.groupBox3.Controls.Add(this.textBox18);
-            this.groupBox3.Controls.Add(this.textBox17);
-            this.groupBox3.Controls.Add(this.textBox16);
-            this.groupBox3.Location = new System.Drawing.Point(10, 8);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(667, 311);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Datos de Mayor de Edad";
-            // 
-            // labelX20
-            // 
-            // 
-            // 
-            // 
-            this.labelX20.BackgroundStyle.Class = "";
-            this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX20.Location = new System.Drawing.Point(32, 122);
-            this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(108, 23);
-            this.labelX20.TabIndex = 11;
-            this.labelX20.Text = "Lugar Laboral :";
-            // 
-            // labelX19
-            // 
-            // 
-            // 
-            // 
-            this.labelX19.BackgroundStyle.Class = "";
-            this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX19.Location = new System.Drawing.Point(32, 81);
-            this.labelX19.Name = "labelX19";
-            this.labelX19.Size = new System.Drawing.Size(108, 23);
-            this.labelX19.TabIndex = 11;
-            this.labelX19.Text = "Grado de Instrucción :";
-            // 
-            // labelX18
-            // 
-            // 
-            // 
-            // 
-            this.labelX18.BackgroundStyle.Class = "";
-            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX18.Location = new System.Drawing.Point(32, 39);
-            this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(108, 23);
-            this.labelX18.TabIndex = 11;
-            this.labelX18.Text = "Ocupación :";
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(158, 125);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(176, 20);
-            this.textBox18.TabIndex = 10;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(158, 84);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(176, 20);
-            this.textBox17.TabIndex = 10;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(158, 42);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(176, 20);
-            this.textBox16.TabIndex = 10;
-            // 
-            // superTabItem3
-            // 
-            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
-            this.superTabItem3.GlobalItem = false;
-            this.superTabItem3.Name = "superTabItem3";
-            this.superTabItem3.Text = "Datos de Mayor Edad";
             // 
             // superTabControlPanel1
             // 
@@ -412,29 +174,29 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.labelX8);
-            this.groupBox1.Controls.Add(this.labelX11);
+            this.groupBox1.Controls.Add(this.labelX23);
             this.groupBox1.Controls.Add(this.labelX12);
             this.groupBox1.Controls.Add(this.labelX10);
             this.groupBox1.Controls.Add(this.labelX6);
             this.groupBox1.Controls.Add(this.labelX4);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtComoEntero);
+            this.groupBox1.Controls.Add(this.txtCorreo);
+            this.groupBox1.Controls.Add(this.txtTelefonoCasa);
+            this.groupBox1.Controls.Add(this.txtDistrito);
+            this.groupBox1.Controls.Add(this.txtFechaNacimiento);
+            this.groupBox1.Controls.Add(this.txtApellidoMaterno);
             this.groupBox1.Controls.Add(this.labelX9);
             this.groupBox1.Controls.Add(this.labelX7);
             this.groupBox1.Controls.Add(this.labelX5);
             this.groupBox1.Controls.Add(this.labelX3);
             this.groupBox1.Controls.Add(this.labelX2);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtDomicilio);
+            this.groupBox1.Controls.Add(this.txtLugarNacimiento);
+            this.groupBox1.Controls.Add(this.txtDNI);
+            this.groupBox1.Controls.Add(this.txtApellidoPaterno);
+            this.groupBox1.Controls.Add(this.txtNombres);
             this.groupBox1.Controls.Add(this.labelX1);
-            this.groupBox1.Controls.Add(this.txtUsername);
+            this.groupBox1.Controls.Add(this.txtNumeroHistoria);
             this.groupBox1.Location = new System.Drawing.Point(10, 8);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(660, 310);
@@ -455,19 +217,6 @@
             this.labelX8.TabIndex = 9;
             this.labelX8.Text = "Distrito :";
             // 
-            // labelX11
-            // 
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.Class = "";
-            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(11, 272);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(112, 23);
-            this.labelX11.TabIndex = 9;
-            this.labelX11.Text = "Telefono Celular :";
-            // 
             // labelX12
             // 
             // 
@@ -475,7 +224,7 @@
             // 
             this.labelX12.BackgroundStyle.Class = "";
             this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Location = new System.Drawing.Point(330, 272);
+            this.labelX12.Location = new System.Drawing.Point(11, 271);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(112, 23);
             this.labelX12.TabIndex = 9;
@@ -520,47 +269,40 @@
             this.labelX4.TabIndex = 9;
             this.labelX4.Text = "Apellido Materno :";
             // 
-            // textBox11
+            // txtCorreo
             // 
-            this.textBox11.Location = new System.Drawing.Point(449, 275);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(180, 20);
-            this.textBox11.TabIndex = 8;
+            this.txtCorreo.Location = new System.Drawing.Point(139, 274);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(160, 20);
+            this.txtCorreo.TabIndex = 8;
             // 
-            // textBox10
+            // txtTelefonoCasa
             // 
-            this.textBox10.Location = new System.Drawing.Point(139, 275);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(160, 20);
-            this.textBox10.TabIndex = 8;
+            this.txtTelefonoCasa.Location = new System.Drawing.Point(449, 235);
+            this.txtTelefonoCasa.Name = "txtTelefonoCasa";
+            this.txtTelefonoCasa.Size = new System.Drawing.Size(180, 20);
+            this.txtTelefonoCasa.TabIndex = 8;
             // 
-            // textBox9
+            // txtDistrito
             // 
-            this.textBox9.Location = new System.Drawing.Point(449, 235);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(180, 20);
-            this.textBox9.TabIndex = 8;
+            this.txtDistrito.Location = new System.Drawing.Point(139, 235);
+            this.txtDistrito.Name = "txtDistrito";
+            this.txtDistrito.Size = new System.Drawing.Size(160, 20);
+            this.txtDistrito.TabIndex = 8;
             // 
-            // textBox7
+            // txtFechaNacimiento
             // 
-            this.textBox7.Location = new System.Drawing.Point(139, 235);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(160, 20);
-            this.textBox7.TabIndex = 8;
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(449, 156);
+            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(180, 20);
+            this.txtFechaNacimiento.TabIndex = 8;
             // 
-            // textBox5
+            // txtApellidoMaterno
             // 
-            this.textBox5.Location = new System.Drawing.Point(449, 156);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(180, 20);
-            this.textBox5.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(449, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(449, 75);
+            this.txtApellidoMaterno.Name = "txtApellidoMaterno";
+            this.txtApellidoMaterno.Size = new System.Drawing.Size(180, 20);
+            this.txtApellidoMaterno.TabIndex = 8;
             // 
             // labelX9
             // 
@@ -627,40 +369,40 @@
             this.labelX2.TabIndex = 7;
             this.labelX2.Text = "Nombres :";
             // 
-            // textBox8
+            // txtDomicilio
             // 
-            this.textBox8.Location = new System.Drawing.Point(140, 194);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(488, 20);
-            this.textBox8.TabIndex = 6;
+            this.txtDomicilio.Location = new System.Drawing.Point(140, 194);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(488, 20);
+            this.txtDomicilio.TabIndex = 6;
             // 
-            // textBox6
+            // txtLugarNacimiento
             // 
-            this.textBox6.Location = new System.Drawing.Point(139, 156);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(159, 20);
-            this.textBox6.TabIndex = 6;
+            this.txtLugarNacimiento.Location = new System.Drawing.Point(139, 156);
+            this.txtLugarNacimiento.Name = "txtLugarNacimiento";
+            this.txtLugarNacimiento.Size = new System.Drawing.Size(159, 20);
+            this.txtLugarNacimiento.TabIndex = 6;
             // 
-            // textBox4
+            // txtDNI
             // 
-            this.textBox4.Location = new System.Drawing.Point(140, 117);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(159, 20);
-            this.textBox4.TabIndex = 6;
+            this.txtDNI.Location = new System.Drawing.Point(140, 117);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(159, 20);
+            this.txtDNI.TabIndex = 6;
             // 
-            // textBox2
+            // txtApellidoPaterno
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(139, 75);
+            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(160, 20);
+            this.txtApellidoPaterno.TabIndex = 6;
             // 
-            // textBox1
+            // txtNombres
             // 
-            this.textBox1.Location = new System.Drawing.Point(449, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtNombres.Location = new System.Drawing.Point(449, 32);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(180, 20);
+            this.txtNombres.TabIndex = 6;
             // 
             // labelX1
             // 
@@ -675,12 +417,12 @@
             this.labelX1.TabIndex = 7;
             this.labelX1.Text = "Número de Historia :";
             // 
-            // txtUsername
+            // txtNumeroHistoria
             // 
-            this.txtUsername.Location = new System.Drawing.Point(139, 32);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(160, 20);
-            this.txtUsername.TabIndex = 6;
+            this.txtNumeroHistoria.Location = new System.Drawing.Point(139, 32);
+            this.txtNumeroHistoria.Name = "txtNumeroHistoria";
+            this.txtNumeroHistoria.Size = new System.Drawing.Size(160, 20);
+            this.txtNumeroHistoria.TabIndex = 6;
             // 
             // superTabItem1
             // 
@@ -688,6 +430,338 @@
             this.superTabItem1.GlobalItem = false;
             this.superTabItem1.Name = "superTabItem1";
             this.superTabItem1.Text = "Datos Principales";
+            // 
+            // superTabControlPanel3
+            // 
+            this.superTabControlPanel3.Controls.Add(this.groupBox3);
+            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel3.Name = "superTabControlPanel3";
+            this.superTabControlPanel3.Size = new System.Drawing.Size(687, 332);
+            this.superTabControlPanel3.TabIndex = 0;
+            this.superTabControlPanel3.TabItem = this.superTabItem3;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.labelX20);
+            this.groupBox3.Controls.Add(this.labelX19);
+            this.groupBox3.Controls.Add(this.labelX22);
+            this.groupBox3.Controls.Add(this.labelX18);
+            this.groupBox3.Controls.Add(this.txtLugarLaboral);
+            this.groupBox3.Controls.Add(this.txtGradoInstruccion);
+            this.groupBox3.Controls.Add(this.txtCelular);
+            this.groupBox3.Controls.Add(this.txtOcupacion);
+            this.groupBox3.Location = new System.Drawing.Point(10, 8);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(667, 311);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Datos de Mayor de Edad";
+            // 
+            // labelX20
+            // 
+            // 
+            // 
+            // 
+            this.labelX20.BackgroundStyle.Class = "";
+            this.labelX20.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX20.Location = new System.Drawing.Point(32, 158);
+            this.labelX20.Name = "labelX20";
+            this.labelX20.Size = new System.Drawing.Size(108, 23);
+            this.labelX20.TabIndex = 11;
+            this.labelX20.Text = "Lugar Laboral :";
+            // 
+            // labelX19
+            // 
+            // 
+            // 
+            // 
+            this.labelX19.BackgroundStyle.Class = "";
+            this.labelX19.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX19.Location = new System.Drawing.Point(32, 117);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(108, 23);
+            this.labelX19.TabIndex = 11;
+            this.labelX19.Text = "Grado de Instrucción :";
+            // 
+            // labelX18
+            // 
+            // 
+            // 
+            // 
+            this.labelX18.BackgroundStyle.Class = "";
+            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX18.Location = new System.Drawing.Point(32, 75);
+            this.labelX18.Name = "labelX18";
+            this.labelX18.Size = new System.Drawing.Size(108, 23);
+            this.labelX18.TabIndex = 11;
+            this.labelX18.Text = "Ocupación :";
+            // 
+            // txtLugarLaboral
+            // 
+            this.txtLugarLaboral.Location = new System.Drawing.Point(158, 161);
+            this.txtLugarLaboral.Name = "txtLugarLaboral";
+            this.txtLugarLaboral.Size = new System.Drawing.Size(176, 20);
+            this.txtLugarLaboral.TabIndex = 10;
+            // 
+            // txtGradoInstruccion
+            // 
+            this.txtGradoInstruccion.Location = new System.Drawing.Point(158, 120);
+            this.txtGradoInstruccion.Name = "txtGradoInstruccion";
+            this.txtGradoInstruccion.Size = new System.Drawing.Size(176, 20);
+            this.txtGradoInstruccion.TabIndex = 10;
+            // 
+            // txtOcupacion
+            // 
+            this.txtOcupacion.Location = new System.Drawing.Point(158, 78);
+            this.txtOcupacion.Name = "txtOcupacion";
+            this.txtOcupacion.Size = new System.Drawing.Size(176, 20);
+            this.txtOcupacion.TabIndex = 10;
+            // 
+            // superTabItem3
+            // 
+            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
+            this.superTabItem3.GlobalItem = false;
+            this.superTabItem3.Name = "superTabItem3";
+            this.superTabItem3.Text = "Datos de Mayor Edad";
+            // 
+            // superTabControlPanel2
+            // 
+            this.superTabControlPanel2.Controls.Add(this.groupBox2);
+            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel2.Name = "superTabControlPanel2";
+            this.superTabControlPanel2.Size = new System.Drawing.Size(687, 332);
+            this.superTabControlPanel2.TabIndex = 0;
+            this.superTabControlPanel2.TabItem = this.superTabItem2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.labelX21);
+            this.groupBox2.Controls.Add(this.labelX11);
+            this.groupBox2.Controls.Add(this.txtCelularMadre);
+            this.groupBox2.Controls.Add(this.txtCelularPadre);
+            this.groupBox2.Controls.Add(this.rbNo);
+            this.groupBox2.Controls.Add(this.rbSi);
+            this.groupBox2.Controls.Add(this.labelX15);
+            this.groupBox2.Controls.Add(this.labelX17);
+            this.groupBox2.Controls.Add(this.labelX16);
+            this.groupBox2.Controls.Add(this.labelX14);
+            this.groupBox2.Controls.Add(this.labelX13);
+            this.groupBox2.Controls.Add(this.txtUbicacionColegio);
+            this.groupBox2.Controls.Add(this.txtNombreColegio);
+            this.groupBox2.Controls.Add(this.txtNombreMadre);
+            this.groupBox2.Controls.Add(this.txtNombrePadre);
+            this.groupBox2.Location = new System.Drawing.Point(10, 8);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(667, 307);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos de Menor de Edad";
+            // 
+            // rbNo
+            // 
+            this.rbNo.AutoSize = true;
+            this.rbNo.Location = new System.Drawing.Point(207, 173);
+            this.rbNo.Name = "rbNo";
+            this.rbNo.Size = new System.Drawing.Size(39, 17);
+            this.rbNo.TabIndex = 11;
+            this.rbNo.TabStop = true;
+            this.rbNo.Text = "No";
+            this.rbNo.UseVisualStyleBackColor = true;
+            // 
+            // rbSi
+            // 
+            this.rbSi.AutoSize = true;
+            this.rbSi.Location = new System.Drawing.Point(154, 173);
+            this.rbSi.Name = "rbSi";
+            this.rbSi.Size = new System.Drawing.Size(34, 17);
+            this.rbSi.TabIndex = 11;
+            this.rbSi.TabStop = true;
+            this.rbSi.Text = "Si";
+            this.rbSi.UseVisualStyleBackColor = true;
+            // 
+            // labelX15
+            // 
+            // 
+            // 
+            // 
+            this.labelX15.BackgroundStyle.Class = "";
+            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX15.Location = new System.Drawing.Point(28, 167);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(108, 23);
+            this.labelX15.TabIndex = 10;
+            this.labelX15.Text = "Escolaridad :";
+            // 
+            // labelX17
+            // 
+            // 
+            // 
+            // 
+            this.labelX17.BackgroundStyle.Class = "";
+            this.labelX17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX17.Location = new System.Drawing.Point(28, 253);
+            this.labelX17.Name = "labelX17";
+            this.labelX17.Size = new System.Drawing.Size(120, 23);
+            this.labelX17.TabIndex = 9;
+            this.labelX17.Text = "Ubicación de Colegio :";
+            // 
+            // labelX16
+            // 
+            // 
+            // 
+            // 
+            this.labelX16.BackgroundStyle.Class = "";
+            this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX16.Location = new System.Drawing.Point(28, 209);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(108, 23);
+            this.labelX16.TabIndex = 9;
+            this.labelX16.Text = "Nombre de Colegio :";
+            // 
+            // labelX14
+            // 
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.Class = "";
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Location = new System.Drawing.Point(28, 80);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(108, 23);
+            this.labelX14.TabIndex = 9;
+            this.labelX14.Text = "Nombre de la Madre :";
+            // 
+            // labelX13
+            // 
+            // 
+            // 
+            // 
+            this.labelX13.BackgroundStyle.Class = "";
+            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX13.Location = new System.Drawing.Point(28, 37);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(108, 23);
+            this.labelX13.TabIndex = 9;
+            this.labelX13.Text = "Nombre del Padre :";
+            // 
+            // txtUbicacionColegio
+            // 
+            this.txtUbicacionColegio.Location = new System.Drawing.Point(154, 256);
+            this.txtUbicacionColegio.Name = "txtUbicacionColegio";
+            this.txtUbicacionColegio.Size = new System.Drawing.Size(165, 20);
+            this.txtUbicacionColegio.TabIndex = 8;
+            // 
+            // txtNombreColegio
+            // 
+            this.txtNombreColegio.Location = new System.Drawing.Point(154, 212);
+            this.txtNombreColegio.Name = "txtNombreColegio";
+            this.txtNombreColegio.Size = new System.Drawing.Size(165, 20);
+            this.txtNombreColegio.TabIndex = 8;
+            // 
+            // txtNombreMadre
+            // 
+            this.txtNombreMadre.Location = new System.Drawing.Point(154, 83);
+            this.txtNombreMadre.Name = "txtNombreMadre";
+            this.txtNombreMadre.Size = new System.Drawing.Size(481, 20);
+            this.txtNombreMadre.TabIndex = 8;
+            // 
+            // txtNombrePadre
+            // 
+            this.txtNombrePadre.Location = new System.Drawing.Point(154, 40);
+            this.txtNombrePadre.Name = "txtNombrePadre";
+            this.txtNombrePadre.Size = new System.Drawing.Size(481, 20);
+            this.txtNombrePadre.TabIndex = 8;
+            // 
+            // superTabItem2
+            // 
+            this.superTabItem2.AttachedControl = this.superTabControlPanel2;
+            this.superTabItem2.GlobalItem = false;
+            this.superTabItem2.Name = "superTabItem2";
+            this.superTabItem2.Text = "Datos de Menor de Edad";
+            // 
+            // labelX11
+            // 
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.Class = "";
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Location = new System.Drawing.Point(344, 126);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(112, 23);
+            this.labelX11.TabIndex = 13;
+            this.labelX11.Text = "Celular de la Madre:";
+            // 
+            // txtCelularPadre
+            // 
+            this.txtCelularPadre.Location = new System.Drawing.Point(154, 126);
+            this.txtCelularPadre.Name = "txtCelularPadre";
+            this.txtCelularPadre.Size = new System.Drawing.Size(160, 20);
+            this.txtCelularPadre.TabIndex = 12;
+            // 
+            // txtCelularMadre
+            // 
+            this.txtCelularMadre.Location = new System.Drawing.Point(475, 126);
+            this.txtCelularMadre.Name = "txtCelularMadre";
+            this.txtCelularMadre.Size = new System.Drawing.Size(160, 20);
+            this.txtCelularMadre.TabIndex = 12;
+            // 
+            // labelX21
+            // 
+            // 
+            // 
+            // 
+            this.labelX21.BackgroundStyle.Class = "";
+            this.labelX21.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX21.Location = new System.Drawing.Point(28, 126);
+            this.labelX21.Name = "labelX21";
+            this.labelX21.Size = new System.Drawing.Size(112, 23);
+            this.labelX21.TabIndex = 13;
+            this.labelX21.Text = "Celular del Padre:";
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(158, 36);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(176, 20);
+            this.txtCelular.TabIndex = 10;
+            // 
+            // labelX22
+            // 
+            // 
+            // 
+            // 
+            this.labelX22.BackgroundStyle.Class = "";
+            this.labelX22.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX22.Location = new System.Drawing.Point(32, 33);
+            this.labelX22.Name = "labelX22";
+            this.labelX22.Size = new System.Drawing.Size(108, 23);
+            this.labelX22.TabIndex = 11;
+            this.labelX22.Text = "Celular :";
+            // 
+            // txtComoEntero
+            // 
+            this.txtComoEntero.Location = new System.Drawing.Point(449, 274);
+            this.txtComoEntero.Name = "txtComoEntero";
+            this.txtComoEntero.Size = new System.Drawing.Size(179, 20);
+            this.txtComoEntero.TabIndex = 8;
+            // 
+            // labelX23
+            // 
+            // 
+            // 
+            // 
+            this.labelX23.BackgroundStyle.Class = "";
+            this.labelX23.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX23.Location = new System.Drawing.Point(331, 271);
+            this.labelX23.Name = "labelX23";
+            this.labelX23.Size = new System.Drawing.Size(112, 23);
+            this.labelX23.TabIndex = 9;
+            this.labelX23.Text = "Cómo se enteró :";
             // 
             // PacientesFormulario
             // 
@@ -704,15 +778,15 @@
             this.Text = "PacientesFormulario";
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
-            this.superTabControlPanel2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.superTabControlPanel3.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.superTabControlPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.superTabControlPanel3.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.superTabControlPanel2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -725,52 +799,58 @@
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevComponents.DotNetBar.LabelX labelX8;
-        private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX4;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtTelefonoCasa;
+        private System.Windows.Forms.TextBox txtDistrito;
+        private System.Windows.Forms.TextBox txtFechaNacimiento;
+        private System.Windows.Forms.TextBox txtApellidoMaterno;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDomicilio;
+        private System.Windows.Forms.TextBox txtLugarNacimiento;
+        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtApellidoPaterno;
+        private System.Windows.Forms.TextBox txtNombres;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtNumeroHistoria;
         private DevComponents.DotNetBar.SuperTabItem superTabItem1;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel2;
         private DevComponents.DotNetBar.SuperTabItem superTabItem2;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel3;
         private DevComponents.DotNetBar.SuperTabItem superTabItem3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbNo;
+        private System.Windows.Forms.RadioButton rbSi;
         private DevComponents.DotNetBar.LabelX labelX15;
         private DevComponents.DotNetBar.LabelX labelX14;
         private DevComponents.DotNetBar.LabelX labelX13;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtNombreMadre;
+        private System.Windows.Forms.TextBox txtNombrePadre;
         private System.Windows.Forms.GroupBox groupBox3;
         private DevComponents.DotNetBar.LabelX labelX20;
         private DevComponents.DotNetBar.LabelX labelX19;
         private DevComponents.DotNetBar.LabelX labelX18;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtLugarLaboral;
+        private System.Windows.Forms.TextBox txtGradoInstruccion;
+        private System.Windows.Forms.TextBox txtOcupacion;
         private DevComponents.DotNetBar.LabelX labelX17;
         private DevComponents.DotNetBar.LabelX labelX16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtUbicacionColegio;
+        private System.Windows.Forms.TextBox txtNombreColegio;
+        private DevComponents.DotNetBar.LabelX labelX22;
+        private System.Windows.Forms.TextBox txtCelular;
+        private DevComponents.DotNetBar.LabelX labelX21;
+        private DevComponents.DotNetBar.LabelX labelX11;
+        private System.Windows.Forms.TextBox txtCelularMadre;
+        private System.Windows.Forms.TextBox txtCelularPadre;
+        private DevComponents.DotNetBar.LabelX labelX23;
+        private System.Windows.Forms.TextBox txtComoEntero;
     }
 }
