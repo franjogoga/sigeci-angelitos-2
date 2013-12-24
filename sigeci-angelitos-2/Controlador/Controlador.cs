@@ -341,7 +341,17 @@ namespace Controlador
             return pacientes;
         }
 
+        public bool agregarPaciente(Paciente paciente)
+        {
 
+            return false;
+        }
+
+        public bool modificarPaciente(Paciente paciente)
+        {
+
+            return false;
+        }
 
     }
 }
