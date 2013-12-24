@@ -344,7 +344,7 @@ namespace Controlador
         public bool agregarPaciente(Paciente paciente)
         {
             bool resultado = false;
-            int idPersona = 0, numeroHistoria =0,numFilas = 0, numFilas2 = 0;
+            int idPersona = 0, numeroHistoria =0,numFilas1 = 0, numFilas2 = 0, numFilas3=0, numFilas4=0;
             OleDbDataReader r = null;            
             pacientes.Clear();
 
@@ -381,7 +381,7 @@ namespace Controlador
             try
             {
                 conexion.Open();
-                numFilas = comando.ExecuteNonQuery();
+                numFilas1 = comando.ExecuteNonQuery();
                 r = comando2.ExecuteReader();
 
                 while (r.Read())
@@ -409,9 +409,35 @@ namespace Controlador
                     new OleDbParameter("@comoEntero",paciente.comoEntero),
                     new OleDbParameter("@observacion","-"),
                 });
-
+        
+                comando5.Parameters.AddRange(new OleDbParameter[]
+                {
+                    new OleDbParameter("@paciente_persona_idPersona",idPersona),
+                    new OleDbParameter("@nombreMadre",paciente.menorEdad.nombreMadre),
+                    new OleDbParameter("@nombrePadre",paciente.menorEdad.nombrePadre),
+                    new OleDbParameter("@celularMadre",paciente.menorEdad.celularMadre),
+                    new OleDbParameter("@celularPadre",paciente.menorEdad.celularPadre),
+                    new OleDbParameter("@escolaridad",paciente.menorEdad.escolaridad),
+                    new OleDbParameter("@nombreColegio",paciente.menorEdad.nombreColegio),
+                    new OleDbParameter("@ubicacionColegio",paciente.menorEdad.ubicacionColegio),
+                });
+                
+                comando6.Parameters.AddRange(new OleDbParameter[]
+                {
+                    new OleDbParameter("@paciente_persona_idPersona",idPersona),
+                    new OleDbParameter("@celular",paciente.mayorEdad.celular),
+                    new OleDbParameter("@ocupacion",paciente.mayorEdad.ocupacion),
+                    new OleDbParameter("@gradoInstruccion",paciente.mayorEdad.gradoInstruccion),
+                    new OleDbParameter("@lugarLaboral",paciente.mayorEdad.lugarLaboral),
+                });
+                
                 comando3.Connection = conexion;
+                comando5.Connection = conexion;
+                comando6.Connection = conexion;
+
                 numFilas2 = comando3.ExecuteNonQuery();
+                numFilas3 = comando5.ExecuteNonQuery();
+                numFilas4 = comando6.ExecuteNonQuery();
             }
             catch (Exception e)
             {
@@ -422,7 +448,7 @@ namespace Controlador
                 r.Close();
                 conexion.Close();
             }
-            resultado = numFilas + numFilas2 == 2;
+            resultado = numFilas1 + numFilas2 + numFilas3 + numFilas4 == 4;
             return resultado;
         }
 

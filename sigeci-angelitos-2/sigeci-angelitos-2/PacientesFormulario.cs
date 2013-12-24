@@ -56,7 +56,7 @@ namespace sigeci_angelitos_2
                 persona.dni = int.Parse(txtDNI.Text);
                 persona.estado = "activo";
                 Paciente paciente = new Paciente();
-                paciente.numeroHistoria = int.Parse(txtNumeroHistoria.Text);
+                //paciente.numeroHistoria = int.Parse(txtNumeroHistoria.Text);
                 paciente.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
                 paciente.lugarNacimiento = txtLugarNacimiento.Text;
                 paciente.domicilio = txtDomicilio.Text;
