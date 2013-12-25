@@ -50,6 +50,55 @@ namespace sigeci_angelitos_2
             llenarPacientes(txtHistoriaClinica.Text, txtDNI.Text, txtNombres.Text, txtApellidoPaterno.Text, txtApellidoMaterno.Text);
         }
 
+        private Paciente buscarPaciente(int numerohistoria)
+        {
+            Paciente paciente = null;
+            foreach (Paciente p in pacientes ) {
+                if (numerohistoria == p.numeroHistoria)
+                {
+                    paciente = p;
+                    break;
+                }
+            }
+            return paciente;
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Paciente paciente = buscarPaciente(int.Parse(dgvPacientes.CurrentRow.Cells[0].Value.ToString()));
+                PacientesFormulario pacientesFormulario = new PacientesFormulario(this, 2, paciente);
+                pacientesFormulario.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("No ha seleccionado un paciente");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar este paciente?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes)
+            {
+                try
+                {
+                    Paciente paciente = buscarPaciente(int.Parse(dgvPacientes.CurrentRow.Cells[0].Value.ToString()));
+                    if (controladorPaciente.eliminarPaciente(paciente))
+                    {
+                        MessageBox.Show("Paciente eliminado");
+                        llenarPacientes("","","","","");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    MessageBox.Show("No ha seleccionado un paciente");
+                }
+        }
+
 
     }
 }

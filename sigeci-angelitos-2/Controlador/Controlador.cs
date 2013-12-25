@@ -460,5 +460,12 @@ namespace Controlador
             return resultado;
         }
 
+        public bool eliminarPaciente(Paciente paciente)
+        {
+            bool resultado = false;
+
+
+            return resultado;
+        }
     }
 }
