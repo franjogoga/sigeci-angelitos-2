@@ -29,6 +29,7 @@ namespace sigeci_angelitos_2
             if (modo == 2) //modificar
             {
                 llenaFormularioPaciente(paciente);
+                txtNumeroHistoria.ReadOnly = true;
             }
             if (modo == 1) //ver
             {
@@ -55,8 +56,7 @@ namespace sigeci_angelitos_2
                 persona.apellidoMaterno = txtApellidoMaterno.Text;
                 persona.dni = int.Parse(txtDNI.Text);
                 persona.estado = "activo";
-                Paciente paciente = new Paciente();
-                //paciente.numeroHistoria = int.Parse(txtNumeroHistoria.Text);
+                Paciente paciente = new Paciente();                
                 paciente.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
                 paciente.lugarNacimiento = txtLugarNacimiento.Text;
                 paciente.domicilio = txtDomicilio.Text;
@@ -91,8 +91,32 @@ namespace sigeci_angelitos_2
                     MessageBox.Show("Ha ocurrido un error");
             }
             else
-            {
-                
+            {                
+                paciente.persona.nombres = txtNombres.Text;
+                paciente.persona.apellidoPaterno  = txtApellidoPaterno.Text;
+                paciente.persona.apellidoMaterno = txtApellidoMaterno.Text;
+                paciente.persona.dni = int.Parse(txtDNI.Text);
+                paciente.lugarNacimiento = txtLugarNacimiento.Text;
+                paciente.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
+                paciente.domicilio = txtDomicilio.Text;
+                paciente.distrito = txtDistrito.Text;
+                paciente.telefonoCasa = txtTelefonoCasa.Text;
+                paciente.correo = txtCorreo.Text;
+                paciente.comoEntero = txtComoEntero.Text;
+                paciente.menorEdad.nombrePadre = txtNombrePadre.Text;
+                paciente.menorEdad.nombreMadre = txtNombreMadre.Text;
+                paciente.menorEdad.celularPadre = txtCelularPadre.Text;
+                paciente.menorEdad.celularMadre = txtCelularMadre.Text;
+                if (rbSi.Checked)
+                    paciente.menorEdad.escolaridad = "si";
+                else
+                    paciente.menorEdad.escolaridad = "no";
+                paciente.menorEdad.nombreColegio = txtNombreColegio.Text;
+                paciente.menorEdad.ubicacionColegio = txtUbicacionColegio.Text;
+                paciente.mayorEdad.celular = txtCelular.Text;
+                paciente.mayorEdad.ocupacion = txtOcupacion.Text;
+                paciente.mayorEdad.gradoInstruccion = txtGradoInstruccion.Text;
+                paciente.mayorEdad.lugarLaboral = txtLugarLaboral.Text;
 
                 if (controladorPaciente.modificarPaciente(paciente))
                 {
@@ -145,6 +169,7 @@ namespace sigeci_angelitos_2
             txtDistrito.Text = paciente.distrito;
             txtTelefonoCasa.Text = paciente.telefonoCasa;
             txtCorreo.Text = paciente.correo;
+            txtComoEntero.Text = paciente.comoEntero;
             txtNombrePadre.Text = paciente.menorEdad.nombrePadre;
             txtNombreMadre.Text = paciente.menorEdad.nombreMadre;
             txtCelularPadre.Text = paciente.menorEdad.celularPadre;

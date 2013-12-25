@@ -35,6 +35,7 @@
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX23 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
@@ -89,7 +90,6 @@
             this.txtOcupacion = new System.Windows.Forms.TextBox();
             this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.dateFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
@@ -205,6 +205,14 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Principales de Paciente";
+            // 
+            // dateFechaNacimiento
+            // 
+            this.dateFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaNacimiento.Location = new System.Drawing.Point(448, 156);
+            this.dateFechaNacimiento.Name = "dateFechaNacimiento";
+            this.dateFechaNacimiento.Size = new System.Drawing.Size(180, 20);
+            this.dateFechaNacimiento.TabIndex = 10;
             // 
             // labelX8
             // 
@@ -762,14 +770,6 @@
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
             // 
-            // dateFechaNacimiento
-            // 
-            this.dateFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaNacimiento.Location = new System.Drawing.Point(448, 156);
-            this.dateFechaNacimiento.Name = "dateFechaNacimiento";
-            this.dateFechaNacimiento.Size = new System.Drawing.Size(180, 20);
-            this.dateFechaNacimiento.TabIndex = 10;
-            // 
             // PacientesFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -779,6 +779,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PacientesFormulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
