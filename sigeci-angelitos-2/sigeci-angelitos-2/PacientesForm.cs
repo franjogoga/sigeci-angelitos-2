@@ -89,7 +89,7 @@ namespace sigeci_angelitos_2
                     if (controladorPaciente.eliminarPaciente(paciente))
                     {
                         MessageBox.Show("Paciente eliminado");
-                        llenarPacientes("","","","","");
+                        llenarPacientes("", "", "", "", "");
                     }
                 }
                 catch (Exception ex)
@@ -97,6 +97,7 @@ namespace sigeci_angelitos_2
                     Console.WriteLine(ex);
                     MessageBox.Show("No ha seleccionado un paciente");
                 }
+            }
         }
 
 

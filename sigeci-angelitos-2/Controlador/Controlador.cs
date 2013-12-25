@@ -258,7 +258,7 @@ namespace Controlador
             {
                 hist = " and paciente.numeroHistoria = @numeroHistoria";
                 numeroHistoria = int.Parse(strHistoria);
-            }            
+            }
             if (!strDNI.Equals(""))
             {
                 dn = " and persona.dni = @dni";
@@ -403,8 +403,7 @@ namespace Controlador
                     new OleDbParameter("@lugarNacimiento",paciente.lugarNacimiento),
                     new OleDbParameter("@domicilio",paciente.domicilio),
                     new OleDbParameter("@distrito",paciente.distrito),
-                    new OleDbParameter("@telefonoCasa",paciente.telefonoCasa),
-                    new OleDbParameter("@fechaNacimiento",paciente.fechaNacimiento),
+                    new OleDbParameter("@telefonoCasa",paciente.telefonoCasa),                    
                     new OleDbParameter("@correo",paciente.correo), 
                     new OleDbParameter("@comoEntero",paciente.comoEntero),
                     new OleDbParameter("@observacion","-"),
