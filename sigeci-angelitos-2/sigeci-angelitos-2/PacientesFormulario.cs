@@ -160,13 +160,12 @@ namespace sigeci_angelitos_2
                 rbNo.Checked = true;
             }
             
-            txtNombreColegio.ReadOnly = true;
-            txtUbicacionColegio.ReadOnly = true;
-            txtCelular.ReadOnly = true;
-            txtOcupacion.ReadOnly = true;
-            txtGradoInstruccion.ReadOnly = true;
-            txtLugarLaboral.ReadOnly = true;
-
+            txtNombreColegio.Text = paciente.menorEdad.nombreColegio;
+            txtUbicacionColegio.Text = paciente.menorEdad.ubicacionColegio;
+            txtCelular.Text = paciente.mayorEdad.celular;
+            txtOcupacion.Text = paciente.mayorEdad.ocupacion;
+            txtGradoInstruccion.Text = paciente.mayorEdad.gradoInstruccion;
+            txtLugarLaboral.Text = paciente.mayorEdad.lugarLaboral;
         }
 
     }
