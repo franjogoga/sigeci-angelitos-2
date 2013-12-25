@@ -134,7 +134,39 @@ namespace sigeci_angelitos_2
 
         private void llenaFormularioPaciente(Paciente paciente)
         {
-            txtNumeroHistoria.Text = 
+            txtNumeroHistoria.Text = ""+paciente.numeroHistoria;
+            txtNombres.Text = paciente.persona.nombres;
+            txtApellidoPaterno.Text = paciente.persona.apellidoPaterno;
+            txtApellidoMaterno.Text = paciente.persona.apellidoMaterno;
+            txtDNI.Text = ""+paciente.persona.dni;
+            txtLugarNacimiento.Text = paciente.lugarNacimiento;
+            dateFechaNacimiento.Text = ""+paciente.fechaNacimiento;
+            txtDomicilio.Text = paciente.domicilio;
+            txtDistrito.Text = paciente.distrito;
+            txtTelefonoCasa.Text = paciente.telefonoCasa;
+            txtCorreo.Text = paciente.correo;
+            txtNombrePadre.Text = paciente.menorEdad.nombrePadre;
+            txtNombreMadre.Text = paciente.menorEdad.nombreMadre;
+            txtCelularPadre.Text = paciente.menorEdad.celularPadre;
+            txtCelularMadre.Text = paciente.menorEdad.celularMadre;
+            if (paciente.menorEdad.escolaridad.ToLower().Equals("si"))
+            {
+                rbSi.Checked = true;
+                rbNo.Checked = false;
+            }
+            else
+            {
+                rbSi.Checked = false;
+                rbNo.Checked = true;
+            }
+            
+            txtNombreColegio.ReadOnly = true;
+            txtUbicacionColegio.ReadOnly = true;
+            txtCelular.ReadOnly = true;
+            txtOcupacion.ReadOnly = true;
+            txtGradoInstruccion.ReadOnly = true;
+            txtLugarLaboral.ReadOnly = true;
+
         }
 
     }
