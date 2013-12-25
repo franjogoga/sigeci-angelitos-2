@@ -134,7 +134,7 @@ namespace sigeci_angelitos_2
 
         private void llenaFormularioPaciente(Paciente paciente)
         {
-
+            txtNumeroHistoria.Text = 
         }
 
     }
