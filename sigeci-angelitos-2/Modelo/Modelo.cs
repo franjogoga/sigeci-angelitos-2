@@ -73,24 +73,30 @@ namespace Modelo
     public class Terapeuta
     {
         private Persona _persona;
+        private Servicio _servicio;
         private DateTime _fechaNacimiento;
-        private string _servicio;
+        private string _telefono;        
 
         public Persona persona
         {
             get { return _persona; }
             set { _persona = value; }
         }
+        public Servicio servicio
+        {
+            get { return _servicio; }
+            set { _servicio = value; }
+        }
         public DateTime fechaNacimiento
         {
             get { return _fechaNacimiento; }
             set { _fechaNacimiento = value; }
         }
-        public string servicio
+        public string telefono
         {
-            get { return _servicio; }
-            set { _servicio = value; }
-        }
+            get { return _telefono; }
+            set { _telefono = value; }
+        }        
     }
 
     public class HorarioTerapeuta
@@ -135,6 +141,8 @@ namespace Modelo
         private int _esGrupal;        
         private int _intervaloHora;
         private float _costo;
+        private int _maximoPacientes;
+        private string _estado;
 
         public int idServicio
         {
@@ -161,6 +169,11 @@ namespace Modelo
             get { return _costo; }
             set { _costo = value; }
         }
+        public string estado
+        {
+            get { return _estado; }
+            set { _estado = value; }
+        }
     }
 
     public class Modalidad
@@ -168,6 +181,7 @@ namespace Modelo
         private int _idModalidad;
         private string _nombreModalidad;
         private int _idServicio;
+        private string _estado;
 
         public int idModalidad
         {
@@ -183,7 +197,12 @@ namespace Modelo
         {
             get { return _idServicio; }
             set { _idServicio = value; }
-        }        
+        }
+        public string estado
+        {
+            get { return _estado; }
+            set { _estado = value; }
+        }
     }
 
     public class Paciente
