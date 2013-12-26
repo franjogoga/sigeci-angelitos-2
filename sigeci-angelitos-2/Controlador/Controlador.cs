@@ -607,4 +607,44 @@ namespace Controlador
         }
     }
 
+    public class ControladorServicio
+    {
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";               
+        private List<Servicio> servicios;
+        static ControladorServicio controladorServicio = null;
+
+        private ControladorServicio()
+        {            
+            servicios = new List<Servicio>();
+        }
+
+        static public ControladorServicio Instancia()
+        {
+            if (controladorServicio == null)
+                controladorServicio= new ControladorServicio();
+            return controladorServicio;
+        }
+
+        public List<Servicio> getListaServicio()
+        {
+            return null;
+        }
+
+        public bool agregarServicio(Servicio servicio)
+        {
+            return true;
+        }
+
+        public bool modificarServicio(Servicio servicio)
+        {
+            return true;
+        }
+
+        public bool eliminarServicio(Servicio servicio)
+        {
+            return true;
+        }
+
+    }
+
 }
