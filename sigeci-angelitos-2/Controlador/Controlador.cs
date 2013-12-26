@@ -567,4 +567,44 @@ namespace Controlador
             return resultado;
         }
     }
+
+    public class ControladorTerapeuta
+    {
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";               
+        private List<Terapeuta> terapeutas;
+        static ControladorTerapeuta controladorTerapeuta = null;
+
+        private ControladorTerapeuta()
+        {            
+            terapeutas = new List<Terapeuta>();
+        }
+
+        static public ControladorTerapeuta Instancia()
+        {
+            if (controladorTerapeuta == null)
+                controladorTerapeuta = new ControladorTerapeuta();
+            return controladorTerapeuta;
+        }
+
+        public List<Terapeuta> getListaTerapeutas(string nombres, string apellidoPaterno, string apellidoMaterno, string strDNI)
+        {
+            return null;
+        }
+
+        public bool agregarTerapeuta(Terapeuta terapeuta)
+        {
+            return true;
+        }
+
+        public bool modificarTerapeuta(Terapeuta terapeuta)
+        {
+            return true;
+        }
+
+        public bool eliminarTerapeuta(Terapeuta terapeuta)
+        {
+            return true;
+        }
+    }
+
 }

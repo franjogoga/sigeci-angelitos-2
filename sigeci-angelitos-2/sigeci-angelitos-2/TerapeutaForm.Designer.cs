@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TerapeutaForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscarUsuario = new DevComponents.DotNetBar.ButtonX();
+            this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtDNI = new System.Windows.Forms.TextBox();
             this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
             this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.dgvTerapeutas = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
             this.btnModificar = new DevComponents.DotNetBar.ButtonX();
             this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
@@ -49,21 +49,21 @@
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTerapeutas)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.btnBuscarUsuario);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.labelX4);
             this.groupBox1.Controls.Add(this.labelX3);
             this.groupBox1.Controls.Add(this.labelX2);
             this.groupBox1.Controls.Add(this.labelX1);
+            this.groupBox1.Controls.Add(this.txtDNI);
             this.groupBox1.Controls.Add(this.txtApellidoMaterno);
             this.groupBox1.Controls.Add(this.txtApellidoPaterno);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.txtUsername);
+            this.groupBox1.Controls.Add(this.txtNombres);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(696, 151);
@@ -71,18 +71,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Terapeuta";
             // 
-            // btnBuscarUsuario
+            // btnBuscar
             // 
-            this.btnBuscarUsuario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnBuscarUsuario.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnBuscarUsuario.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
-            this.btnBuscarUsuario.ImageFixedSize = new System.Drawing.Size(23, 23);
-            this.btnBuscarUsuario.Location = new System.Drawing.Point(129, 108);
-            this.btnBuscarUsuario.Name = "btnBuscarUsuario";
-            this.btnBuscarUsuario.Size = new System.Drawing.Size(100, 32);
-            this.btnBuscarUsuario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnBuscarUsuario.TabIndex = 4;
-            this.btnBuscarUsuario.Text = "Buscar";
+            this.btnBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBuscar.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
+            this.btnBuscar.ImageFixedSize = new System.Drawing.Size(23, 23);
+            this.btnBuscar.Location = new System.Drawing.Point(129, 108);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 32);
+            this.btnBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // labelX4
             // 
@@ -121,7 +122,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(107, 23);
             this.labelX2.TabIndex = 6;
-            this.labelX2.Text = "Nombre :";
+            this.labelX2.Text = "Nombres :";
             // 
             // labelX1
             // 
@@ -136,50 +137,51 @@
             this.labelX1.TabIndex = 5;
             this.labelX1.Text = "DNI :";
             // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(481, 72);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(180, 20);
+            this.txtDNI.TabIndex = 3;
+            // 
             // txtApellidoMaterno
             // 
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(481, 72);
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(129, 71);
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.Size = new System.Drawing.Size(180, 20);
-            this.txtApellidoMaterno.TabIndex = 3;
+            this.txtApellidoMaterno.TabIndex = 2;
             // 
             // txtApellidoPaterno
             // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(129, 71);
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(481, 31);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.Size = new System.Drawing.Size(180, 20);
-            this.txtApellidoPaterno.TabIndex = 2;
+            this.txtApellidoPaterno.TabIndex = 1;
             // 
-            // txtNombre
+            // txtNombres
             // 
-            this.txtNombre.Location = new System.Drawing.Point(481, 31);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(180, 20);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombres.Location = new System.Drawing.Point(129, 31);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(180, 20);
+            this.txtNombres.TabIndex = 0;
             // 
-            // txtUsername
+            // dgvTerapeutas
             // 
-            this.txtUsername.Location = new System.Drawing.Point(129, 31);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(180, 20);
-            this.txtUsername.TabIndex = 0;
-            // 
-            // dgvUsuarios
-            // 
-            this.dgvUsuarios.AllowUserToAddRows = false;
-            this.dgvUsuarios.AllowUserToDeleteRows = false;
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTerapeutas.AllowUserToAddRows = false;
+            this.dgvTerapeutas.AllowUserToDeleteRows = false;
+            this.dgvTerapeutas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTerapeutas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPersona,
             this.nombres,
             this.apellidos,
             this.dni,
             this.telefono});
-            this.dgvUsuarios.Location = new System.Drawing.Point(12, 181);
-            this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.Size = new System.Drawing.Size(696, 198);
-            this.dgvUsuarios.TabIndex = 2;
+            this.dgvTerapeutas.Location = new System.Drawing.Point(12, 181);
+            this.dgvTerapeutas.Name = "dgvTerapeutas";
+            this.dgvTerapeutas.ReadOnly = true;
+            this.dgvTerapeutas.Size = new System.Drawing.Size(696, 198);
+            this.dgvTerapeutas.TabIndex = 2;
+            this.dgvTerapeutas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvTerapeutas_MouseDoubleClick);
             // 
             // btnEliminar
             // 
@@ -193,6 +195,7 @@
             this.btnEliminar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -206,6 +209,7 @@
             this.btnModificar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnNuevo
             // 
@@ -219,12 +223,14 @@
             this.btnNuevo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // idPersona
             // 
             this.idPersona.HeaderText = "ID";
             this.idPersona.Name = "idPersona";
             this.idPersona.ReadOnly = true;
+            this.idPersona.Width = 70;
             // 
             // nombres
             // 
@@ -262,7 +268,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.dgvUsuarios);
+            this.Controls.Add(this.dgvTerapeutas);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -272,7 +278,7 @@
             this.Text = "Terapeuta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTerapeutas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,16 +286,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevComponents.DotNetBar.ButtonX btnBuscarUsuario;
+        private DevComponents.DotNetBar.ButtonX btnBuscar;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.TextBox txtDNI;
         private System.Windows.Forms.TextBox txtApellidoMaterno;
         private System.Windows.Forms.TextBox txtApellidoPaterno;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.DataGridView dgvUsuarios;
+        private System.Windows.Forms.TextBox txtNombres;
+        private System.Windows.Forms.DataGridView dgvTerapeutas;
         private DevComponents.DotNetBar.ButtonX btnEliminar;
         private DevComponents.DotNetBar.ButtonX btnModificar;
         private DevComponents.DotNetBar.ButtonX btnNuevo;
