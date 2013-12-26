@@ -100,6 +100,21 @@ namespace sigeci_angelitos_2
             }
         }
 
+        private void dgvPacientes_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Paciente paciente = buscarPaciente(int.Parse(dgvPacientes.CurrentRow.Cells[0].Value.ToString()));
+                PacientesFormulario pacientesFormulario = new PacientesFormulario(this, 1, paciente);
+                pacientesFormulario.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("No ha seleccionado un paciente");
+            }
+        }
+
 
     }
 }

@@ -70,6 +70,7 @@
             this.dgvPacientes.ReadOnly = true;
             this.dgvPacientes.Size = new System.Drawing.Size(689, 183);
             this.dgvPacientes.TabIndex = 1;
+            this.dgvPacientes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvPacientes_MouseDoubleClick);
             // 
             // numHistoria
             // 
