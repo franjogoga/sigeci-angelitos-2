@@ -137,8 +137,7 @@ namespace Modelo
     public class Servicio
     {
         private int _idServicio;
-        private string _nombreServicio;
-        private int _esGrupal;        
+        private string _nombreServicio;              
         private int _intervaloHora;
         private float _costo;
         private int _maximoPacientes;
@@ -153,12 +152,7 @@ namespace Modelo
         {
             get { return _nombreServicio; }
             set { _nombreServicio = value; }
-        }
-        public int esGrupal
-        {
-            get { return _esGrupal; }
-            set { _esGrupal = value; }
-        }        
+        }              
         public int intervaloHora
         {
             get { return _intervaloHora; }
@@ -168,6 +162,11 @@ namespace Modelo
         {
             get { return _costo; }
             set { _costo = value; }
+        }
+        public int maximoPacientes
+        {
+            get { return _maximoPacientes; }
+            set { _maximoPacientes = value; }
         }
         public string estado
         {
