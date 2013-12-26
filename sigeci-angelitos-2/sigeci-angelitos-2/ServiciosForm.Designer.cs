@@ -34,13 +34,13 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtNombreServicio = new System.Windows.Forms.TextBox();
             this.dgvServicios = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
-            this.btnModificar = new DevComponents.DotNetBar.ButtonX();
-            this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maximoPacientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
+            this.btnModificar = new DevComponents.DotNetBar.ButtonX();
+            this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             this.SuspendLayout();
@@ -107,6 +107,34 @@
             this.dgvServicios.Size = new System.Drawing.Size(633, 173);
             this.dgvServicios.TabIndex = 2;
             // 
+            // idUsuario
+            // 
+            this.idUsuario.HeaderText = "ID";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.ReadOnly = true;
+            this.idUsuario.Width = 65;
+            // 
+            // nombreServicio
+            // 
+            this.nombreServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreServicio.HeaderText = "NombreServicio";
+            this.nombreServicio.Name = "nombreServicio";
+            this.nombreServicio.ReadOnly = true;
+            // 
+            // costo
+            // 
+            this.costo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.costo.HeaderText = "Costo";
+            this.costo.Name = "costo";
+            this.costo.ReadOnly = true;
+            // 
+            // maximoPacientes
+            // 
+            this.maximoPacientes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.maximoPacientes.HeaderText = "Máximo de Pacientes";
+            this.maximoPacientes.Name = "maximoPacientes";
+            this.maximoPacientes.ReadOnly = true;
+            // 
             // btnEliminar
             // 
             this.btnEliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -149,34 +177,6 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // idUsuario
-            // 
-            this.idUsuario.HeaderText = "ID";
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.ReadOnly = true;
-            this.idUsuario.Width = 65;
-            // 
-            // nombreServicio
-            // 
-            this.nombreServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreServicio.HeaderText = "NombreServicio";
-            this.nombreServicio.Name = "nombreServicio";
-            this.nombreServicio.ReadOnly = true;
-            // 
-            // costo
-            // 
-            this.costo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.costo.HeaderText = "Costo";
-            this.costo.Name = "costo";
-            this.costo.ReadOnly = true;
-            // 
-            // maximoPacientes
-            // 
-            this.maximoPacientes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.maximoPacientes.HeaderText = "Máximo de Pacientes";
-            this.maximoPacientes.Name = "maximoPacientes";
-            this.maximoPacientes.ReadOnly = true;
-            // 
             // ServiciosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +189,7 @@
             this.Controls.Add(this.dgvServicios);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ServiciosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
