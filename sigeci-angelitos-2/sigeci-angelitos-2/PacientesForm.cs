@@ -114,7 +114,5 @@ namespace sigeci_angelitos_2
                 MessageBox.Show("No ha seleccionado un paciente");
             }
         }
-
-
     }
 }
