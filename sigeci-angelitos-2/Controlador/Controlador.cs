@@ -454,8 +454,7 @@ namespace Controlador
         public bool modificarPaciente(Paciente paciente)
         {
             bool resultado = false;
-            int numFilas = 0;
-            int numFilas2 = 0;
+            int numFilas1 = 0, numFilas2 = 0, numFilas3=0, numFilas4=0;
             pacientes.Clear();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
             OleDbCommand comando1 = new OleDbCommand("update persona set nombres=@nombres,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,dni=@dni " +
@@ -474,28 +473,52 @@ namespace Controlador
                 new OleDbParameter("@dni",paciente.persona.dni),
                 new OleDbParameter("@idPersona",paciente.persona.idPersona),                
             });
-            
+                    
             comando2.Parameters.AddRange(new OleDbParameter[]
             {
                 new OleDbParameter("@fechaNacimiento",paciente.fechaNacimiento),
                 new OleDbParameter("@lugarNacimiento",paciente.lugarNacimiento),                
                 new OleDbParameter("@domicilio",paciente.domicilio),
                 new OleDbParameter("@distrito",paciente.distrito),
-                new OleDbParameter("@telefonoCasa",paciente.telefonoCasa),
-                new OleDbParameter("@domicilio",paciente.domicilio),
+                new OleDbParameter("@telefonoCasa",paciente.telefonoCasa),                
                 new OleDbParameter("@correo",paciente.correo),
                 new OleDbParameter("@comoEntero",paciente.comoEntero),
                 new OleDbParameter("@persona_idPersona",paciente.persona.idPersona),
             });
+            
+            comando3.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombreMadre",paciente.menorEdad.nombreMadre),
+                new OleDbParameter("@nombrePadre",paciente.menorEdad.nombrePadre),                
+                new OleDbParameter("@celularMadre",paciente.menorEdad.celularMadre),
+                new OleDbParameter("@celularPadre",paciente.menorEdad.celularPadre),
+                new OleDbParameter("@escolaridad",paciente.menorEdad.escolaridad),
+                new OleDbParameter("@nombreColegio",paciente.menorEdad.nombreColegio),
+                new OleDbParameter("@ubicacionColegio",paciente.menorEdad.ubicacionColegio),                
+                new OleDbParameter("@paciente_persona_idPersona",paciente.persona.idPersona),
+            });
+            
+            comando4.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@celular",paciente.mayorEdad.celular),
+                new OleDbParameter("@ocupacion",paciente.mayorEdad.ocupacion),                
+                new OleDbParameter("@gradoInstruccion",paciente.mayorEdad.gradoInstruccion),
+                new OleDbParameter("@lugarLaboral",paciente.mayorEdad.lugarLaboral),                
+                new OleDbParameter("@paciente_persona_idPersona",paciente.persona.idPersona),
+            });
 
             comando1.Connection = conexion;
             comando2.Connection = conexion;
+            comando3.Connection = conexion;
+            comando4.Connection = conexion;
 
             try
             {
                 conexion.Open();
-                numFilas = comando1.ExecuteNonQuery();
+                numFilas1 = comando1.ExecuteNonQuery();
                 numFilas2 = comando2.ExecuteNonQuery();
+                numFilas3 = comando3.ExecuteNonQuery();
+                numFilas4 = comando4.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -505,15 +528,42 @@ namespace Controlador
             {
                 conexion.Close();
             }
-            resultado = numFilas + numFilas2 == 2;
+            resultado = numFilas1 + numFilas2 + numFilas3 + numFilas4== 4;
             return resultado;
         }
 
         public bool eliminarPaciente(Paciente paciente)
         {
             bool resultado = false;
+            int numFilas = 0;
+            pacientes.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update persona set estado=@estado " +
+                                                    "where idPersona=@idPersona");
 
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@estado","inactivo"),
+                new OleDbParameter("@idPersona",paciente.persona.idPersona),                               
+            });
 
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            resultado = numFilas == 1;
             return resultado;
         }
     }
