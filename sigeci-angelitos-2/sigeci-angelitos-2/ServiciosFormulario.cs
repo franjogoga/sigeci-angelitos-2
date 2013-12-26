@@ -39,5 +39,16 @@ namespace sigeci_angelitos_2
             else
                 btnAceptar.Enabled = true;
         }
+
+        private void bloqueaFormularioServicio()
+        {
+
+        }
+
+        private void llenaFormularioServicio(Servicio servicio)
+        {
+
+        }
+        
     }
 }

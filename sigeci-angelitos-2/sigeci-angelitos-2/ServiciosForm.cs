@@ -64,7 +64,7 @@ namespace sigeci_angelitos_2
             try
             {
                 Servicio servicio = buscarServicio(int.Parse(dgvServicios.CurrentRow.Cells[0].Value.ToString()));
-                ServiciosFormulario serviciosFormulario = new UsuariosFormulario(this, 2, servicio);
+                ServiciosFormulario serviciosFormulario = new ServiciosFormulario(this, 2, servicio);
                 serviciosFormulario.ShowDialog();
             }
             catch (Exception ex)
