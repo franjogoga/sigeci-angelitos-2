@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TerapeutaForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarUsuario = new DevComponents.DotNetBar.ButtonX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -39,13 +40,14 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBuscarUsuario = new DevComponents.DotNetBar.ButtonX();
             this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
             this.btnModificar = new DevComponents.DotNetBar.ButtonX();
             this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
+            this.idPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +70,19 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Terapeuta";
+            // 
+            // btnBuscarUsuario
+            // 
+            this.btnBuscarUsuario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBuscarUsuario.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBuscarUsuario.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
+            this.btnBuscarUsuario.ImageFixedSize = new System.Drawing.Size(23, 23);
+            this.btnBuscarUsuario.Location = new System.Drawing.Point(129, 108);
+            this.btnBuscarUsuario.Name = "btnBuscarUsuario";
+            this.btnBuscarUsuario.Size = new System.Drawing.Size(100, 32);
+            this.btnBuscarUsuario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBuscarUsuario.TabIndex = 4;
+            this.btnBuscarUsuario.Text = "Buscar";
             // 
             // labelX4
             // 
@@ -155,14 +170,61 @@
             this.dgvUsuarios.AllowUserToDeleteRows = false;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPersona,
             this.nombres,
             this.apellidos,
-            this.dni});
+            this.dni,
+            this.telefono});
             this.dgvUsuarios.Location = new System.Drawing.Point(12, 181);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.Size = new System.Drawing.Size(696, 216);
+            this.dgvUsuarios.Size = new System.Drawing.Size(696, 198);
             this.dgvUsuarios.TabIndex = 2;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnEliminar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnEliminar.Image = global::sigeci_angelitos_2.Properties.Resources.cancelarcita;
+            this.btnEliminar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnEliminar.Location = new System.Drawing.Point(480, 398);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(123, 32);
+            this.btnEliminar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar";
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnModificar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnModificar.Image = global::sigeci_angelitos_2.Properties.Resources.editar;
+            this.btnModificar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnModificar.Location = new System.Drawing.Point(288, 398);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(123, 32);
+            this.btnModificar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnModificar.TabIndex = 9;
+            this.btnModificar.Text = "Modificar";
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnNuevo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnNuevo.Image = global::sigeci_angelitos_2.Properties.Resources.agregar;
+            this.btnNuevo.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnNuevo.Location = new System.Drawing.Point(97, 398);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(123, 32);
+            this.btnNuevo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnNuevo.TabIndex = 8;
+            this.btnNuevo.Text = "Nuevo";
+            // 
+            // idPersona
+            // 
+            this.idPersona.HeaderText = "ID";
+            this.idPersona.Name = "idPersona";
+            this.idPersona.ReadOnly = true;
             // 
             // nombres
             // 
@@ -185,70 +247,25 @@
             this.dni.Name = "dni";
             this.dni.ReadOnly = true;
             // 
-            // btnBuscarUsuario
+            // telefono
             // 
-            this.btnBuscarUsuario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnBuscarUsuario.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnBuscarUsuario.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
-            this.btnBuscarUsuario.ImageFixedSize = new System.Drawing.Size(23, 23);
-            this.btnBuscarUsuario.Location = new System.Drawing.Point(129, 108);
-            this.btnBuscarUsuario.Name = "btnBuscarUsuario";
-            this.btnBuscarUsuario.Size = new System.Drawing.Size(100, 32);
-            this.btnBuscarUsuario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnBuscarUsuario.TabIndex = 4;
-            this.btnBuscarUsuario.Text = "Buscar";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnEliminar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnEliminar.Image = global::sigeci_angelitos_2.Properties.Resources.cancelarcita;
-            this.btnEliminar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnEliminar.Location = new System.Drawing.Point(501, 418);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(123, 32);
-            this.btnEliminar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Eliminar";
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnModificar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnModificar.Image = global::sigeci_angelitos_2.Properties.Resources.editar;
-            this.btnModificar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnModificar.Location = new System.Drawing.Point(309, 418);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(123, 32);
-            this.btnModificar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "Modificar";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnNuevo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnNuevo.Image = global::sigeci_angelitos_2.Properties.Resources.agregar;
-            this.btnNuevo.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnNuevo.Location = new System.Drawing.Point(118, 418);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(123, 32);
-            this.btnNuevo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnNuevo.TabIndex = 8;
-            this.btnNuevo.Text = "Nuevo";
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
             // 
             // TerapeutaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(720, 475);
+            this.ClientSize = new System.Drawing.Size(720, 446);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TerapeutaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -273,11 +290,13 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
         private DevComponents.DotNetBar.ButtonX btnEliminar;
         private DevComponents.DotNetBar.ButtonX btnModificar;
         private DevComponents.DotNetBar.ButtonX btnNuevo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPersona;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
     }
 }
