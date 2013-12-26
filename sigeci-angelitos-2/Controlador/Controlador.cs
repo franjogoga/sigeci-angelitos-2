@@ -625,7 +625,7 @@ namespace Controlador
             return controladorServicio;
         }
 
-        public List<Servicio> getListaServicio()
+        public List<Servicio> getListaServicios(string nombreServicio)
         {
             return null;
         }
