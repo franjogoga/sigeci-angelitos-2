@@ -142,6 +142,7 @@ namespace sigeci_angelitos_2
             txtDistrito.ReadOnly = true;
             txtTelefonoCasa.ReadOnly = true;
             txtCorreo.ReadOnly = true;
+            txtComoEntero.ReadOnly = true;
             txtNombrePadre.ReadOnly = true;
             txtNombreMadre.ReadOnly = true;
             txtCelularPadre.ReadOnly = true;
