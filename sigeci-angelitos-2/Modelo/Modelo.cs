@@ -72,8 +72,7 @@ namespace Modelo
     
     public class Terapeuta
     {
-        private Persona _persona;
-        private Servicio _servicio;
+        private Persona _persona;        
         private DateTime _fechaNacimiento;
         private string _telefono;        
 
@@ -81,11 +80,6 @@ namespace Modelo
         {
             get { return _persona; }
             set { _persona = value; }
-        }
-        public Servicio servicio
-        {
-            get { return _servicio; }
-            set { _servicio = value; }
         }
         public DateTime fechaNacimiento
         {
