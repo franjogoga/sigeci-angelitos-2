@@ -40,14 +40,14 @@
             this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
             this.dgvTerapeutas = new System.Windows.Forms.DataGridView();
+            this.idPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
             this.btnModificar = new DevComponents.DotNetBar.ButtonX();
             this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerapeutas)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.groupBox1.Size = new System.Drawing.Size(696, 151);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos de Terapeuta";
+            this.groupBox1.Text = "Datos del Terapeuta";
             // 
             // btnBuscar
             // 
@@ -183,6 +183,40 @@
             this.dgvTerapeutas.TabIndex = 2;
             this.dgvTerapeutas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvTerapeutas_MouseDoubleClick);
             // 
+            // idPersona
+            // 
+            this.idPersona.HeaderText = "ID";
+            this.idPersona.Name = "idPersona";
+            this.idPersona.ReadOnly = true;
+            this.idPersona.Width = 70;
+            // 
+            // nombres
+            // 
+            this.nombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombres.HeaderText = "Nombres";
+            this.nombres.Name = "nombres";
+            this.nombres.ReadOnly = true;
+            // 
+            // apellidos
+            // 
+            this.apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.apellidos.HeaderText = "Apellidos";
+            this.apellidos.Name = "apellidos";
+            this.apellidos.ReadOnly = true;
+            // 
+            // dni
+            // 
+            this.dni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
             // btnEliminar
             // 
             this.btnEliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -224,40 +258,6 @@
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "Teléfono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // dni
-            // 
-            this.dni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dni.HeaderText = "DNI";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            // 
-            // apellidos
-            // 
-            this.apellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.apellidos.HeaderText = "Apellidos";
-            this.apellidos.Name = "apellidos";
-            this.apellidos.ReadOnly = true;
-            // 
-            // nombres
-            // 
-            this.nombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombres.HeaderText = "Nombres";
-            this.nombres.Name = "nombres";
-            this.nombres.ReadOnly = true;
-            // 
-            // idPersona
-            // 
-            this.idPersona.HeaderText = "ID";
-            this.idPersona.Name = "idPersona";
-            this.idPersona.ReadOnly = true;
-            this.idPersona.Width = 70;
             // 
             // TerapeutaForm
             // 
