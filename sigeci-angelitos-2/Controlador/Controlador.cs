@@ -28,12 +28,9 @@ namespace Controlador
         }
 
         public bool agregarUsuario(Usuario usuario)
-        {
-            bool resultado = false;
-            int idPersona=0;
-            OleDbDataReader r = null;
-            int numFilas = 0;
-            int numFilas2 = 0;
+        {            
+            int idPersona=0,numFilas = 0, numFilas2 = 0;
+            OleDbDataReader r = null;            
             usuarios.Clear();
 
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
@@ -86,9 +83,8 @@ namespace Controlador
             finally {
                 r.Close();
                 conexion.Close(); 
-            }
-            resultado = numFilas + numFilas2 == 2;
-            return resultado;
+            }            
+            return numFilas + numFilas2 == 2;
         }
 
         public List<Usuario> getListaUsuarios(string username, string nombres, string apellidoPaterno, string apellidoMaterno)
@@ -139,13 +135,11 @@ namespace Controlador
                 r.Close();
                 conexion.Close();
             }
-
             return usuarios;
         }
 
         public bool modificarUsuario(Usuario usuario)
-        {
-            bool resultado = false;
+        {            
             int numFilas = 0;
             int numFilas2 = 0;
             usuarios.Clear();
@@ -187,14 +181,12 @@ namespace Controlador
             finally
             {
                 conexion.Close(); 
-            }
-            resultado = numFilas + numFilas2 == 2;
-            return resultado;
+            }            
+            return numFilas + numFilas2 == 2;
         }
 
         public bool eliminarUsuario(Usuario usuario)
-        {
-            bool resultado = false;
+        {            
             int numFilas = 0;
             usuarios.Clear();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
@@ -221,10 +213,8 @@ namespace Controlador
             finally
             {
                 conexion.Close();
-            }
-
-            resultado = numFilas == 1;
-            return resultado;
+            }            
+            return numFilas == 1;
         }
     }
 
@@ -337,13 +327,11 @@ namespace Controlador
                 r.Close();
                 conexion.Close();
             }
-
             return pacientes;
         }
 
         public bool agregarPaciente(Paciente paciente)
-        {
-            bool resultado = false;
+        {            
             int idPersona = 0, numeroHistoria =0,numFilas1 = 0, numFilas2 = 0, numFilas3=0, numFilas4=0;
             OleDbDataReader r = null;            
             pacientes.Clear();
@@ -446,14 +434,12 @@ namespace Controlador
             {
                 r.Close();
                 conexion.Close();
-            }
-            resultado = numFilas1 + numFilas2 + numFilas3 + numFilas4 == 4;
-            return resultado;
+            }            
+            return numFilas1 + numFilas2 + numFilas3 + numFilas4 == 4;
         }
 
         public bool modificarPaciente(Paciente paciente)
-        {
-            bool resultado = false;
+        {            
             int numFilas1 = 0, numFilas2 = 0, numFilas3=0, numFilas4=0;
             pacientes.Clear();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
@@ -527,14 +513,12 @@ namespace Controlador
             finally
             {
                 conexion.Close();
-            }
-            resultado = numFilas1 + numFilas2 + numFilas3 + numFilas4== 4;
-            return resultado;
+            }            
+            return numFilas1 + numFilas2 + numFilas3 + numFilas4== 4;
         }
 
         public bool eliminarPaciente(Paciente paciente)
-        {
-            bool resultado = false;
+        {            
             int numFilas = 0;
             pacientes.Clear();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
@@ -561,10 +545,8 @@ namespace Controlador
             finally
             {
                 conexion.Close();
-            }
-
-            resultado = numFilas == 1;
-            return resultado;
+            }           
+            return numFilas == 1;
         }
     }
 
@@ -666,23 +648,111 @@ namespace Controlador
                 r.Close();
                 conexion.Close();
             }
-
             return servicios;            
         }
 
         public bool agregarServicio(Servicio servicio)
-        {
-            return true;
+        {                                
+            int numFilas = 0;            
+            servicios.Clear();
+
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("insert into servicio(nombreServicio,intervaloHora,costo,maximoPacientes,estado) " +
+                                                        "values(@nombreServicio,@intervaloHora,@costo,@maximoPacientes,@estado)");            
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombreServicio",servicio.nombreServicio),
+                new OleDbParameter("@intervaloHora",servicio.intervaloHora),
+                new OleDbParameter("@costo",servicio.costo),
+                new OleDbParameter("@maximoPacientes",servicio.maximoPacientes),
+                new OleDbParameter("@estado",servicio.estado),                
+            });
+
+            comando.Connection = conexion;            
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();                                                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {                
+                conexion.Close();
+            }            
+            return numFilas == 1;
         }
 
         public bool modificarServicio(Servicio servicio)
-        {
-            return true;
+        {            
+            int numFilas = 0;         
+            servicios.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update servicio set nombreServicio=@nombreServicio,intervaloHora=@intervaloHora,costo=@costo,maximoPacientes=@maximoPacientes " +
+                                                    "where idServicio=@idServicio");            
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombreServicio",servicio.nombreServicio),
+                new OleDbParameter("@intervaloHora",servicio.intervaloHora),
+                new OleDbParameter("@costo",servicio.costo),
+                new OleDbParameter("@maximoPacientes",servicio.maximoPacientes),
+                new OleDbParameter("@idServicio",servicio.idServicio),                
+            });
+         
+            comando.Connection = conexion;            
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas == 1;
         }
 
         public bool eliminarServicio(Servicio servicio)
-        {
-            return true;
+        {            
+            int numFilas = 0;
+            servicios.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update servicio set estado=@estado " +
+                                                    "where idServicio=@idServicio");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@estado","inactivo"),
+                new OleDbParameter("@idServicio",servicio.idServicio),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }      
+            return numFilas == 1;
         }
 
     }
