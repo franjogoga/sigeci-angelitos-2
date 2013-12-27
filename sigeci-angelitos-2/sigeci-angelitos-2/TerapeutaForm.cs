@@ -24,7 +24,8 @@ namespace sigeci_angelitos_2
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            TerapeutaFormulario terapeutaFormulario = new TerapeutaFormulario();
+            terapeutaFormulario.ShowDialog();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
