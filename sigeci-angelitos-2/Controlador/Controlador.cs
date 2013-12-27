@@ -609,7 +609,7 @@ namespace Controlador
 
     public class ControladorServicio
     {
-        //private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";               
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";               
         private List<Servicio> servicios;
         static ControladorServicio controladorServicio = null;
 
