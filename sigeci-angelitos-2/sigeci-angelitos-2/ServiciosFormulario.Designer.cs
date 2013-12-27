@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiciosFormulario));
             this.gbUsuario = new System.Windows.Forms.GroupBox();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
@@ -40,6 +41,7 @@
             this.txtNombreServicio = new System.Windows.Forms.TextBox();
             this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.gbUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,6 +172,10 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
+            // 
             // ServiciosFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,5 +210,6 @@
         private System.Windows.Forms.TextBox txtNombreServicio;
         private DevComponents.DotNetBar.ButtonX btnCancelar;
         private DevComponents.DotNetBar.ButtonX btnAceptar;
+        private DevComponents.DotNetBar.StyleManager styleManager1;
     }
 }
