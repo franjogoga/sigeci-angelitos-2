@@ -276,6 +276,7 @@
             this.Name = "TerapeutaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Terapeuta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TerapeutaForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerapeutas)).EndInit();
