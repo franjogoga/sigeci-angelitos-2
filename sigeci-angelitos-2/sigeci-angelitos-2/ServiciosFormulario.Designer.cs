@@ -119,7 +119,6 @@
             // 
             this.txtIntervaloHora.Location = new System.Drawing.Point(197, 69);
             this.txtIntervaloHora.Name = "txtIntervaloHora";
-            this.txtIntervaloHora.PasswordChar = '•';
             this.txtIntervaloHora.Size = new System.Drawing.Size(182, 20);
             this.txtIntervaloHora.TabIndex = 1;
             // 

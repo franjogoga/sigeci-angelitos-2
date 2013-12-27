@@ -95,5 +95,20 @@ namespace sigeci_angelitos_2
                 }
             }        
         }
+
+        private void dgvServicios_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                Servicio servicio = buscarServicio(int.Parse(dgvServicios.CurrentRow.Cells[0].Value.ToString()));
+                ServiciosFormulario serviciosFormulario = new ServiciosFormulario(this, 1, servicio);
+                serviciosFormulario.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("No ha seleccionado un servicio");
+            }
+        }
     }
 }

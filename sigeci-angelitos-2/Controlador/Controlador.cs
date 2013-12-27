@@ -627,7 +627,47 @@ namespace Controlador
 
         public List<Servicio> getListaServicios(string nombreServicio)
         {
-            return null;
+            servicios.Clear();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("select * from servicio where nombreServicio like @nombreServicio and estado='activo' order by idServicio ASC");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombreServicio","%"+nombreServicio+"%"),                
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Servicio servicio = new Servicio();
+                    servicio.idServicio = r.GetInt32(0);
+                    servicio.nombreServicio = r.GetString(1);
+                    servicio.intervaloHora = r.GetInt32(2);
+                    servicio.costo = r.GetInt32(3);
+                    servicio.maximoPacientes = r.GetInt32(4);
+                    servicio.estado = r.GetString(5);                    
+
+                    servicios.Add(servicio);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+
+            return servicios;            
         }
 
         public bool agregarServicio(Servicio servicio)
