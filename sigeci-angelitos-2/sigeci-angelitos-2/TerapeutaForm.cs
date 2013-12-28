@@ -35,7 +35,7 @@ namespace sigeci_angelitos_2
             dgvTerapeutas.Rows.Clear();
             foreach (Terapeuta terapeuta in terapeutas)
             {
-                fila = new string[] { ""+terapeuta.persona.idPersona, terapeuta.persona.nombres, terapeuta.persona.apellidoPaterno + " " + terapeuta.persona.apellidoMaterno, "" + terapeuta.persona.dni };
+                fila = new string[] { ""+terapeuta.persona.idPersona, terapeuta.persona.nombres, terapeuta.persona.apellidoPaterno + " " + terapeuta.persona.apellidoMaterno, "" + terapeuta.persona.dni, terapeuta.telefono};
                 dgvTerapeutas.Rows.Add(fila);
             }
         }

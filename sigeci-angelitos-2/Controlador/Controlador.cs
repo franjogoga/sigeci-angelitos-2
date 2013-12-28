@@ -140,8 +140,7 @@ namespace Controlador
 
         public bool modificarUsuario(Usuario usuario)
         {            
-            int numFilas = 0;
-            int numFilas2 = 0;
+            int numFilas = 0, numFilas2 = 0;
             usuarios.Clear();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
             OleDbCommand comando = new OleDbCommand("update persona set nombres=@nombres,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,dni=@dni " +
@@ -552,7 +551,7 @@ namespace Controlador
 
     public class ControladorTerapeuta
     {
-        //private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";               
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";               
         private List<Terapeuta> terapeutas;
         static ControladorTerapeuta controladorTerapeuta = null;
 
@@ -570,22 +569,204 @@ namespace Controlador
 
         public List<Terapeuta> getListaTerapeutas(string nombres, string apellidoPaterno, string apellidoMaterno, string strDNI)
         {
-            return null;
+            string dn = "";
+            int dni = 0;
+            terapeutas.Clear();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            if (!strDNI.Equals(""))
+            {
+                dn = " and persona.dni = @dni";
+                dni = int.Parse(strDNI);
+            }
+
+            OleDbCommand comando = new OleDbCommand("select * from persona, terapeuta where persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and persona.apellidoMaterno like @apellidoMaterno and persona.estado='activo' and "+dn+" persona.idPersona = terapeuta.persona_idPersona order by persona.idPersona ASC");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombres","%"+nombres+"%"),               
+                new OleDbParameter("@apellidoPaterno","%"+apellidoPaterno+"%"),
+                new OleDbParameter("@apellidoMaterno","%"+apellidoMaterno+"%"),                
+            });
+
+            if (!strDNI.Equals(""))
+            {
+                comando.Parameters.AddWithValue("@dni", dni);
+            }
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Persona persona = new Persona();
+                    persona.idPersona = r.GetInt32(0);
+                    persona.nombres = r.GetString(1);
+                    persona.apellidoPaterno = r.GetString(2);
+                    persona.apellidoMaterno = r.GetString(3);
+                    persona.dni = r.GetInt32(4);
+                    persona.estado = r.GetString(5);
+                    Terapeuta terapeuta = new Terapeuta();
+                    terapeuta.persona = persona;
+                    terapeuta.fechaNacimiento = r.GetDateTime(7);
+                    terapeuta.telefono = r.GetString(8);
+
+                    terapeutas.Add(terapeuta);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return terapeutas;
         }
 
         public bool agregarTerapeuta(Terapeuta terapeuta)
         {
-            return true;
+            int idPersona = 0, numFilas = 0, numFilas2 = 0;
+            OleDbDataReader r = null;
+            terapeutas.Clear();
+
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("insert into persona(nombres,apellidoPaterno,apellidoMaterno,dni,estado) " +
+                                                        "values(@nombres,@apellidoPaterno,@apellidoMaterno,@dni,@estado)");
+
+            OleDbCommand comando2 = new OleDbCommand("SELECT TOP 1 * FROM persona order by idPersona DESC");
+
+            OleDbCommand comando3 = new OleDbCommand("insert into terapeuta(persona_idPersona,fechaNacimiento,telefono) " +
+                                                        "values(@persona_idPersona,@fechaNacimiento,@telefono)");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombres",terapeuta.persona.nombres),
+                new OleDbParameter("@apellidoPaterno",terapeuta.persona.apellidoPaterno),
+                new OleDbParameter("@apellidoMaterno",terapeuta.persona.apellidoMaterno),
+                new OleDbParameter("@dni",terapeuta.persona.dni),
+                new OleDbParameter("@estado",terapeuta.persona.estado),                
+            });
+
+            comando.Connection = conexion;
+            comando2.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+                r = comando2.ExecuteReader();
+
+                while (r.Read())
+                {
+                    idPersona = r.GetInt32(0);
+                }
+
+                comando3.Parameters.AddRange(new OleDbParameter[]
+                {
+                    new OleDbParameter("@persona_idPersona",idPersona),
+                    new OleDbParameter("@fechaNacimiento",terapeuta.fechaNacimiento),
+                    new OleDbParameter("@telefono",terapeuta.telefono), 
+                });
+
+                comando3.Connection = conexion;
+                numFilas2 = comando3.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return numFilas + numFilas2 == 2;
         }
 
         public bool modificarTerapeuta(Terapeuta terapeuta)
         {
-            return true;
+            int numFilas = 0, numFilas2 = 0;
+            terapeutas.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update persona set nombres=@nombres,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,dni=@dni " +
+                                                    "where idPersona=@idPersona");
+            OleDbCommand comando2 = new OleDbCommand("update terapeuta set fechaNacimiento=@fechaNacimiento,telefono=@telefono " +
+                                                        "where persona_idPersona=@persona_idPersona");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombres",terapeuta.persona.nombres),
+                new OleDbParameter("@apellidoPaterno",terapeuta.persona.apellidoPaterno),
+                new OleDbParameter("@apellidoMaterno",terapeuta.persona.apellidoMaterno),
+                new OleDbParameter("@dni",terapeuta.persona.dni),
+                new OleDbParameter("@idPersona",terapeuta.persona.idPersona),                
+            });
+
+            comando2.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@fechaNacimiento",terapeuta.fechaNacimiento),
+                new OleDbParameter("@telefono",terapeuta.telefono),                
+                new OleDbParameter("@persona_idPersona",terapeuta.persona.idPersona),                
+            });
+
+            comando.Connection = conexion;
+            comando2.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+                numFilas2 = comando2.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas + numFilas2 == 2;
         }
 
         public bool eliminarTerapeuta(Terapeuta terapeuta)
         {
-            return true;
+            int numFilas = 0;
+            terapeutas.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update persona set estado=@estado " +
+                                                    "where idPersona=@idPersona");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@estado","inactivo"),
+                new OleDbParameter("@idPersona",terapeuta.persona.idPersona),                               
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas == 1;
         }
     }
 
@@ -617,7 +798,7 @@ namespace Controlador
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
-                new OleDbParameter("@nombreServicio","%"+nombreServicio+"%"),                
+                new OleDbParameter("@nombreServicio","%" + nombreServicio + "%"),                
             });
 
             comando.Connection = conexion;
