@@ -604,7 +604,10 @@ namespace Controlador
                 while (r.Read())
                 {
                     Persona persona = new Persona();
+                    List<Servicio> serviciosxTerapeuta = new List<Servicio>();
+                    ControladorServicio controladorServicio = ControladorServicio.Instancia();
                     persona.idPersona = r.GetInt32(0);
+                    serviciosxTerapeuta = controladorServicio.getListaServiciosxTerapeuta(persona.idPersona);                    
                     persona.nombres = r.GetString(1);
                     persona.apellidoPaterno = r.GetString(2);
                     persona.apellidoMaterno = r.GetString(3);
@@ -614,6 +617,7 @@ namespace Controlador
                     terapeuta.persona = persona;
                     terapeuta.fechaNacimiento = r.GetDateTime(7);
                     terapeuta.telefono = r.GetString(8);
+                    terapeuta.servicios = serviciosxTerapeuta;
 
                     terapeutas.Add(terapeuta);
                 }
@@ -786,6 +790,46 @@ namespace Controlador
             if (controladorServicio == null)
                 controladorServicio= new ControladorServicio();
             return controladorServicio;
+        }
+
+        public List<Servicio> getListaServiciosxTerapeuta(int idTerapeuta)
+        {
+            List<Servicio> serviciosxTerapeuta = new List<Servicio>();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("SELECT * from servicio, terapeuta, servicioxterapeuta where servicio.idServicio = servicioxterapeuta.idServicio and  servicioxterapeuta.persona_idPersona = terapeuta.persona_idPersona and terapeuta.persona_idPersona = @idTerapeuta order by servicio.idServicio ASC");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@idTerapeuta", idTerapeuta),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Servicio servicio = new Servicio();
+                    servicio.idServicio = r.GetInt32(0);
+                    servicio.nombreServicio = r.GetString(1);                    
+
+                    servicios.Add(servicio);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return serviciosxTerapeuta;
         }
 
         public List<Servicio> getListaServicios(string nombreServicio)

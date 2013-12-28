@@ -15,8 +15,8 @@ namespace sigeci_angelitos_2
 {
     public partial class TerapeutaForm : Office2007Form
     {
-        private ControladorTerapeuta controladorTerapeuta = ControladorTerapeuta.Instancia();
-        private List<Terapeuta> terapeutas;
+        private ControladorTerapeuta controladorTerapeuta = ControladorTerapeuta.Instancia();        
+        private List<Terapeuta> terapeutas;        
         public TerapeutaForm()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace sigeci_angelitos_2
         public void llenarTerapeutas(string nombres, string apellidoPaterno, string apellidoMaterno, string strDNI)
         {
             string[] fila;
-            terapeutas = controladorTerapeuta.getListaTerapeutas(nombres, apellidoPaterno, apellidoMaterno, strDNI);
+            terapeutas = controladorTerapeuta.getListaTerapeutas(nombres, apellidoPaterno, apellidoMaterno, strDNI);            
             dgvTerapeutas.Rows.Clear();
             foreach (Terapeuta terapeuta in terapeutas)
             {

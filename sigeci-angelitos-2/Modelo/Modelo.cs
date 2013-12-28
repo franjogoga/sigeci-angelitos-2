@@ -72,7 +72,8 @@ namespace Modelo
     
     public class Terapeuta
     {
-        private Persona _persona;        
+        private Persona _persona;
+        private List<Servicio> _servicios;
         private DateTime _fechaNacimiento;
         private string _telefono;        
 
@@ -80,6 +81,11 @@ namespace Modelo
         {
             get { return _persona; }
             set { _persona = value; }
+        }
+        public List<Servicio> servicios
+        {
+            get { return _servicios; }
+            set { _servicios = value; }
         }
         public DateTime fechaNacimiento
         {
@@ -127,7 +133,7 @@ namespace Modelo
             set { _idPersona = value; }
         }
     }
-
+   
     public class Servicio
     {
         private int _idServicio;
