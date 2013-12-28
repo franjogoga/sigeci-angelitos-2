@@ -50,9 +50,8 @@ namespace sigeci_angelitos_2
             txtTelefono.Text = terapeuta.telefono;
 
             foreach (Servicio s in terapeuta.servicios) {
-                checkListServicios.Items.Add(s.nombreServicio);
-            }
-            
+                checkListServicios.Items.Add(s.nombreServicio, true);
+            }            
         }
 
         private void bloqueaFormularioTerapeuta()
@@ -63,6 +62,7 @@ namespace sigeci_angelitos_2
             dateFechaNacimiento.Enabled = false;
             txtDNI.ReadOnly = true;
             txtTelefono.ReadOnly = true;
+            checkListServicios.Enabled = false;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
