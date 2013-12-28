@@ -59,5 +59,54 @@ namespace sigeci_angelitos_2
             txtDNI.ReadOnly = true;
             txtTelefono.ReadOnly = true;
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (modo == 0)
+            {
+                Terapeuta terapeuta = new Terapeuta();                                
+                Persona persona = new Persona();
+                persona.nombres = txtNombres.Text;
+                persona.apellidoPaterno = txtApellidoPaterno.Text;
+                persona.apellidoMaterno = txtApellidoMaterno.Text;
+                persona.dni = int.Parse(txtDNI.Text);
+                persona.estado = "activo";
+                terapeuta.persona = persona;
+                terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
+                terapeuta.telefono = txtTelefono.Text;
+
+                if (controladorTerapeuta.agregarTerapeuta(terapeuta))
+                {
+                    MessageBox.Show("Terapeuta Agregado");
+                    this.Dispose();
+                    padre.llenarTerapeutas("", "", "", "");
+                }
+                else
+                    MessageBox.Show("Ha ocurrido un error");
+            }
+            else
+            {                
+                terapeuta.persona.nombres = txtNombres.Text;
+                terapeuta.persona.apellidoPaterno = txtApellidoPaterno.Text;
+                terapeuta.persona.apellidoMaterno = txtApellidoMaterno.Text;
+                terapeuta.persona.dni = int.Parse(txtDNI.Text);                                
+                terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
+                terapeuta.telefono = txtTelefono.Text;
+
+                if (controladorTerapeuta.modificarTerapeuta(terapeuta))
+                {
+                    MessageBox.Show("Terapeuta Modificado");
+                    this.Dispose();
+                    padre.llenarTerapeutas("", "", "", "");
+                }
+                else
+                    MessageBox.Show("Ha ocurrido un error");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
