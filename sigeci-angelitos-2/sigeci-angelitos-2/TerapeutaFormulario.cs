@@ -19,12 +19,14 @@ namespace sigeci_angelitos_2
         private TerapeutaForm padre;
         private int modo;
         private Terapeuta terapeuta;
+        private List<Servicio> servicios;
 
-        public TerapeutaFormulario(TerapeutaForm terapeutaForm, int modo, Terapeuta terapeuta)
+        public TerapeutaFormulario(TerapeutaForm terapeutaForm, int modo, Terapeuta terapeuta, List<Servicio> servicios)
         {
             InitializeComponent();
             this.terapeuta = terapeuta;
             this.padre = terapeutaForm;
+            this.servicios = servicios;
             this.modo = modo;
             if (modo == 2) //modificar
             {
