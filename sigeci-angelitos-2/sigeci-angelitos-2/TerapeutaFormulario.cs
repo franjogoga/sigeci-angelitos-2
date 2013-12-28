@@ -28,6 +28,10 @@ namespace sigeci_angelitos_2
             this.padre = terapeutaForm;
             this.servicios = servicios;
             this.modo = modo;
+            if (modo == 0) //agregar
+            {
+                llenaServicios();
+            }
             if (modo == 2) //modificar
             {
                 llenaFormularioTerapeuta(terapeuta);
@@ -42,6 +46,13 @@ namespace sigeci_angelitos_2
                 btnAceptar.Enabled = true;
         }
 
+        private void llenaServicios()
+        {
+            checkListServicios.DataSource = servicios;
+            checkListServicios.DisplayMember = "nombreServicio";
+            checkListServicios.ValueMember = "idServicio";            
+        }
+
         private void llenaFormularioTerapeuta(Terapeuta terapeuta)
         {
             txtNombres.Text = terapeuta.persona.nombres;
@@ -50,10 +61,8 @@ namespace sigeci_angelitos_2
             dateFechaNacimiento.Text = ""+terapeuta.fechaNacimiento;
             txtDNI.Text = ""+terapeuta.persona.dni;
             txtTelefono.Text = terapeuta.telefono;
+            llenaServicios();
 
-            foreach (Servicio s in terapeuta.servicios) {
-                checkListServicios.Items.Add(s.nombreServicio, true);
-            }            
         }
 
         private void bloqueaFormularioTerapeuta()
@@ -81,6 +90,8 @@ namespace sigeci_angelitos_2
                 terapeuta.persona = persona;
                 terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
                 terapeuta.telefono = txtTelefono.Text;
+                List<Servicio> serviciosxtera = new List<Servicio>();
+                //checkListServicios.CheckedItems;
 
                 if (controladorTerapeuta.agregarTerapeuta(terapeuta))
                 {
