@@ -205,6 +205,7 @@
             this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -218,6 +219,7 @@
             this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // checkListServicios
             // 
