@@ -15,16 +15,20 @@ namespace sigeci_angelitos_2
 {
     public partial class TerapeutaForm : Office2007Form
     {
-        private ControladorTerapeuta controladorTerapeuta = ControladorTerapeuta.Instancia();        
-        private List<Terapeuta> terapeutas;        
+        private ControladorTerapeuta controladorTerapeuta = ControladorTerapeuta.Instancia();
+        private ControladorServicio controladorServicio = ControladorServicio.Instancia();
+        private List<Terapeuta> terapeutas;
+        private List<Servicio> servicios;
+
         public TerapeutaForm()
         {
             InitializeComponent();
+            servicios = controladorServicio.getListaServicios("");
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            TerapeutaFormulario terapeutaFormulario = new TerapeutaFormulario(this, 0, null);
+            TerapeutaFormulario terapeutaFormulario = new TerapeutaFormulario(this, 0, null, servicios);
             terapeutaFormulario.ShowDialog();
         }        
 
@@ -64,7 +68,7 @@ namespace sigeci_angelitos_2
             try
             {
                 Terapeuta terapeuta = buscarTerapeuta(int.Parse(dgvTerapeutas.CurrentRow.Cells[0].Value.ToString()));
-                TerapeutaFormulario terapeutaFormulario = new TerapeutaFormulario(this, 1, terapeuta);
+                TerapeutaFormulario terapeutaFormulario = new TerapeutaFormulario(this, 1, terapeuta, servicios);
                 terapeutaFormulario.ShowDialog();
             }
             catch (Exception ex)
@@ -79,7 +83,7 @@ namespace sigeci_angelitos_2
             try
             {
                 Terapeuta terapeuta = buscarTerapeuta(int.Parse(dgvTerapeutas.CurrentRow.Cells[0].Value.ToString()));
-                TerapeutaFormulario terapeutaFormulario = new TerapeutaFormulario(this, 2, terapeuta);
+                TerapeutaFormulario terapeutaFormulario = new TerapeutaFormulario(this, 2, terapeuta, servicios);
                 terapeutaFormulario.ShowDialog();
             }
             catch (Exception ex)
