@@ -48,6 +48,11 @@ namespace sigeci_angelitos_2
             dateFechaNacimiento.Text = ""+terapeuta.fechaNacimiento;
             txtDNI.Text = ""+terapeuta.persona.dni;
             txtTelefono.Text = terapeuta.telefono;
+
+            foreach (Servicio s in terapeuta.servicios) {
+                checkListServicios.Items.Add(s.nombreServicio);
+            }
+            
         }
 
         private void bloqueaFormularioTerapeuta()
