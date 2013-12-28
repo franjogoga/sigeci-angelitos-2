@@ -817,7 +817,7 @@ namespace Controlador
                     servicio.idServicio = r.GetInt32(0);
                     servicio.nombreServicio = r.GetString(1);                    
 
-                    servicios.Add(servicio);
+                    serviciosxTerapeuta.Add(servicio);
                 }
             }
             catch (Exception e)
