@@ -636,7 +636,7 @@ namespace Controlador
 
         public bool agregarTerapeuta(Terapeuta terapeuta)
         {
-            int idPersona = 0, numFilas = 0, numFilas2 = 0;
+            int idPersona = 0, numFilas = 0, numFilas2 = 0, numFilas4=0;
             OleDbDataReader r = null;
             terapeutas.Clear();
 
@@ -648,10 +648,7 @@ namespace Controlador
             OleDbCommand comando2 = new OleDbCommand("SELECT TOP 1 * FROM persona order by idPersona DESC");
 
             OleDbCommand comando3 = new OleDbCommand("insert into terapeuta(persona_idPersona,fechaNacimiento,telefono) " +
-                                                        "values(@persona_idPersona,@fechaNacimiento,@telefono)");            
-
-            OleDbCommand comando5 = new OleDbCommand("insert into servicioxterapeuta(idServicio,persona_idPersona) " +
-                                                        "values(@idServicio,@persona_idPersona)");
+                                                        "values(@persona_idPersona,@fechaNacimiento,@telefono)");                        
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
@@ -686,6 +683,20 @@ namespace Controlador
                 comando3.Connection = conexion;
 
                 numFilas2 = comando3.ExecuteNonQuery();
+
+                foreach (Servicio s in terapeuta.servicios)
+                {
+                    OleDbCommand comando4 = new OleDbCommand("insert into servicioxterapeuta(idServicio,persona_idPersona) " +
+                                                        "values(@idServicio,@persona_idPersona)");
+
+                    comando4.Parameters.AddRange(new OleDbParameter[]
+                    {
+                        new OleDbParameter("@idServicio",s.idServicio),
+                        new OleDbParameter("@persona_idPersona",idPersona),                                                
+                    });
+                    comando4.Connection = conexion;
+                    numFilas4 = numFilas4 + comando4.ExecuteNonQuery();
+                }
             }
             catch (Exception e)
             {
@@ -696,7 +707,7 @@ namespace Controlador
                 r.Close();
                 conexion.Close();
             }
-            return numFilas + numFilas2 == 2;
+            return numFilas + numFilas2 == 2 && terapeuta.servicios.Count == numFilas4;
         }
 
         public bool modificarTerapeuta(Terapeuta terapeuta)

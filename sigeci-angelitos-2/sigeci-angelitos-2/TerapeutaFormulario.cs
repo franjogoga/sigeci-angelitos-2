@@ -52,6 +52,20 @@ namespace sigeci_angelitos_2
                 checkListServicios.Items.Add(s.nombreServicio, false);                                
         }
 
+        private bool estaServicio(string nombreServicio, List<Servicio> ss)
+        {
+            bool resultado = false;
+            foreach (Servicio s in ss)
+            {
+                if (s.nombreServicio.Equals(nombreServicio))
+                {
+                    resultado = true;
+                    break;
+                }                                
+            }
+            return resultado;
+        }
+
         private void llenaFormularioTerapeuta(Terapeuta terapeuta)
         {
             txtNombres.Text = terapeuta.persona.nombres;
@@ -63,13 +77,10 @@ namespace sigeci_angelitos_2
 
             foreach (Servicio s in servicios)
             {
-                foreach (Servicio sxt in terapeuta.servicios)
-                {
-                    if (sxt.nombreServicio.Equals(s.nombreServicio))                    
-                        checkListServicios.Items.Add(s.nombreServicio, true);                    
-                    else                   
-                        checkListServicios.Items.Add(s.nombreServicio, false);                    
-                }
+                if (estaServicio(s.nombreServicio,terapeuta.servicios))                                 
+                    checkListServicios.Items.Add(s.nombreServicio, true);                    
+                else
+                    checkListServicios.Items.Add(s.nombreServicio, false);                                    
             }            
         }
 
@@ -81,7 +92,7 @@ namespace sigeci_angelitos_2
             dateFechaNacimiento.Enabled = false;
             txtDNI.ReadOnly = true;
             txtTelefono.ReadOnly = true;
-            checkListServicios.Enabled = false;
+            checkListServicios.SelectionMode = SelectionMode.None;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -98,13 +109,13 @@ namespace sigeci_angelitos_2
                 terapeuta.persona = persona;
                 terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
                 terapeuta.telefono = txtTelefono.Text;
-                List<Servicio> serviciosxtera = new List<Servicio>();
+                List<Servicio> serviciosxtera = new List<Servicio>();                
 
                 foreach (Servicio s in servicios)
                 {
-                    foreach (string valor in checkListServicios.CheckedItems)
+                    foreach (object valor in checkListServicios.CheckedItems)
                     {
-                        if (valor.Equals(s.nombreServicio))
+                        if (s.nombreServicio.Equals(valor.ToString()))
                         {
                             serviciosxtera.Add(s);
                         }
