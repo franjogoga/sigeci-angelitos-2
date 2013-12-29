@@ -48,9 +48,8 @@ namespace sigeci_angelitos_2
 
         private void llenaServicios()
         {
-            checkListServicios.DataSource = servicios;
-            checkListServicios.DisplayMember = "nombreServicio";
-            checkListServicios.ValueMember = "idServicio";            
+            foreach (Servicio s in servicios)             
+                checkListServicios.Items.Add(s.nombreServicio, false);                                
         }
 
         private void llenaFormularioTerapeuta(Terapeuta terapeuta)
@@ -60,9 +59,18 @@ namespace sigeci_angelitos_2
             txtApellidoMaterno.Text = terapeuta.persona.apellidoMaterno;
             dateFechaNacimiento.Text = ""+terapeuta.fechaNacimiento;
             txtDNI.Text = ""+terapeuta.persona.dni;
-            txtTelefono.Text = terapeuta.telefono;
-            llenaServicios();
+            txtTelefono.Text = terapeuta.telefono;            
 
+            foreach (Servicio s in servicios)
+            {
+                foreach (Servicio sxt in terapeuta.servicios)
+                {
+                    if (sxt.nombreServicio.Equals(s.nombreServicio))                    
+                        checkListServicios.Items.Add(s.nombreServicio, true);                    
+                    else                   
+                        checkListServicios.Items.Add(s.nombreServicio, false);                    
+                }
+            }            
         }
 
         private void bloqueaFormularioTerapeuta()
@@ -91,7 +99,18 @@ namespace sigeci_angelitos_2
                 terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
                 terapeuta.telefono = txtTelefono.Text;
                 List<Servicio> serviciosxtera = new List<Servicio>();
-                //checkListServicios.CheckedItems;
+
+                foreach (Servicio s in servicios)
+                {
+                    foreach (string valor in checkListServicios.CheckedItems)
+                    {
+                        if (valor.Equals(s.nombreServicio))
+                        {
+                            serviciosxtera.Add(s);
+                        }
+                    }
+                }
+                terapeuta.servicios = serviciosxtera;
 
                 if (controladorTerapeuta.agregarTerapeuta(terapeuta))
                 {

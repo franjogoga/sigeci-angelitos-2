@@ -648,7 +648,10 @@ namespace Controlador
             OleDbCommand comando2 = new OleDbCommand("SELECT TOP 1 * FROM persona order by idPersona DESC");
 
             OleDbCommand comando3 = new OleDbCommand("insert into terapeuta(persona_idPersona,fechaNacimiento,telefono) " +
-                                                        "values(@persona_idPersona,@fechaNacimiento,@telefono)");
+                                                        "values(@persona_idPersona,@fechaNacimiento,@telefono)");            
+
+            OleDbCommand comando5 = new OleDbCommand("insert into servicioxterapeuta(idServicio,persona_idPersona) " +
+                                                        "values(@idServicio,@persona_idPersona)");
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
@@ -678,9 +681,10 @@ namespace Controlador
                     new OleDbParameter("@persona_idPersona",idPersona),
                     new OleDbParameter("@fechaNacimiento",terapeuta.fechaNacimiento),
                     new OleDbParameter("@telefono",terapeuta.telefono), 
-                });
+                });                
 
                 comando3.Connection = conexion;
+
                 numFilas2 = comando3.ExecuteNonQuery();
             }
             catch (Exception e)
