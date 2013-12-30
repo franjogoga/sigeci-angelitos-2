@@ -51,28 +51,28 @@
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.txtLunesInicio = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateLunesInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateLunesFin = new System.Windows.Forms.DateTimePicker();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateMartesInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateMartesFin = new System.Windows.Forms.DateTimePicker();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.dateMiercolesInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateMiercolesFin = new System.Windows.Forms.DateTimePicker();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.dateJuevesInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateJuevesFin = new System.Windows.Forms.DateTimePicker();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
+            this.dateViernesInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateViernesFin = new System.Windows.Forms.DateTimePicker();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
-            this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker11 = new System.Windows.Forms.DateTimePicker();
+            this.dateSabadoInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateSabadoFin = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -274,28 +274,28 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dateTimePicker11);
+            this.groupBox3.Controls.Add(this.dateSabadoFin);
             this.groupBox3.Controls.Add(this.labelX10);
-            this.groupBox3.Controls.Add(this.dateTimePicker10);
+            this.groupBox3.Controls.Add(this.dateSabadoInicio);
             this.groupBox3.Controls.Add(this.labelX11);
             this.groupBox3.Controls.Add(this.labelX18);
-            this.groupBox3.Controls.Add(this.dateTimePicker6);
+            this.groupBox3.Controls.Add(this.dateJuevesInicio);
             this.groupBox3.Controls.Add(this.labelX17);
-            this.groupBox3.Controls.Add(this.dateTimePicker7);
-            this.groupBox3.Controls.Add(this.dateTimePicker9);
+            this.groupBox3.Controls.Add(this.dateJuevesFin);
+            this.groupBox3.Controls.Add(this.dateViernesFin);
             this.groupBox3.Controls.Add(this.labelX12);
-            this.groupBox3.Controls.Add(this.dateTimePicker8);
+            this.groupBox3.Controls.Add(this.dateViernesInicio);
             this.groupBox3.Controls.Add(this.labelX16);
-            this.groupBox3.Controls.Add(this.dateTimePicker5);
-            this.groupBox3.Controls.Add(this.dateTimePicker4);
+            this.groupBox3.Controls.Add(this.dateMiercolesFin);
+            this.groupBox3.Controls.Add(this.dateMiercolesInicio);
             this.groupBox3.Controls.Add(this.labelX14);
             this.groupBox3.Controls.Add(this.labelX15);
-            this.groupBox3.Controls.Add(this.dateTimePicker3);
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
+            this.groupBox3.Controls.Add(this.dateMartesFin);
+            this.groupBox3.Controls.Add(this.dateMartesInicio);
             this.groupBox3.Controls.Add(this.labelX8);
             this.groupBox3.Controls.Add(this.labelX9);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Controls.Add(this.txtLunesInicio);
+            this.groupBox3.Controls.Add(this.dateLunesFin);
+            this.groupBox3.Controls.Add(this.dateLunesInicio);
             this.groupBox3.Controls.Add(this.labelX13);
             this.groupBox3.Controls.Add(this.labelX7);
             this.groupBox3.Controls.Add(this.shapeContainer1);
@@ -353,23 +353,25 @@
             this.lineShape1.Y1 = 14;
             this.lineShape1.Y2 = 129;
             // 
-            // txtLunesInicio
+            // dateLunesInicio
             // 
-            this.txtLunesInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.txtLunesInicio.Location = new System.Drawing.Point(113, 28);
-            this.txtLunesInicio.Name = "txtLunesInicio";
-            this.txtLunesInicio.Size = new System.Drawing.Size(88, 20);
-            this.txtLunesInicio.TabIndex = 9;
-            this.txtLunesInicio.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateLunesInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateLunesInicio.Location = new System.Drawing.Point(113, 28);
+            this.dateLunesInicio.Name = "dateLunesInicio";
+            this.dateLunesInicio.ShowUpDown = true;
+            this.dateLunesInicio.Size = new System.Drawing.Size(88, 20);
+            this.dateLunesInicio.TabIndex = 9;
+            this.dateLunesInicio.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // dateLunesFin
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(237, 29);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker1.TabIndex = 9;
-            this.dateTimePicker1.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateLunesFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateLunesFin.Location = new System.Drawing.Point(237, 29);
+            this.dateLunesFin.Name = "dateLunesFin";
+            this.dateLunesFin.ShowUpDown = true;
+            this.dateLunesFin.Size = new System.Drawing.Size(88, 20);
+            this.dateLunesFin.TabIndex = 9;
+            this.dateLunesFin.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
             // labelX8
             // 
@@ -398,23 +400,25 @@
             this.labelX9.Text = "-";
             this.labelX9.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // dateTimePicker2
+            // dateMartesInicio
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(113, 75);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker2.TabIndex = 9;
-            this.dateTimePicker2.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateMartesInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateMartesInicio.Location = new System.Drawing.Point(113, 75);
+            this.dateMartesInicio.Name = "dateMartesInicio";
+            this.dateMartesInicio.ShowUpDown = true;
+            this.dateMartesInicio.Size = new System.Drawing.Size(88, 20);
+            this.dateMartesInicio.TabIndex = 9;
+            this.dateMartesInicio.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
-            // dateTimePicker3
+            // dateMartesFin
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker3.Location = new System.Drawing.Point(237, 76);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker3.TabIndex = 9;
-            this.dateTimePicker3.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateMartesFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateMartesFin.Location = new System.Drawing.Point(237, 76);
+            this.dateMartesFin.Name = "dateMartesFin";
+            this.dateMartesFin.ShowUpDown = true;
+            this.dateMartesFin.Size = new System.Drawing.Size(88, 20);
+            this.dateMartesFin.TabIndex = 9;
+            this.dateMartesFin.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
             // labelX14
             // 
@@ -443,23 +447,25 @@
             this.labelX15.TabIndex = 5;
             this.labelX15.Text = "Miércoles :";
             // 
-            // dateTimePicker4
+            // dateMiercolesInicio
             // 
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker4.Location = new System.Drawing.Point(113, 120);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker4.TabIndex = 9;
-            this.dateTimePicker4.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateMiercolesInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateMiercolesInicio.Location = new System.Drawing.Point(113, 120);
+            this.dateMiercolesInicio.Name = "dateMiercolesInicio";
+            this.dateMiercolesInicio.ShowUpDown = true;
+            this.dateMiercolesInicio.Size = new System.Drawing.Size(88, 20);
+            this.dateMiercolesInicio.TabIndex = 9;
+            this.dateMiercolesInicio.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
-            // dateTimePicker5
+            // dateMiercolesFin
             // 
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker5.Location = new System.Drawing.Point(237, 121);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker5.TabIndex = 9;
-            this.dateTimePicker5.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateMiercolesFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateMiercolesFin.Location = new System.Drawing.Point(237, 121);
+            this.dateMiercolesFin.Name = "dateMiercolesFin";
+            this.dateMiercolesFin.ShowUpDown = true;
+            this.dateMiercolesFin.Size = new System.Drawing.Size(88, 20);
+            this.dateMiercolesFin.TabIndex = 9;
+            this.dateMiercolesFin.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
             // labelX10
             // 
@@ -488,23 +494,25 @@
             this.labelX11.Text = "-";
             this.labelX11.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // dateTimePicker6
+            // dateJuevesInicio
             // 
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker6.Location = new System.Drawing.Point(458, 29);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker6.TabIndex = 9;
-            this.dateTimePicker6.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateJuevesInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateJuevesInicio.Location = new System.Drawing.Point(458, 29);
+            this.dateJuevesInicio.Name = "dateJuevesInicio";
+            this.dateJuevesInicio.ShowUpDown = true;
+            this.dateJuevesInicio.Size = new System.Drawing.Size(88, 20);
+            this.dateJuevesInicio.TabIndex = 9;
+            this.dateJuevesInicio.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
-            // dateTimePicker7
+            // dateJuevesFin
             // 
-            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker7.Location = new System.Drawing.Point(582, 30);
-            this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker7.TabIndex = 9;
-            this.dateTimePicker7.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateJuevesFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateJuevesFin.Location = new System.Drawing.Point(582, 30);
+            this.dateJuevesFin.Name = "dateJuevesFin";
+            this.dateJuevesFin.ShowUpDown = true;
+            this.dateJuevesFin.Size = new System.Drawing.Size(88, 20);
+            this.dateJuevesFin.TabIndex = 9;
+            this.dateJuevesFin.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
             // labelX12
             // 
@@ -533,23 +541,25 @@
             this.labelX16.TabIndex = 5;
             this.labelX16.Text = "Viernes :";
             // 
-            // dateTimePicker8
+            // dateViernesInicio
             // 
-            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker8.Location = new System.Drawing.Point(458, 76);
-            this.dateTimePicker8.Name = "dateTimePicker8";
-            this.dateTimePicker8.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker8.TabIndex = 9;
-            this.dateTimePicker8.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateViernesInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateViernesInicio.Location = new System.Drawing.Point(458, 76);
+            this.dateViernesInicio.Name = "dateViernesInicio";
+            this.dateViernesInicio.ShowUpDown = true;
+            this.dateViernesInicio.Size = new System.Drawing.Size(88, 20);
+            this.dateViernesInicio.TabIndex = 9;
+            this.dateViernesInicio.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
-            // dateTimePicker9
+            // dateViernesFin
             // 
-            this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker9.Location = new System.Drawing.Point(582, 77);
-            this.dateTimePicker9.Name = "dateTimePicker9";
-            this.dateTimePicker9.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker9.TabIndex = 9;
-            this.dateTimePicker9.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateViernesFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateViernesFin.Location = new System.Drawing.Point(582, 77);
+            this.dateViernesFin.Name = "dateViernesFin";
+            this.dateViernesFin.ShowUpDown = true;
+            this.dateViernesFin.Size = new System.Drawing.Size(88, 20);
+            this.dateViernesFin.TabIndex = 9;
+            this.dateViernesFin.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
             // labelX17
             // 
@@ -578,23 +588,25 @@
             this.labelX18.Text = "-";
             this.labelX18.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // dateTimePicker10
+            // dateSabadoInicio
             // 
-            this.dateTimePicker10.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker10.Location = new System.Drawing.Point(458, 121);
-            this.dateTimePicker10.Name = "dateTimePicker10";
-            this.dateTimePicker10.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker10.TabIndex = 9;
-            this.dateTimePicker10.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateSabadoInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateSabadoInicio.Location = new System.Drawing.Point(458, 121);
+            this.dateSabadoInicio.Name = "dateSabadoInicio";
+            this.dateSabadoInicio.ShowUpDown = true;
+            this.dateSabadoInicio.Size = new System.Drawing.Size(88, 20);
+            this.dateSabadoInicio.TabIndex = 9;
+            this.dateSabadoInicio.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
-            // dateTimePicker11
+            // dateSabadoFin
             // 
-            this.dateTimePicker11.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker11.Location = new System.Drawing.Point(582, 122);
-            this.dateTimePicker11.Name = "dateTimePicker11";
-            this.dateTimePicker11.Size = new System.Drawing.Size(88, 20);
-            this.dateTimePicker11.TabIndex = 9;
-            this.dateTimePicker11.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
+            this.dateSabadoFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateSabadoFin.Location = new System.Drawing.Point(582, 122);
+            this.dateSabadoFin.Name = "dateSabadoFin";
+            this.dateSabadoFin.ShowUpDown = true;
+            this.dateSabadoFin.Size = new System.Drawing.Size(88, 20);
+            this.dateSabadoFin.TabIndex = 9;
+            this.dateSabadoFin.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
             // TerapeutaFormulario
             // 
@@ -645,27 +657,27 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.TextBox txtDNI;
         private DevComponents.DotNetBar.LabelX labelX13;
-        private System.Windows.Forms.DateTimePicker txtLunesInicio;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dateLunesInicio;
+        private System.Windows.Forms.DateTimePicker dateMiercolesFin;
+        private System.Windows.Forms.DateTimePicker dateMiercolesInicio;
         private DevComponents.DotNetBar.LabelX labelX14;
         private DevComponents.DotNetBar.LabelX labelX15;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateMartesFin;
+        private System.Windows.Forms.DateTimePicker dateMartesInicio;
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.LabelX labelX9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker11;
+        private System.Windows.Forms.DateTimePicker dateLunesFin;
+        private System.Windows.Forms.DateTimePicker dateSabadoFin;
         private DevComponents.DotNetBar.LabelX labelX10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker10;
+        private System.Windows.Forms.DateTimePicker dateSabadoInicio;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX18;
-        private System.Windows.Forms.DateTimePicker dateTimePicker6;
+        private System.Windows.Forms.DateTimePicker dateJuevesInicio;
         private DevComponents.DotNetBar.LabelX labelX17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker9;
+        private System.Windows.Forms.DateTimePicker dateJuevesFin;
+        private System.Windows.Forms.DateTimePicker dateViernesFin;
         private DevComponents.DotNetBar.LabelX labelX12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker8;
+        private System.Windows.Forms.DateTimePicker dateViernesInicio;
         private DevComponents.DotNetBar.LabelX labelX16;
     }
 }
