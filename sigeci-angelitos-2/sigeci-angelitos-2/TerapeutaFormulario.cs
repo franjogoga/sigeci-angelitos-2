@@ -140,6 +140,19 @@ namespace sigeci_angelitos_2
                 terapeuta.persona.dni = int.Parse(txtDNI.Text);                                
                 terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
                 terapeuta.telefono = txtTelefono.Text;
+                List<Servicio> serviciosxtera = new List<Servicio>();
+
+                foreach (Servicio s in servicios)
+                {
+                    foreach (object valor in checkListServicios.CheckedItems)
+                    {
+                        if (s.nombreServicio.Equals(valor.ToString()))
+                        {
+                            serviciosxtera.Add(s);
+                        }
+                    }
+                }
+                terapeuta.servicios = serviciosxtera;
 
                 if (controladorTerapeuta.modificarTerapeuta(terapeuta))
                 {

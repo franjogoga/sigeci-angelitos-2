@@ -712,15 +712,21 @@ namespace Controlador
 
         public bool modificarTerapeuta(Terapeuta terapeuta)
         {
-            int numFilas = 0, numFilas2 = 0;
+            int numFilas = 0, numFilas2 = 0, numFilas3=0, numFilas4=0;
+            List<Servicio> serviciosxTerapeuta = new List<Servicio>();
+            ControladorServicio controladorServicio = ControladorServicio.Instancia();
+            serviciosxTerapeuta = controladorServicio.getListaServiciosxTerapeuta(terapeuta.persona.idPersona);
+
             terapeutas.Clear();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
-            OleDbCommand comando = new OleDbCommand("update persona set nombres=@nombres,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,dni=@dni " +
+            OleDbCommand comando1 = new OleDbCommand("update persona set nombres=@nombres,apellidoPaterno=@apellidoPaterno,apellidoMaterno=@apellidoMaterno,dni=@dni " +
                                                     "where idPersona=@idPersona");
-            OleDbCommand comando2 = new OleDbCommand("update terapeuta set fechaNacimiento=@fechaNacimiento,telefono=@telefono " +
-                                                        "where persona_idPersona=@persona_idPersona");
+            OleDbCommand comando2 = new OleDbCommand("update terapeuta set fechaNacimiento=@fechaNacimiento,telefono=@telefono " + "where persona_idPersona=@persona_idPersona");
 
-            comando.Parameters.AddRange(new OleDbParameter[]
+            OleDbCommand comando3 = new OleDbCommand("delete from servicioxterapeuta " + "where persona_idPersona=@persona_idPersona");
+
+
+            comando1.Parameters.AddRange(new OleDbParameter[]
             {
                 new OleDbParameter("@nombres",terapeuta.persona.nombres),
                 new OleDbParameter("@apellidoPaterno",terapeuta.persona.apellidoPaterno),
@@ -736,14 +742,34 @@ namespace Controlador
                 new OleDbParameter("@persona_idPersona",terapeuta.persona.idPersona),                
             });
 
-            comando.Connection = conexion;
+            comando3.Parameters.AddRange(new OleDbParameter[]
+            {                
+                new OleDbParameter("@persona_idPersona",terapeuta.persona.idPersona),                
+            });
+
+            comando1.Connection = conexion;
             comando2.Connection = conexion;
+            comando3.Connection = conexion;
 
             try
             {
                 conexion.Open();
-                numFilas = comando.ExecuteNonQuery();
+                numFilas = comando1.ExecuteNonQuery();
                 numFilas2 = comando2.ExecuteNonQuery();
+                numFilas3 = comando3.ExecuteNonQuery();
+
+                foreach (Servicio s in terapeuta.servicios)
+                {
+                    OleDbCommand comando4 = new OleDbCommand("insert into servicioxterapeuta(idServicio,persona_idPersona) " + "values(@idServicio,@persona_idPersona)");
+
+                    comando4.Parameters.AddRange(new OleDbParameter[]
+                    {
+                        new OleDbParameter("@idServicio",s.idServicio),
+                        new OleDbParameter("@persona_idPersona",terapeuta.persona.idPersona),                                                
+                    });
+                    comando4.Connection = conexion;
+                    numFilas4 = numFilas4 + comando4.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
@@ -752,8 +778,8 @@ namespace Controlador
             finally
             {
                 conexion.Close();
-            }
-            return numFilas + numFilas2 == 2;
+            }            
+            return numFilas + numFilas2 == 2 && numFilas4==terapeuta.servicios.Count && numFilas3==serviciosxTerapeuta.Count;
         }
 
         public bool eliminarTerapeuta(Terapeuta terapeuta)
