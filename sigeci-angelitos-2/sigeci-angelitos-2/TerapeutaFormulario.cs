@@ -97,72 +97,73 @@ namespace sigeci_angelitos_2
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (modo == 0)
-            {
-                Terapeuta terapeuta = new Terapeuta();                                
-                Persona persona = new Persona();
-                persona.nombres = txtNombres.Text;
-                persona.apellidoPaterno = txtApellidoPaterno.Text;
-                persona.apellidoMaterno = txtApellidoMaterno.Text;
-                persona.dni = int.Parse(txtDNI.Text);
-                persona.estado = "activo";
-                terapeuta.persona = persona;
-                terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
-                terapeuta.telefono = txtTelefono.Text;
-                List<Servicio> serviciosxtera = new List<Servicio>();                
+            MessageBox.Show("mira "+txtLunesInicio);
+            //if (modo == 0)
+            //{
+            //    Terapeuta terapeuta = new Terapeuta();                                
+            //    Persona persona = new Persona();
+            //    persona.nombres = txtNombres.Text;
+            //    persona.apellidoPaterno = txtApellidoPaterno.Text;
+            //    persona.apellidoMaterno = txtApellidoMaterno.Text;
+            //    persona.dni = int.Parse(txtDNI.Text);
+            //    persona.estado = "activo";
+            //    terapeuta.persona = persona;
+            //    terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
+            //    terapeuta.telefono = txtTelefono.Text;
+            //    List<Servicio> serviciosxtera = new List<Servicio>();                
 
-                foreach (Servicio s in servicios)
-                {
-                    foreach (object valor in checkListServicios.CheckedItems)
-                    {
-                        if (s.nombreServicio.Equals(valor.ToString()))
-                        {
-                            serviciosxtera.Add(s);
-                        }
-                    }
-                }
-                terapeuta.servicios = serviciosxtera;
+            //    foreach (Servicio s in servicios)
+            //    {
+            //        foreach (object valor in checkListServicios.CheckedItems)
+            //        {
+            //            if (s.nombreServicio.Equals(valor.ToString()))
+            //            {
+            //                serviciosxtera.Add(s);
+            //            }
+            //        }
+            //    }
+            //    terapeuta.servicios = serviciosxtera;
 
-                if (controladorTerapeuta.agregarTerapeuta(terapeuta))
-                {
-                    MessageBox.Show("Terapeuta Agregado");
-                    this.Dispose();
-                    padre.llenarTerapeutas("", "", "", "");
-                }
-                else
-                    MessageBox.Show("Ha ocurrido un error");
-            }
-            else
-            {                
-                terapeuta.persona.nombres = txtNombres.Text;
-                terapeuta.persona.apellidoPaterno = txtApellidoPaterno.Text;
-                terapeuta.persona.apellidoMaterno = txtApellidoMaterno.Text;
-                terapeuta.persona.dni = int.Parse(txtDNI.Text);                                
-                terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
-                terapeuta.telefono = txtTelefono.Text;
-                List<Servicio> serviciosxtera = new List<Servicio>();
+            //    if (controladorTerapeuta.agregarTerapeuta(terapeuta))
+            //    {
+            //        MessageBox.Show("Terapeuta Agregado");
+            //        this.Dispose();
+            //        padre.llenarTerapeutas("", "", "", "");
+            //    }
+            //    else
+            //        MessageBox.Show("Ha ocurrido un error");
+            //}
+            //else
+            //{                
+            //    terapeuta.persona.nombres = txtNombres.Text;
+            //    terapeuta.persona.apellidoPaterno = txtApellidoPaterno.Text;
+            //    terapeuta.persona.apellidoMaterno = txtApellidoMaterno.Text;
+            //    terapeuta.persona.dni = int.Parse(txtDNI.Text);                                
+            //    terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
+            //    terapeuta.telefono = txtTelefono.Text;
+            //    List<Servicio> serviciosxtera = new List<Servicio>();
 
-                foreach (Servicio s in servicios)
-                {
-                    foreach (object valor in checkListServicios.CheckedItems)
-                    {
-                        if (s.nombreServicio.Equals(valor.ToString()))
-                        {
-                            serviciosxtera.Add(s);
-                        }
-                    }
-                }
-                terapeuta.servicios = serviciosxtera;
+            //    foreach (Servicio s in servicios)
+            //    {
+            //        foreach (object valor in checkListServicios.CheckedItems)
+            //        {
+            //            if (s.nombreServicio.Equals(valor.ToString()))
+            //            {
+            //                serviciosxtera.Add(s);
+            //            }
+            //        }
+            //    }
+            //    terapeuta.servicios = serviciosxtera;
 
-                if (controladorTerapeuta.modificarTerapeuta(terapeuta))
-                {
-                    MessageBox.Show("Terapeuta Modificado");
-                    this.Dispose();
-                    padre.llenarTerapeutas("", "", "", "");
-                }
-                else
-                    MessageBox.Show("Ha ocurrido un error");
-            }
+            //    if (controladorTerapeuta.modificarTerapeuta(terapeuta))
+            //    {
+            //        MessageBox.Show("Terapeuta Modificado");
+            //        this.Dispose();
+            //        padre.llenarTerapeutas("", "", "", "");
+            //    }
+            //    else
+            //        MessageBox.Show("Ha ocurrido un error");
+            //}
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
