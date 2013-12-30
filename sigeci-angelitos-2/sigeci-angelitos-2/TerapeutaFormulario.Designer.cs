@@ -38,6 +38,7 @@
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
             this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
             this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
             this.txtNombres = new System.Windows.Forms.TextBox();
@@ -46,33 +47,32 @@
             this.checkListServicios = new System.Windows.Forms.CheckedListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.txtLunesInicio = new System.Windows.Forms.MaskedTextBox();
-            this.txtLunesFin = new System.Windows.Forms.MaskedTextBox();
-            this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.txtMartesInicio = new System.Windows.Forms.MaskedTextBox();
-            this.txtMartesFin = new System.Windows.Forms.MaskedTextBox();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.txtMiercolesInicio = new System.Windows.Forms.MaskedTextBox();
-            this.txtMiercolesFin = new System.Windows.Forms.MaskedTextBox();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.txtJuevesInicio = new System.Windows.Forms.MaskedTextBox();
-            this.txtJuevesFin = new System.Windows.Forms.MaskedTextBox();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.txtViernesInicio = new System.Windows.Forms.MaskedTextBox();
-            this.txtViernesFin = new System.Windows.Forms.MaskedTextBox();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.txtSabadoInicio = new System.Windows.Forms.MaskedTextBox();
+            this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.labelX17 = new DevComponents.DotNetBar.LabelX();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.txtSabadoFin = new System.Windows.Forms.MaskedTextBox();
+            this.txtViernesFin = new System.Windows.Forms.MaskedTextBox();
+            this.txtJuevesFin = new System.Windows.Forms.MaskedTextBox();
+            this.txtMiercolesFin = new System.Windows.Forms.MaskedTextBox();
+            this.txtMartesFin = new System.Windows.Forms.MaskedTextBox();
+            this.txtLunesFin = new System.Windows.Forms.MaskedTextBox();
+            this.txtSabadoInicio = new System.Windows.Forms.MaskedTextBox();
+            this.txtViernesInicio = new System.Windows.Forms.MaskedTextBox();
+            this.txtJuevesInicio = new System.Windows.Forms.MaskedTextBox();
+            this.txtMiercolesInicio = new System.Windows.Forms.MaskedTextBox();
+            this.txtMartesInicio = new System.Windows.Forms.MaskedTextBox();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.labelX17 = new DevComponents.DotNetBar.LabelX();
-            this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.txtLunesInicio = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -194,6 +194,14 @@
             this.txtTelefono.Size = new System.Drawing.Size(180, 20);
             this.txtTelefono.TabIndex = 5;
             // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(174, 155);
+            this.txtDNI.MaxLength = 8;
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(180, 20);
+            this.txtDNI.TabIndex = 3;
+            // 
             // txtApellidoMaterno
             // 
             this.txtApellidoMaterno.Location = new System.Drawing.Point(174, 114);
@@ -266,6 +274,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtLunesInicio);
             this.groupBox3.Controls.Add(this.labelX18);
             this.groupBox3.Controls.Add(this.labelX17);
             this.groupBox3.Controls.Add(this.labelX16);
@@ -283,7 +292,6 @@
             this.groupBox3.Controls.Add(this.txtJuevesInicio);
             this.groupBox3.Controls.Add(this.txtMiercolesInicio);
             this.groupBox3.Controls.Add(this.txtMartesInicio);
-            this.groupBox3.Controls.Add(this.txtLunesInicio);
             this.groupBox3.Controls.Add(this.labelX12);
             this.groupBox3.Controls.Add(this.labelX11);
             this.groupBox3.Controls.Add(this.labelX10);
@@ -298,120 +306,107 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Horario";
             // 
-            // labelX7
+            // labelX18
             // 
             // 
             // 
             // 
-            this.labelX7.BackgroundStyle.Class = "";
-            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(51, 28);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(74, 23);
-            this.labelX7.TabIndex = 5;
-            this.labelX7.Text = "Lunes :";
+            this.labelX18.BackgroundStyle.Class = "";
+            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX18.Location = new System.Drawing.Point(549, 118);
+            this.labelX18.Name = "labelX18";
+            this.labelX18.Size = new System.Drawing.Size(24, 23);
+            this.labelX18.TabIndex = 5;
+            this.labelX18.Text = "-";
+            this.labelX18.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // txtLunesInicio
-            // 
-            this.txtLunesInicio.Location = new System.Drawing.Point(136, 31);
-            this.txtLunesInicio.Mask = "00:00";
-            this.txtLunesInicio.Name = "txtLunesInicio";
-            this.txtLunesInicio.Size = new System.Drawing.Size(65, 20);
-            this.txtLunesInicio.TabIndex = 7;
-            this.txtLunesInicio.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtLunesFin
-            // 
-            this.txtLunesFin.Location = new System.Drawing.Point(237, 30);
-            this.txtLunesFin.Mask = "00:00";
-            this.txtLunesFin.Name = "txtLunesFin";
-            this.txtLunesFin.Size = new System.Drawing.Size(65, 20);
-            this.txtLunesFin.TabIndex = 7;
-            this.txtLunesFin.ValidatingType = typeof(System.DateTime);
-            // 
-            // labelX8
+            // labelX17
             // 
             // 
             // 
             // 
-            this.labelX8.BackgroundStyle.Class = "";
-            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX8.Location = new System.Drawing.Point(51, 72);
-            this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(74, 23);
-            this.labelX8.TabIndex = 5;
-            this.labelX8.Text = "Martes :";
+            this.labelX17.BackgroundStyle.Class = "";
+            this.labelX17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX17.Location = new System.Drawing.Point(549, 74);
+            this.labelX17.Name = "labelX17";
+            this.labelX17.Size = new System.Drawing.Size(24, 23);
+            this.labelX17.TabIndex = 5;
+            this.labelX17.Text = "-";
+            this.labelX17.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // txtMartesInicio
-            // 
-            this.txtMartesInicio.Location = new System.Drawing.Point(136, 75);
-            this.txtMartesInicio.Mask = "00:00";
-            this.txtMartesInicio.Name = "txtMartesInicio";
-            this.txtMartesInicio.Size = new System.Drawing.Size(65, 20);
-            this.txtMartesInicio.TabIndex = 7;
-            this.txtMartesInicio.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtMartesFin
-            // 
-            this.txtMartesFin.Location = new System.Drawing.Point(237, 74);
-            this.txtMartesFin.Mask = "00:00";
-            this.txtMartesFin.Name = "txtMartesFin";
-            this.txtMartesFin.Size = new System.Drawing.Size(65, 20);
-            this.txtMartesFin.TabIndex = 7;
-            this.txtMartesFin.ValidatingType = typeof(System.DateTime);
-            // 
-            // labelX9
+            // labelX16
             // 
             // 
             // 
             // 
-            this.labelX9.BackgroundStyle.Class = "";
-            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(51, 117);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(74, 23);
-            this.labelX9.TabIndex = 5;
-            this.labelX9.Text = "Miércoles :";
+            this.labelX16.BackgroundStyle.Class = "";
+            this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX16.Location = new System.Drawing.Point(549, 30);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(24, 23);
+            this.labelX16.TabIndex = 5;
+            this.labelX16.Text = "-";
+            this.labelX16.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // txtMiercolesInicio
-            // 
-            this.txtMiercolesInicio.Location = new System.Drawing.Point(136, 120);
-            this.txtMiercolesInicio.Mask = "00:00";
-            this.txtMiercolesInicio.Name = "txtMiercolesInicio";
-            this.txtMiercolesInicio.Size = new System.Drawing.Size(65, 20);
-            this.txtMiercolesInicio.TabIndex = 7;
-            this.txtMiercolesInicio.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtMiercolesFin
-            // 
-            this.txtMiercolesFin.Location = new System.Drawing.Point(237, 119);
-            this.txtMiercolesFin.Mask = "00:00";
-            this.txtMiercolesFin.Name = "txtMiercolesFin";
-            this.txtMiercolesFin.Size = new System.Drawing.Size(65, 20);
-            this.txtMiercolesFin.TabIndex = 7;
-            this.txtMiercolesFin.ValidatingType = typeof(System.DateTime);
-            // 
-            // labelX10
+            // labelX15
             // 
             // 
             // 
             // 
-            this.labelX10.BackgroundStyle.Class = "";
-            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(393, 29);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(74, 23);
-            this.labelX10.TabIndex = 5;
-            this.labelX10.Text = "Jueves :";
+            this.labelX15.BackgroundStyle.Class = "";
+            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX15.Location = new System.Drawing.Point(207, 118);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(24, 23);
+            this.labelX15.TabIndex = 5;
+            this.labelX15.Text = "-";
+            this.labelX15.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // txtJuevesInicio
+            // labelX14
             // 
-            this.txtJuevesInicio.Location = new System.Drawing.Point(478, 32);
-            this.txtJuevesInicio.Mask = "00:00";
-            this.txtJuevesInicio.Name = "txtJuevesInicio";
-            this.txtJuevesInicio.Size = new System.Drawing.Size(65, 20);
-            this.txtJuevesInicio.TabIndex = 7;
-            this.txtJuevesInicio.ValidatingType = typeof(System.DateTime);
+            // 
+            // 
+            // 
+            this.labelX14.BackgroundStyle.Class = "";
+            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX14.Location = new System.Drawing.Point(207, 72);
+            this.labelX14.Name = "labelX14";
+            this.labelX14.Size = new System.Drawing.Size(24, 23);
+            this.labelX14.TabIndex = 5;
+            this.labelX14.Text = "-";
+            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // labelX13
+            // 
+            // 
+            // 
+            // 
+            this.labelX13.BackgroundStyle.Class = "";
+            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX13.Location = new System.Drawing.Point(207, 28);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(24, 23);
+            this.labelX13.TabIndex = 5;
+            this.labelX13.Text = "-";
+            this.labelX13.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // txtSabadoFin
+            // 
+            this.txtSabadoFin.Location = new System.Drawing.Point(579, 120);
+            this.txtSabadoFin.Mask = "00:00";
+            this.txtSabadoFin.Name = "txtSabadoFin";
+            this.txtSabadoFin.Size = new System.Drawing.Size(65, 20);
+            this.txtSabadoFin.TabIndex = 7;
+            this.txtSabadoFin.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtViernesFin
+            // 
+            this.txtViernesFin.Location = new System.Drawing.Point(579, 75);
+            this.txtViernesFin.Mask = "00:00";
+            this.txtViernesFin.Name = "txtViernesFin";
+            this.txtViernesFin.Size = new System.Drawing.Size(65, 20);
+            this.txtViernesFin.TabIndex = 7;
+            this.txtViernesFin.ValidatingType = typeof(System.DateTime);
             // 
             // txtJuevesFin
             // 
@@ -422,18 +417,41 @@
             this.txtJuevesFin.TabIndex = 7;
             this.txtJuevesFin.ValidatingType = typeof(System.DateTime);
             // 
-            // labelX11
+            // txtMiercolesFin
             // 
+            this.txtMiercolesFin.Location = new System.Drawing.Point(237, 119);
+            this.txtMiercolesFin.Mask = "00:00";
+            this.txtMiercolesFin.Name = "txtMiercolesFin";
+            this.txtMiercolesFin.Size = new System.Drawing.Size(65, 20);
+            this.txtMiercolesFin.TabIndex = 7;
+            this.txtMiercolesFin.ValidatingType = typeof(System.DateTime);
             // 
+            // txtMartesFin
             // 
+            this.txtMartesFin.Location = new System.Drawing.Point(237, 74);
+            this.txtMartesFin.Mask = "00:00";
+            this.txtMartesFin.Name = "txtMartesFin";
+            this.txtMartesFin.Size = new System.Drawing.Size(65, 20);
+            this.txtMartesFin.TabIndex = 7;
+            this.txtMartesFin.ValidatingType = typeof(System.DateTime);
             // 
-            this.labelX11.BackgroundStyle.Class = "";
-            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(393, 73);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(74, 23);
-            this.labelX11.TabIndex = 5;
-            this.labelX11.Text = "Viernes :";
+            // txtLunesFin
+            // 
+            this.txtLunesFin.Location = new System.Drawing.Point(237, 30);
+            this.txtLunesFin.Mask = "00:00";
+            this.txtLunesFin.Name = "txtLunesFin";
+            this.txtLunesFin.Size = new System.Drawing.Size(65, 20);
+            this.txtLunesFin.TabIndex = 7;
+            this.txtLunesFin.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtSabadoInicio
+            // 
+            this.txtSabadoInicio.Location = new System.Drawing.Point(478, 121);
+            this.txtSabadoInicio.Mask = "00:00";
+            this.txtSabadoInicio.Name = "txtSabadoInicio";
+            this.txtSabadoInicio.Size = new System.Drawing.Size(65, 20);
+            this.txtSabadoInicio.TabIndex = 7;
+            this.txtSabadoInicio.ValidatingType = typeof(System.DateTime);
             // 
             // txtViernesInicio
             // 
@@ -444,14 +462,32 @@
             this.txtViernesInicio.TabIndex = 7;
             this.txtViernesInicio.ValidatingType = typeof(System.DateTime);
             // 
-            // txtViernesFin
+            // txtJuevesInicio
             // 
-            this.txtViernesFin.Location = new System.Drawing.Point(579, 75);
-            this.txtViernesFin.Mask = "00:00";
-            this.txtViernesFin.Name = "txtViernesFin";
-            this.txtViernesFin.Size = new System.Drawing.Size(65, 20);
-            this.txtViernesFin.TabIndex = 7;
-            this.txtViernesFin.ValidatingType = typeof(System.DateTime);
+            this.txtJuevesInicio.Location = new System.Drawing.Point(478, 32);
+            this.txtJuevesInicio.Mask = "00:00";
+            this.txtJuevesInicio.Name = "txtJuevesInicio";
+            this.txtJuevesInicio.Size = new System.Drawing.Size(65, 20);
+            this.txtJuevesInicio.TabIndex = 7;
+            this.txtJuevesInicio.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtMiercolesInicio
+            // 
+            this.txtMiercolesInicio.Location = new System.Drawing.Point(136, 120);
+            this.txtMiercolesInicio.Mask = "00:00";
+            this.txtMiercolesInicio.Name = "txtMiercolesInicio";
+            this.txtMiercolesInicio.Size = new System.Drawing.Size(65, 20);
+            this.txtMiercolesInicio.TabIndex = 7;
+            this.txtMiercolesInicio.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtMartesInicio
+            // 
+            this.txtMartesInicio.Location = new System.Drawing.Point(136, 75);
+            this.txtMartesInicio.Mask = "00:00";
+            this.txtMartesInicio.Name = "txtMartesInicio";
+            this.txtMartesInicio.Size = new System.Drawing.Size(65, 20);
+            this.txtMartesInicio.TabIndex = 7;
+            this.txtMartesInicio.ValidatingType = typeof(System.DateTime);
             // 
             // labelX12
             // 
@@ -466,23 +502,70 @@
             this.labelX12.TabIndex = 5;
             this.labelX12.Text = "Sábado :";
             // 
-            // txtSabadoInicio
+            // labelX11
             // 
-            this.txtSabadoInicio.Location = new System.Drawing.Point(478, 121);
-            this.txtSabadoInicio.Mask = "00:00";
-            this.txtSabadoInicio.Name = "txtSabadoInicio";
-            this.txtSabadoInicio.Size = new System.Drawing.Size(65, 20);
-            this.txtSabadoInicio.TabIndex = 7;
-            this.txtSabadoInicio.ValidatingType = typeof(System.DateTime);
             // 
-            // txtSabadoFin
             // 
-            this.txtSabadoFin.Location = new System.Drawing.Point(579, 120);
-            this.txtSabadoFin.Mask = "00:00";
-            this.txtSabadoFin.Name = "txtSabadoFin";
-            this.txtSabadoFin.Size = new System.Drawing.Size(65, 20);
-            this.txtSabadoFin.TabIndex = 7;
-            this.txtSabadoFin.ValidatingType = typeof(System.DateTime);
+            // 
+            this.labelX11.BackgroundStyle.Class = "";
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Location = new System.Drawing.Point(393, 73);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(74, 23);
+            this.labelX11.TabIndex = 5;
+            this.labelX11.Text = "Viernes :";
+            // 
+            // labelX10
+            // 
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.Class = "";
+            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX10.Location = new System.Drawing.Point(393, 29);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(74, 23);
+            this.labelX10.TabIndex = 5;
+            this.labelX10.Text = "Jueves :";
+            // 
+            // labelX9
+            // 
+            // 
+            // 
+            // 
+            this.labelX9.BackgroundStyle.Class = "";
+            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX9.Location = new System.Drawing.Point(51, 117);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(74, 23);
+            this.labelX9.TabIndex = 5;
+            this.labelX9.Text = "Miércoles :";
+            // 
+            // labelX8
+            // 
+            // 
+            // 
+            // 
+            this.labelX8.BackgroundStyle.Class = "";
+            this.labelX8.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX8.Location = new System.Drawing.Point(51, 72);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(74, 23);
+            this.labelX8.TabIndex = 5;
+            this.labelX8.Text = "Martes :";
+            // 
+            // labelX7
+            // 
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.Class = "";
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.Location = new System.Drawing.Point(51, 28);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(74, 23);
+            this.labelX7.TabIndex = 5;
+            this.labelX7.Text = "Lunes :";
             // 
             // shapeContainer1
             // 
@@ -504,97 +587,14 @@
             this.lineShape1.Y1 = 14;
             this.lineShape1.Y2 = 129;
             // 
-            // txtDNI
+            // txtLunesInicio
             // 
-            this.txtDNI.Location = new System.Drawing.Point(174, 155);
-            this.txtDNI.MaxLength = 8;
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(180, 20);
-            this.txtDNI.TabIndex = 3;
-            // 
-            // labelX13
-            // 
-            // 
-            // 
-            // 
-            this.labelX13.BackgroundStyle.Class = "";
-            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Location = new System.Drawing.Point(207, 28);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(24, 23);
-            this.labelX13.TabIndex = 5;
-            this.labelX13.Text = "-";
-            this.labelX13.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // labelX14
-            // 
-            // 
-            // 
-            // 
-            this.labelX14.BackgroundStyle.Class = "";
-            this.labelX14.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX14.Location = new System.Drawing.Point(207, 72);
-            this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(24, 23);
-            this.labelX14.TabIndex = 5;
-            this.labelX14.Text = "-";
-            this.labelX14.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // labelX15
-            // 
-            // 
-            // 
-            // 
-            this.labelX15.BackgroundStyle.Class = "";
-            this.labelX15.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX15.Location = new System.Drawing.Point(207, 118);
-            this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(24, 23);
-            this.labelX15.TabIndex = 5;
-            this.labelX15.Text = "-";
-            this.labelX15.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // labelX16
-            // 
-            // 
-            // 
-            // 
-            this.labelX16.BackgroundStyle.Class = "";
-            this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX16.Location = new System.Drawing.Point(549, 30);
-            this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(24, 23);
-            this.labelX16.TabIndex = 5;
-            this.labelX16.Text = "-";
-            this.labelX16.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // labelX17
-            // 
-            // 
-            // 
-            // 
-            this.labelX17.BackgroundStyle.Class = "";
-            this.labelX17.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX17.Location = new System.Drawing.Point(549, 74);
-            this.labelX17.Name = "labelX17";
-            this.labelX17.Size = new System.Drawing.Size(24, 23);
-            this.labelX17.TabIndex = 5;
-            this.labelX17.Text = "-";
-            this.labelX17.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // labelX18
-            // 
-            // 
-            // 
-            // 
-            this.labelX18.BackgroundStyle.Class = "";
-            this.labelX18.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX18.Location = new System.Drawing.Point(549, 118);
-            this.labelX18.Name = "labelX18";
-            this.labelX18.Size = new System.Drawing.Size(24, 23);
-            this.labelX18.TabIndex = 5;
-            this.labelX18.Text = "-";
-            this.labelX18.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.txtLunesInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.txtLunesInicio.Location = new System.Drawing.Point(113, 28);
+            this.txtLunesInicio.Name = "txtLunesInicio";
+            this.txtLunesInicio.Size = new System.Drawing.Size(88, 20);
+            this.txtLunesInicio.TabIndex = 9;
+            this.txtLunesInicio.Value = new System.DateTime(2013, 12, 30, 0, 0, 0, 0);
             // 
             // TerapeutaFormulario
             // 
@@ -642,7 +642,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private DevComponents.DotNetBar.LabelX labelX7;
-        private System.Windows.Forms.MaskedTextBox txtLunesInicio;
         private System.Windows.Forms.MaskedTextBox txtSabadoFin;
         private System.Windows.Forms.MaskedTextBox txtViernesFin;
         private System.Windows.Forms.MaskedTextBox txtJuevesFin;
@@ -668,5 +667,6 @@
         private DevComponents.DotNetBar.LabelX labelX15;
         private DevComponents.DotNetBar.LabelX labelX14;
         private DevComponents.DotNetBar.LabelX labelX13;
+        private System.Windows.Forms.DateTimePicker txtLunesInicio;
     }
 }
