@@ -44,6 +44,8 @@
     <Reference Include="DevComponents.Instrumentation.Design">
       <HintPath>D:\terapia\DotNetBar\DevComponents.Instrumentation.Design.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -263,6 +265,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\reloj.png" />
     <None Include="Resources\aceptar.png" />
     <Content Include="Resources\angelico.ico" />
     <Content Include="Resources\angelpng.png" />
