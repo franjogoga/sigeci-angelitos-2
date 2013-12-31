@@ -127,6 +127,18 @@ namespace sigeci_angelitos_2
             txtDNI.ReadOnly = true;
             txtTelefono.ReadOnly = true;
             checkListServicios.SelectionMode = SelectionMode.None;
+            dateLunesInicio.Enabled = false;
+            dateLunesFin.Enabled = false;
+            dateMartesInicio.Enabled = false;
+            dateMartesFin.Enabled = false;
+            dateMiercolesInicio.Enabled = false;
+            dateMiercolesFin.Enabled = false;
+            dateJuevesInicio.Enabled = false;
+            dateJuevesFin.Enabled = false;
+            dateViernesInicio.Enabled = false;
+            dateViernesFin.Enabled = false;
+            dateSabadoInicio.Enabled = false;
+            dateSabadoFin.Enabled = false;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
