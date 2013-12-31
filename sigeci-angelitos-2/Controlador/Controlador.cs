@@ -605,9 +605,12 @@ namespace Controlador
                 {
                     Persona persona = new Persona();
                     List<Servicio> serviciosxTerapeuta = new List<Servicio>();
+                    List<HorarioTerapeuta> horariosxTerapeuta = new List<HorarioTerapeuta>();
                     ControladorServicio controladorServicio = ControladorServicio.Instancia();
+                    ControladorHorarioTerapeuta controladorHorarioTerapeuta = ControladorHorarioTerapeuta.Instancia();
                     persona.idPersona = r.GetInt32(0);
                     serviciosxTerapeuta = controladorServicio.getListaServiciosxTerapeuta(persona.idPersona);
+                    horariosxTerapeuta = controladorHorarioTerapeuta.getListaHorariosxTerapeuta(persona.idPersona);
                     persona.nombres = r.GetString(1);
                     persona.apellidoPaterno = r.GetString(2);
                     persona.apellidoMaterno = r.GetString(3);
@@ -618,6 +621,7 @@ namespace Controlador
                     terapeuta.fechaNacimiento = r.GetDateTime(7);
                     terapeuta.telefono = r.GetString(8);
                     terapeuta.servicios = serviciosxTerapeuta;
+                    terapeuta.horarioTerapeuta = horariosxTerapeuta;
 
                     terapeutas.Add(terapeuta);
                 }
@@ -750,19 +754,19 @@ namespace Controlador
                 new OleDbParameter("@apellidoPaterno",terapeuta.persona.apellidoPaterno),
                 new OleDbParameter("@apellidoMaterno",terapeuta.persona.apellidoMaterno),
                 new OleDbParameter("@dni",terapeuta.persona.dni),
-                new OleDbParameter("@idPersona",terapeuta.persona.idPersona),                
+                new OleDbParameter("@idPersona",terapeuta.persona.idPersona),
             });
 
             comando2.Parameters.AddRange(new OleDbParameter[]
             {
                 new OleDbParameter("@fechaNacimiento",terapeuta.fechaNacimiento),
-                new OleDbParameter("@telefono",terapeuta.telefono),                
-                new OleDbParameter("@persona_idPersona",terapeuta.persona.idPersona),                
+                new OleDbParameter("@telefono",terapeuta.telefono),
+                new OleDbParameter("@persona_idPersona",terapeuta.persona.idPersona),
             });
 
             comando3.Parameters.AddRange(new OleDbParameter[]
-            {                
-                new OleDbParameter("@persona_idPersona",terapeuta.persona.idPersona),                
+            {
+                new OleDbParameter("@persona_idPersona",terapeuta.persona.idPersona),
             });
 
             comando1.Connection = conexion;
@@ -792,14 +796,13 @@ namespace Controlador
                 foreach (HorarioTerapeuta horarioTerapeuta in terapeuta.horarioTerapeuta)
                 {
                     OleDbCommand comando5 = new OleDbCommand("update horarioTerapeuta set horaInicio=@horaInicio,horaFin=@horaFin " +
-                                                        "where terapeuta_persona_idPersona=@terapeuta_persona_idPersona and dia=@dia");
+                                                        "where idHorarioTerapeuta=@idHorarioTerapeuta");
 
                     comando5.Parameters.AddRange(new OleDbParameter[]
                     {
                         new OleDbParameter("@horaInicio",horarioTerapeuta.horaInicio),
                         new OleDbParameter("@horaFin",horarioTerapeuta.horaFin),
-                        new OleDbParameter("@dia",horarioTerapeuta.dia),
-                        new OleDbParameter("@terapeuta_persona_idPersona",terapeuta.persona.idPersona),                                                
+                        new OleDbParameter("@idHorarioTerapeuta",horarioTerapeuta.idHorarioTerapeuta),                                                                     
                     });
 
                     comando5.Connection = conexion;
@@ -1056,6 +1059,68 @@ namespace Controlador
             return numFilas == 1;
         }
 
+    }
+
+    public class ControladorHorarioTerapeuta
+    {
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private List<HorarioTerapeuta> horarioTerapeutas;
+        static ControladorHorarioTerapeuta controladorHorarioTerapeuta = null;
+
+        private ControladorHorarioTerapeuta()
+        {
+            horarioTerapeutas = new List<HorarioTerapeuta>();
+        }
+
+        static public ControladorHorarioTerapeuta Instancia()
+        {
+            if (controladorHorarioTerapeuta == null)
+                controladorHorarioTerapeuta = new ControladorHorarioTerapeuta();
+            return controladorHorarioTerapeuta;
+        }
+
+        public List<HorarioTerapeuta> getListaHorariosxTerapeuta(int idTerapeuta)
+        {
+            List<HorarioTerapeuta> horarios = new List<HorarioTerapeuta>();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("SELECT * from horarioTerapeuta where terapeuta_persona_idPersona=@terapeuta_persona_idPersona order by idHorarioTerapeuta ASC");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@terapeuta_persona_idPersona", idTerapeuta),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    HorarioTerapeuta horarioTerapeuta = new HorarioTerapeuta();
+                    horarioTerapeuta.idHorarioTerapeuta = r.GetInt32(0);
+                    horarioTerapeuta.horaInicio = r.GetDateTime(1);
+                    horarioTerapeuta.horaFin = r.GetDateTime(2);
+                    horarioTerapeuta.dia = r.GetString(3);
+                    horarioTerapeuta.idPersona = r.GetInt32(4);
+
+                    horarios.Add(horarioTerapeuta);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return horarios;
+        }
     }
 
 }
