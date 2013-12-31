@@ -81,6 +81,40 @@ namespace sigeci_angelitos_2
                     checkListServicios.Items.Add(s.nombreServicio, true);                    
                 else
                     checkListServicios.Items.Add(s.nombreServicio, false);                                    
+            }
+
+            foreach (HorarioTerapeuta horarioTerapeuta in terapeuta.horarioTerapeuta)
+            {
+                if (horarioTerapeuta.dia.Equals("Lunes"))
+                {
+                    dateLunesInicio.Text = ""+horarioTerapeuta.horaInicio;
+                    dateLunesFin.Text = "" + horarioTerapeuta.horaFin;
+                }
+                if (horarioTerapeuta.dia.Equals("Martes"))
+                {
+                    dateMartesInicio.Text = "" + horarioTerapeuta.horaInicio;
+                    dateMartesFin.Text = "" + horarioTerapeuta.horaFin;
+                }
+                if (horarioTerapeuta.dia.Equals("Miércoles"))
+                {
+                    dateMiercolesInicio.Text = "" + horarioTerapeuta.horaInicio;
+                    dateMiercolesFin.Text = "" + horarioTerapeuta.horaFin;
+                }
+                if (horarioTerapeuta.dia.Equals("Jueves"))
+                {
+                    dateJuevesInicio.Text = "" + horarioTerapeuta.horaInicio;
+                    dateJuevesFin.Text = "" + horarioTerapeuta.horaFin;
+                }
+                if (horarioTerapeuta.dia.Equals("Viernes"))
+                {
+                    dateViernesInicio.Text = "" + horarioTerapeuta.horaInicio;
+                    dateViernesFin.Text = "" + horarioTerapeuta.horaFin;
+                }
+                if (horarioTerapeuta.dia.Equals("Sábado"))
+                {
+                    dateSabadoInicio.Text = "" + horarioTerapeuta.horaInicio;
+                    dateSabadoFin.Text = "" + horarioTerapeuta.horaFin;
+                }
             }            
         }
 
@@ -135,7 +169,7 @@ namespace sigeci_angelitos_2
                 horarioMiercoles.dia = "Miércoles";
                 horarioJueves.dia = "Jueves";
                 horarioViernes.dia = "Viernes";
-                horarioSabado.dia = "Sabado";
+                horarioSabado.dia = "Sábado";
                 horarioLunes.horaInicio = Convert.ToDateTime(dateLunesInicio.Text);
                 horarioMartes.horaInicio = Convert.ToDateTime(dateMartesInicio.Text);
                 horarioMiercoles.horaInicio = Convert.ToDateTime(dateMiercolesInicio.Text);
@@ -188,6 +222,40 @@ namespace sigeci_angelitos_2
                     }
                 }
                 terapeuta.servicios = serviciosxtera;
+
+                foreach (HorarioTerapeuta horarioTerapeuta in terapeuta.horarioTerapeuta)
+                {
+                    if (horarioTerapeuta.dia.Equals("Lunes"))
+                    {
+                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateLunesInicio.Text);
+                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateLunesFin.Text);
+                    }
+                    if (horarioTerapeuta.dia.Equals("Martes"))
+                    {
+                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateMartesInicio.Text);
+                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateMartesFin.Text);
+                    }
+                    if (horarioTerapeuta.dia.Equals("Miércoles"))
+                    {
+                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateMiercolesInicio.Text);
+                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateMiercolesFin.Text);
+                    }
+                    if (horarioTerapeuta.dia.Equals("Jueves"))
+                    {
+                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateJuevesInicio.Text);
+                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateJuevesFin.Text);
+                    }
+                    if (horarioTerapeuta.dia.Equals("Viernes"))
+                    {
+                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateViernesInicio.Text);
+                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateViernesFin.Text);
+                    }
+                    if (horarioTerapeuta.dia.Equals("Sábado"))
+                    {
+                        horarioTerapeuta.horaInicio = Convert.ToDateTime(dateSabadoInicio.Text);
+                        horarioTerapeuta.horaFin = Convert.ToDateTime(dateSabadoFin.Text);
+                    }
+                }
 
                 if (controladorTerapeuta.modificarTerapeuta(terapeuta))
                 {
