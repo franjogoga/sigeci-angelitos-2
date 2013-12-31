@@ -74,6 +74,7 @@ namespace Modelo
     {
         private Persona _persona;
         private List<Servicio> _servicios;
+        private List<HorarioTerapeuta> _horarioTerapeuta;
         private DateTime _fechaNacimiento;
         private string _telefono;        
 
@@ -86,6 +87,11 @@ namespace Modelo
         {
             get { return _servicios; }
             set { _servicios = value; }
+        }
+        public List<HorarioTerapeuta> horarioTerapeuta
+        {
+            get { return _horarioTerapeuta; }
+            set { _horarioTerapeuta = value; }
         }
         public DateTime fechaNacimiento
         {
