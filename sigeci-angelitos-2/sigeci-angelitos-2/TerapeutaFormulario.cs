@@ -110,6 +110,7 @@ namespace sigeci_angelitos_2
                 terapeuta.fechaNacimiento = Convert.ToDateTime(dateFechaNacimiento.Text);
                 terapeuta.telefono = txtTelefono.Text;
                 List<Servicio> serviciosxtera = new List<Servicio>();
+                List<HorarioTerapeuta> horarioTerapeuta = new List<HorarioTerapeuta>();
 
                 foreach (Servicio s in servicios)
                 {
@@ -122,6 +123,40 @@ namespace sigeci_angelitos_2
                     }
                 }
                 terapeuta.servicios = serviciosxtera;
+
+                HorarioTerapeuta horarioLunes = new HorarioTerapeuta();
+                HorarioTerapeuta horarioMartes = new HorarioTerapeuta();
+                HorarioTerapeuta horarioMiercoles = new HorarioTerapeuta();
+                HorarioTerapeuta horarioJueves = new HorarioTerapeuta();
+                HorarioTerapeuta horarioViernes = new HorarioTerapeuta();
+                HorarioTerapeuta horarioSabado = new HorarioTerapeuta();
+                horarioLunes.dia = "Lunes";
+                horarioMartes.dia = "Martes";
+                horarioMiercoles.dia = "Miércoles";
+                horarioJueves.dia = "Jueves";
+                horarioViernes.dia = "Viernes";
+                horarioSabado.dia = "Sabado";
+                horarioLunes.horaInicio = Convert.ToDateTime(dateLunesInicio.Text);
+                horarioMartes.horaInicio = Convert.ToDateTime(dateMartesInicio.Text);
+                horarioMiercoles.horaInicio = Convert.ToDateTime(dateMiercolesInicio.Text);
+                horarioJueves.horaInicio = Convert.ToDateTime(dateJuevesInicio.Text);
+                horarioViernes.horaInicio = Convert.ToDateTime(dateViernesInicio.Text);
+                horarioSabado.horaInicio = Convert.ToDateTime(dateSabadoInicio.Text);
+                horarioLunes.horaFin = Convert.ToDateTime(dateLunesFin.Text);
+                horarioMartes.horaFin = Convert.ToDateTime(dateMartesFin.Text);
+                horarioMiercoles.horaFin = Convert.ToDateTime(dateMiercolesFin.Text);
+                horarioJueves.horaFin = Convert.ToDateTime(dateJuevesFin.Text);
+                horarioViernes.horaFin = Convert.ToDateTime(dateViernesFin.Text);
+                horarioSabado.horaFin = Convert.ToDateTime(dateSabadoFin.Text);
+
+                horarioTerapeuta.Add(horarioLunes);
+                horarioTerapeuta.Add(horarioMartes);
+                horarioTerapeuta.Add(horarioMiercoles);
+                horarioTerapeuta.Add(horarioJueves);
+                horarioTerapeuta.Add(horarioViernes);
+                horarioTerapeuta.Add(horarioSabado);
+
+                terapeuta.horarioTerapeuta = horarioTerapeuta;
 
                 if (controladorTerapeuta.agregarTerapeuta(terapeuta))
                 {
