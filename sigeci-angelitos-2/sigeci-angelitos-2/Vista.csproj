@@ -82,6 +82,12 @@
     <Compile Include="ModalidadesForm.Designer.cs">
       <DependentUpon>ModalidadesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModalidadesFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalidadesFormulario.Designer.cs">
+      <DependentUpon>ModalidadesFormulario.cs</DependentUpon>
+    </Compile>
     <Compile Include="PacientesBusquedaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModalidadesForm.resx">
       <DependentUpon>ModalidadesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalidadesFormulario.resx">
+      <DependentUpon>ModalidadesFormulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PacientesBusquedaForm.resx">
       <DependentUpon>PacientesBusquedaForm.cs</DependentUpon>

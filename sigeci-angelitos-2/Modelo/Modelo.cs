@@ -148,7 +148,13 @@ namespace Modelo
         private float _costo;
         private int _maximoPacientes;
         private string _estado;
+        private List<Modalidad> _modalidades;
 
+        public List<Modalidad> modalidades
+        {
+            get { return _modalidades; }
+            set { _modalidades = value; }
+        }
         public int idServicio
         {
             get { return _idServicio; }
