@@ -1151,8 +1151,8 @@ namespace Controlador
 
             comando.Parameters.AddRange(new OleDbParameter[]
             {
-                new OleDbParameter("@nombreModalidad","%" + nombreModalidad + "%"),
                 new OleDbParameter("@idServicio", idServicio),
+                new OleDbParameter("@nombreModalidad","%" + nombreModalidad + "%"),                
             });
 
             comando.Connection = conexion;
@@ -1224,7 +1224,7 @@ namespace Controlador
             int numFilas = 0;
             modalidades.Clear();
             OleDbConnection conexion = new OleDbConnection(cadenaConexion);
-            OleDbCommand comando = new OleDbCommand("update modalidad set nombreModalidad=@nombreModalidad" +
+            OleDbCommand comando = new OleDbCommand("update modalidad set nombreModalidad=@nombreModalidad " +
                                                     "where idModalidad=@idModalidad");
 
             comando.Parameters.AddRange(new OleDbParameter[]
@@ -1282,7 +1282,13 @@ namespace Controlador
             }
             return numFilas == 1;
         }
-
     }
+
+
+
+
+
+
+
 
 }
