@@ -1123,4 +1123,166 @@ namespace Controlador
         }
     }
 
+    public class ControladorModalidad
+    {
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private List<Modalidad> modalidades;
+        static ControladorModalidad controladorModalidad = null;
+
+        private ControladorModalidad()
+        {
+            modalidades = new List<Modalidad>();
+        }
+
+        static public ControladorModalidad Instancia()
+        {
+            if (controladorModalidad == null)
+                controladorModalidad = new ControladorModalidad();
+            return controladorModalidad;
+        }
+
+        public List<Modalidad> getListaModalidadesxServicio(string nombreModalidad, int idServicio)
+        {
+            modalidades.Clear();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("SELECT * from modalidad, servicio where servicio.idServicio = modalidad.servicio_idServicio and servicio.idServicio = @idServicio and modalidad.nombreModalidad like @nombreModalidad and modalidad.estado = 'activo' order by modalidad.idModalidad asc");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombreModalidad","%" + nombreModalidad + "%"),
+                new OleDbParameter("@idServicio", idServicio),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Modalidad modalidad = new Modalidad();
+                    modalidad.idModalidad = r.GetInt32(0);
+                    modalidad.nombreModalidad = r.GetString(1);
+                    modalidad.idServicio = r.GetInt32(2);
+                    modalidad.estado = r.GetString(3);
+
+                    modalidades.Add(modalidad);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return modalidades;  
+        }
+
+        public bool agregarModalidad(Modalidad modalidad)
+        {
+            int numFilas = 0;
+            modalidades.Clear();
+
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("insert into modalidad(nombreModalidad,servicio_idServicio,estado) " +
+                                                        "values(@nombreModalidad,@servicio_idServicio,@estado)");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {                
+                new OleDbParameter("@nombreModalidad",modalidad.nombreModalidad),
+                new OleDbParameter("@servicio_idServicio",modalidad.idServicio),
+                new OleDbParameter("@estado",modalidad.estado),                
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas == 1;
+        }
+
+        public bool modificarModalidad(Modalidad modalidad)
+        {
+            int numFilas = 0;
+            modalidades.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update modalidad set nombreModalidad=@nombreModalidad" +
+                                                    "where idModalidad=@idModalidad");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombreModalidad",modalidad.nombreModalidad),
+                new OleDbParameter("@idModalidad",modalidad.idModalidad),                      
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas == 1;
+        }
+
+        public bool eliminarModalidad(Modalidad modalidad)
+        {
+            int numFilas = 0;
+            modalidades.Clear();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            OleDbCommand comando = new OleDbCommand("update modalidad set estado=@estado " +
+                                                    "where idModalidad=@idModalidad");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@estado","inactivo"),
+                new OleDbParameter("@idModalidad",modalidad.idModalidad),
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                numFilas = comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return numFilas == 1;
+        }
+
+    }
+
 }
