@@ -110,5 +110,20 @@ namespace sigeci_angelitos_2
                 MessageBox.Show("No ha seleccionado un servicio");
             }
         }
+
+        private void btnModalidades_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Servicio servicio = buscarServicio(int.Parse(dgvServicios.CurrentRow.Cells[0].Value.ToString()));
+                ModalidadesForm modalidadesForm = new ModalidadesForm(this, servicio);
+                modalidadesForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("No ha seleccionado un servicio");
+            }
+        }
     }
 }
