@@ -34,13 +34,14 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtNombreServicio = new System.Windows.Forms.TextBox();
             this.dgvServicios = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
-            this.btnModificar = new DevComponents.DotNetBar.ButtonX();
-            this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
             this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maximoPacientes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
+            this.btnModificar = new DevComponents.DotNetBar.ButtonX();
+            this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
+            this.btnModalidades = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             this.SuspendLayout();
@@ -108,48 +109,6 @@
             this.dgvServicios.TabIndex = 2;
             this.dgvServicios.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvServicios_MouseDoubleClick);
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnEliminar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnEliminar.Image = global::sigeci_angelitos_2.Properties.Resources.cancelarcita;
-            this.btnEliminar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnEliminar.Location = new System.Drawing.Point(439, 302);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(123, 32);
-            this.btnEliminar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnEliminar.TabIndex = 10;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnModificar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnModificar.Image = global::sigeci_angelitos_2.Properties.Resources.editar;
-            this.btnModificar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnModificar.Location = new System.Drawing.Point(247, 302);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(123, 32);
-            this.btnModificar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnModificar.TabIndex = 9;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnNuevo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnNuevo.Image = global::sigeci_angelitos_2.Properties.Resources.agregar;
-            this.btnNuevo.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnNuevo.Location = new System.Drawing.Point(56, 302);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(123, 32);
-            this.btnNuevo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnNuevo.TabIndex = 8;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
             // idUsuario
             // 
             this.idUsuario.HeaderText = "ID";
@@ -180,12 +139,69 @@
             this.maximoPacientes.Name = "maximoPacientes";
             this.maximoPacientes.ReadOnly = true;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnEliminar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnEliminar.Image = global::sigeci_angelitos_2.Properties.Resources.cancelarcita;
+            this.btnEliminar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnEliminar.Location = new System.Drawing.Point(494, 302);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(123, 32);
+            this.btnEliminar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnModificar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnModificar.Image = global::sigeci_angelitos_2.Properties.Resources.editar;
+            this.btnModificar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnModificar.Location = new System.Drawing.Point(201, 302);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(123, 32);
+            this.btnModificar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnModificar.TabIndex = 9;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnNuevo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnNuevo.Image = global::sigeci_angelitos_2.Properties.Resources.agregar;
+            this.btnNuevo.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnNuevo.Location = new System.Drawing.Point(56, 302);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(123, 32);
+            this.btnNuevo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnNuevo.TabIndex = 8;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnModalidades
+            // 
+            this.btnModalidades.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnModalidades.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnModalidades.Image = global::sigeci_angelitos_2.Properties.Resources.programar;
+            this.btnModalidades.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnModalidades.Location = new System.Drawing.Point(346, 302);
+            this.btnModalidades.Name = "btnModalidades";
+            this.btnModalidades.Size = new System.Drawing.Size(123, 32);
+            this.btnModalidades.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnModalidades.TabIndex = 11;
+            this.btnModalidades.Text = "Modalidades";
+            this.btnModalidades.Click += new System.EventHandler(this.btnModalidades_Click);
+            // 
             // ServiciosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 350);
+            this.Controls.Add(this.btnModalidades);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
@@ -218,5 +234,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
         private System.Windows.Forms.DataGridViewTextBoxColumn maximoPacientes;
+        private DevComponents.DotNetBar.ButtonX btnModalidades;
     }
 }
