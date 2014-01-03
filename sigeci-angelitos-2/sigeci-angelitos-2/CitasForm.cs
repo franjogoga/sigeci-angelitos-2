@@ -8,11 +8,16 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 using DevComponents.DotNetBar;
+using Controlador;
+using Modelo;
 
 namespace sigeci_angelitos_2
 {
     public partial class CitasForm : Office2007Form
     {
+        private ControladorCita controladorCita = ControladorCita.Instancia();
+        private List<Cita> citas;
+
         public CitasForm()
         {
             InitializeComponent();
@@ -25,8 +30,27 @@ namespace sigeci_angelitos_2
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            CitasFornulario citasFormulario = new CitasFornulario();
+            CitasFornulario citasFormulario = new CitasFornulario(this, 0, null);
             citasFormulario.ShowDialog();
         }
+
+        public void llenarCitas(string strNumeroCita, string nombres, string apellidoPaterno, string nombreServicio, string strFecha)
+        {
+            string[] fila;
+            citas = controladorCita.getListaCitas(strNumeroCita, nombres, apellidoPaterno, apellidoPaterno, nombreServicio, strFecha);
+            dgvCitas.Rows.Clear();
+            foreach (Cita cita in citas)
+            {
+                fila = new string[] { ""+cita.idCita, ""+cita.fechaCita, ""+cita.horaCita, cita.servicio.nombreServicio, cita.paciente.nombres + " "+cita.paciente.apellidoPaterno+""+cita.paciente.apellidoMaterno, cita.estado};
+                dgvCitas.Rows.Add(fila);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            llenarCitas(txtNumeroCita.Text, txtNombres.Text, txtApellidoPaterno.Text, comboServicios.SelectedItem.ToString(), dateFechaCita.Text);
+        }
+
+
     }
 }

@@ -44,7 +44,9 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
@@ -52,11 +54,6 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pageNavigator1 = new DevComponents.DotNetBar.Controls.PageNavigator();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +61,11 @@
             this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pageNavigator1 = new DevComponents.DotNetBar.Controls.PageNavigator();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
+            this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -148,6 +150,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(440, 68);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(189, 20);
             this.textBox2.TabIndex = 11;
             // 
@@ -155,6 +158,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(440, 107);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(182, 20);
             this.textBox4.TabIndex = 11;
             // 
@@ -162,6 +166,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(125, 108);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(182, 20);
             this.textBox3.TabIndex = 11;
             // 
@@ -169,6 +174,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(125, 68);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(182, 20);
             this.textBox1.TabIndex = 11;
             // 
@@ -189,6 +195,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(440, 32);
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(189, 20);
             this.txtNombre.TabIndex = 9;
             // 
@@ -242,6 +249,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Servicio";
             // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(439, 72);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(189, 21);
+            this.comboBox4.TabIndex = 15;
+            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
@@ -249,6 +264,19 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(189, 21);
             this.comboBox2.TabIndex = 15;
+            // 
+            // labelX11
+            // 
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.Class = "";
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Location = new System.Drawing.Point(325, 70);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(107, 23);
+            this.labelX11.TabIndex = 14;
+            this.labelX11.Text = "Modalidad :";
             // 
             // labelX7
             // 
@@ -337,65 +365,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(629, 166);
             this.dataGridView1.TabIndex = 18;
             // 
-            // pageNavigator1
-            // 
-            // 
-            // 
-            // 
-            this.pageNavigator1.BackgroundStyle.Class = "";
-            this.pageNavigator1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pageNavigator1.Location = new System.Drawing.Point(310, 32);
-            this.pageNavigator1.Name = "pageNavigator1";
-            this.pageNavigator1.NextPageTooltip = "Día Siguiente";
-            this.pageNavigator1.PreviousPageTooltip = "Día Anterior";
-            this.pageNavigator1.Size = new System.Drawing.Size(69, 20);
-            this.pageNavigator1.TabIndex = 17;
-            this.pageNavigator1.Text = "pageNavigator1";
-            this.pageNavigator1.TodayTooltip = "Hoy";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 32);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(180, 20);
-            this.dateTimePicker1.TabIndex = 16;
-            // 
-            // labelX9
-            // 
-            // 
-            // 
-            // 
-            this.labelX9.BackgroundStyle.Class = "";
-            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(8, 29);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(107, 23);
-            this.labelX9.TabIndex = 14;
-            this.labelX9.Text = "Fecha :";
-            // 
-            // labelX11
-            // 
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.Class = "";
-            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(325, 70);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(107, 23);
-            this.labelX11.TabIndex = 14;
-            this.labelX11.Text = "Modalidad :";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(439, 72);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(189, 21);
-            this.comboBox4.TabIndex = 15;
-            // 
             // horaCita
             // 
             this.horaCita.HeaderText = "Hora";
@@ -438,12 +407,78 @@
             this.sabado.Name = "sabado";
             this.sabado.ReadOnly = true;
             // 
+            // pageNavigator1
+            // 
+            // 
+            // 
+            // 
+            this.pageNavigator1.BackgroundStyle.Class = "";
+            this.pageNavigator1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pageNavigator1.Location = new System.Drawing.Point(310, 32);
+            this.pageNavigator1.Name = "pageNavigator1";
+            this.pageNavigator1.NextPageTooltip = "Día Siguiente";
+            this.pageNavigator1.PreviousPageTooltip = "Día Anterior";
+            this.pageNavigator1.Size = new System.Drawing.Size(69, 20);
+            this.pageNavigator1.TabIndex = 17;
+            this.pageNavigator1.Text = "pageNavigator1";
+            this.pageNavigator1.TodayTooltip = "Hoy";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 32);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePicker1.TabIndex = 16;
+            // 
+            // labelX9
+            // 
+            // 
+            // 
+            // 
+            this.labelX9.BackgroundStyle.Class = "";
+            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX9.Location = new System.Drawing.Point(8, 29);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(107, 23);
+            this.labelX9.TabIndex = 14;
+            this.labelX9.Text = "Fecha :";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCancelar.Image = global::sigeci_angelitos_2.Properties.Resources.borrar;
+            this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnCancelar.Location = new System.Drawing.Point(363, 549);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(123, 32);
+            this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Cancelar";
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnAceptar.Image = global::sigeci_angelitos_2.Properties.Resources.aceptar;
+            this.btnAceptar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnAceptar.Location = new System.Drawing.Point(212, 549);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(123, 32);
+            this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnAceptar.TabIndex = 10;
+            this.btnAceptar.Text = "Aceptar";
+            // 
             // CitasFornulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(688, 603);
+            this.ClientSize = new System.Drawing.Size(688, 593);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -498,5 +533,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jueves;
         private System.Windows.Forms.DataGridViewTextBoxColumn viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn sabado;
+        private DevComponents.DotNetBar.ButtonX btnCancelar;
+        private DevComponents.DotNetBar.ButtonX btnAceptar;
     }
 }

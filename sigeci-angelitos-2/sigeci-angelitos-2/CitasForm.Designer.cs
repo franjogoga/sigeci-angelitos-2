@@ -28,21 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CitasForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.btnBuscarUsuario = new DevComponents.DotNetBar.ButtonX();
+            this.dateFechaCita = new System.Windows.Forms.DateTimePicker();
+            this.txtNombres = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtNumeroCita = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.comboServicios = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new DevComponents.DotNetBar.ButtonX();
-            this.btnModificar = new DevComponents.DotNetBar.ButtonX();
-            this.btnNuevo = new DevComponents.DotNetBar.ButtonX();
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
+            this.btnConfirmar = new DevComponents.DotNetBar.ButtonX();
+            this.btnReservar = new DevComponents.DotNetBar.ButtonX();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.txtApellidoPaterno = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,84 +54,87 @@
             this.paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBoxX2);
-            this.groupBox1.Controls.Add(this.textBoxX1);
-            this.groupBox1.Controls.Add(this.comboBoxEx1);
-            this.groupBox1.Controls.Add(this.btnBuscarUsuario);
+            this.groupBox1.Controls.Add(this.dateFechaCita);
+            this.groupBox1.Controls.Add(this.txtApellidoPaterno);
+            this.groupBox1.Controls.Add(this.txtNombres);
+            this.groupBox1.Controls.Add(this.txtNumeroCita);
+            this.groupBox1.Controls.Add(this.comboServicios);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.labelX4);
+            this.groupBox1.Controls.Add(this.labelX5);
             this.groupBox1.Controls.Add(this.labelX3);
             this.groupBox1.Controls.Add(this.labelX2);
             this.groupBox1.Controls.Add(this.labelX1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(594, 151);
+            this.groupBox1.Size = new System.Drawing.Size(647, 151);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Usuario";
             // 
-            // dateTimePicker1
+            // dateFechaCita
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(129, 72);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(147, 20);
-            this.dateTimePicker1.TabIndex = 12;
+            this.dateFechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaCita.Location = new System.Drawing.Point(156, 117);
+            this.dateFechaCita.Name = "dateFechaCita";
+            this.dateFechaCita.Size = new System.Drawing.Size(147, 20);
+            this.dateFechaCita.TabIndex = 12;
             // 
-            // textBoxX2
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX2.Location = new System.Drawing.Point(417, 31);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(147, 20);
-            this.textBoxX2.TabIndex = 11;
-            // 
-            // textBoxX1
+            // txtNombres
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(129, 31);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(147, 20);
-            this.textBoxX1.TabIndex = 11;
+            this.txtNombres.Border.Class = "TextBoxBorder";
+            this.txtNombres.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNombres.Location = new System.Drawing.Point(455, 32);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(147, 20);
+            this.txtNombres.TabIndex = 11;
             // 
-            // comboBoxEx1
+            // txtNumeroCita
             // 
-            this.comboBoxEx1.DisplayMember = "Text";
-            this.comboBoxEx1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx1.FormattingEnabled = true;
-            this.comboBoxEx1.ItemHeight = 14;
-            this.comboBoxEx1.Location = new System.Drawing.Point(417, 74);
-            this.comboBoxEx1.Name = "comboBoxEx1";
-            this.comboBoxEx1.Size = new System.Drawing.Size(147, 20);
-            this.comboBoxEx1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboBoxEx1.TabIndex = 10;
             // 
-            // btnBuscarUsuario
             // 
-            this.btnBuscarUsuario.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnBuscarUsuario.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnBuscarUsuario.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
-            this.btnBuscarUsuario.ImageFixedSize = new System.Drawing.Size(23, 23);
-            this.btnBuscarUsuario.Location = new System.Drawing.Point(129, 108);
-            this.btnBuscarUsuario.Name = "btnBuscarUsuario";
-            this.btnBuscarUsuario.Size = new System.Drawing.Size(100, 32);
-            this.btnBuscarUsuario.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnBuscarUsuario.TabIndex = 4;
-            this.btnBuscarUsuario.Text = "Buscar";
+            // 
+            this.txtNumeroCita.Border.Class = "TextBoxBorder";
+            this.txtNumeroCita.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNumeroCita.Location = new System.Drawing.Point(156, 32);
+            this.txtNumeroCita.Name = "txtNumeroCita";
+            this.txtNumeroCita.Size = new System.Drawing.Size(147, 20);
+            this.txtNumeroCita.TabIndex = 11;
+            // 
+            // comboServicios
+            // 
+            this.comboServicios.DisplayMember = "Text";
+            this.comboServicios.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboServicios.FormattingEnabled = true;
+            this.comboServicios.ItemHeight = 14;
+            this.comboServicios.Location = new System.Drawing.Point(455, 75);
+            this.comboServicios.Name = "comboServicios";
+            this.comboServicios.Size = new System.Drawing.Size(147, 20);
+            this.comboServicios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboServicios.TabIndex = 10;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBuscar.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
+            this.btnBuscar.ImageFixedSize = new System.Drawing.Size(23, 23);
+            this.btnBuscar.Location = new System.Drawing.Point(342, 110);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 32);
+            this.btnBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // labelX4
             // 
@@ -136,7 +143,7 @@
             // 
             this.labelX4.BackgroundStyle.Class = "";
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(304, 71);
+            this.labelX4.Location = new System.Drawing.Point(342, 72);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(107, 23);
             this.labelX4.TabIndex = 8;
@@ -149,7 +156,7 @@
             // 
             this.labelX3.BackgroundStyle.Class = "";
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(16, 69);
+            this.labelX3.Location = new System.Drawing.Point(43, 114);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(107, 23);
             this.labelX3.TabIndex = 7;
@@ -162,11 +169,11 @@
             // 
             this.labelX2.BackgroundStyle.Class = "";
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(304, 28);
+            this.labelX2.Location = new System.Drawing.Point(342, 29);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(107, 23);
             this.labelX2.TabIndex = 6;
-            this.labelX2.Text = "Paciente :";
+            this.labelX2.Text = "Nombres :";
             // 
             // labelX1
             // 
@@ -175,76 +182,106 @@
             // 
             this.labelX1.BackgroundStyle.Class = "";
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(16, 28);
+            this.labelX1.Location = new System.Drawing.Point(43, 29);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(107, 23);
             this.labelX1.TabIndex = 5;
             this.labelX1.Text = "N° Cita :";
             // 
-            // dgvUsuarios
+            // dgvCitas
             // 
-            this.dgvUsuarios.AllowUserToAddRows = false;
-            this.dgvUsuarios.AllowUserToDeleteRows = false;
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCitas.AllowUserToAddRows = false;
+            this.dgvCitas.AllowUserToDeleteRows = false;
+            this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCita,
             this.fechaCita,
             this.horaCita,
             this.servicio,
             this.paciente,
             this.estado});
-            this.dgvUsuarios.Location = new System.Drawing.Point(12, 182);
-            this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.Size = new System.Drawing.Size(593, 160);
-            this.dgvUsuarios.TabIndex = 2;
+            this.dgvCitas.Location = new System.Drawing.Point(12, 182);
+            this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.ReadOnly = true;
+            this.dgvCitas.Size = new System.Drawing.Size(647, 160);
+            this.dgvCitas.TabIndex = 2;
             // 
-            // btnEliminar
+            // btnCancelar
             // 
-            this.btnEliminar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnEliminar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnEliminar.Image = global::sigeci_angelitos_2.Properties.Resources.cancelarcita;
-            this.btnEliminar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnEliminar.Location = new System.Drawing.Point(440, 360);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(123, 32);
-            this.btnEliminar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnEliminar.TabIndex = 13;
-            this.btnEliminar.Text = "Cancelar";
+            this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCancelar.Image = global::sigeci_angelitos_2.Properties.Resources.cancelarcita;
+            this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnCancelar.Location = new System.Drawing.Point(440, 360);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(123, 32);
+            this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
             // 
-            // btnModificar
+            // btnConfirmar
             // 
-            this.btnModificar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnModificar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnModificar.Image = global::sigeci_angelitos_2.Properties.Resources.editar;
-            this.btnModificar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnModificar.Location = new System.Drawing.Point(248, 360);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(123, 32);
-            this.btnModificar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnModificar.TabIndex = 12;
-            this.btnModificar.Text = "Modificar";
+            this.btnConfirmar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnConfirmar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnConfirmar.Image = global::sigeci_angelitos_2.Properties.Resources.aceptar;
+            this.btnConfirmar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnConfirmar.Location = new System.Drawing.Point(248, 360);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(123, 32);
+            this.btnConfirmar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnConfirmar.TabIndex = 12;
+            this.btnConfirmar.Text = "Confirmar";
             // 
-            // btnNuevo
+            // btnReservar
             // 
-            this.btnNuevo.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnNuevo.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnNuevo.Image = global::sigeci_angelitos_2.Properties.Resources.agregar;
-            this.btnNuevo.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnNuevo.Location = new System.Drawing.Point(57, 360);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(123, 32);
-            this.btnNuevo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnNuevo.TabIndex = 11;
-            this.btnNuevo.Text = "Reservar";
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.btnReservar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnReservar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnReservar.Image = global::sigeci_angelitos_2.Properties.Resources.reloj;
+            this.btnReservar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnReservar.Location = new System.Drawing.Point(57, 360);
+            this.btnReservar.Name = "btnReservar";
+            this.btnReservar.Size = new System.Drawing.Size(123, 32);
+            this.btnReservar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnReservar.TabIndex = 11;
+            this.btnReservar.Text = "Reservar";
+            this.btnReservar.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
+            // 
+            // labelX5
+            // 
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.Class = "";
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Location = new System.Drawing.Point(43, 75);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(107, 23);
+            this.labelX5.TabIndex = 6;
+            this.labelX5.Text = "Apellido Paterno :";
+            // 
+            // txtApellidoPaterno
+            // 
+            // 
+            // 
+            // 
+            this.txtApellidoPaterno.Border.Class = "TextBoxBorder";
+            this.txtApellidoPaterno.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(156, 75);
+            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(147, 20);
+            this.txtApellidoPaterno.TabIndex = 11;
             // 
             // idCita
             // 
-            this.idCita.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idCita.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idCita.HeaderText = "N° Cita";
             this.idCita.Name = "idCita";
             this.idCita.ReadOnly = true;
+            this.idCita.Width = 65;
             // 
             // fechaCita
             // 
@@ -273,6 +310,7 @@
             this.paciente.HeaderText = "Paciente";
             this.paciente.Name = "paciente";
             this.paciente.ReadOnly = true;
+            this.paciente.Width = 170;
             // 
             // estado
             // 
@@ -285,20 +323,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(621, 406);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.dgvUsuarios);
+            this.ClientSize = new System.Drawing.Size(671, 406);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.btnReservar);
+            this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CitasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CitasForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,19 +345,22 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevComponents.DotNetBar.ButtonX btnBuscarUsuario;
+        private DevComponents.DotNetBar.ButtonX btnBuscar;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx1;
-        private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private DevComponents.DotNetBar.ButtonX btnEliminar;
-        private DevComponents.DotNetBar.ButtonX btnModificar;
-        private DevComponents.DotNetBar.ButtonX btnNuevo;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNombres;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNumeroCita;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboServicios;
+        private System.Windows.Forms.DataGridView dgvCitas;
+        private System.Windows.Forms.DateTimePicker dateFechaCita;
+        private DevComponents.DotNetBar.ButtonX btnCancelar;
+        private DevComponents.DotNetBar.ButtonX btnConfirmar;
+        private DevComponents.DotNetBar.ButtonX btnReservar;
+        private DevComponents.DotNetBar.StyleManager styleManager1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtApellidoPaterno;
+        private DevComponents.DotNetBar.LabelX labelX5;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn horaCita;
