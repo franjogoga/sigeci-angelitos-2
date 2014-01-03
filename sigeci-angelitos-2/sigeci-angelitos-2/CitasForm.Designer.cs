@@ -81,10 +81,10 @@
             // dateFechaCita
             // 
             this.dateFechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateFechaCita.Location = new System.Drawing.Point(156, 117);
+            this.dateFechaCita.Location = new System.Drawing.Point(141, 117);
             this.dateFechaCita.Name = "dateFechaCita";
-            this.dateFechaCita.Size = new System.Drawing.Size(147, 20);
-            this.dateFechaCita.TabIndex = 12;
+            this.dateFechaCita.Size = new System.Drawing.Size(162, 20);
+            this.dateFechaCita.TabIndex = 4;
             // 
             // txtNombres
             // 
@@ -93,10 +93,10 @@
             // 
             this.txtNombres.Border.Class = "TextBoxBorder";
             this.txtNombres.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNombres.Location = new System.Drawing.Point(455, 32);
+            this.txtNombres.Location = new System.Drawing.Point(428, 32);
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(147, 20);
-            this.txtNombres.TabIndex = 11;
+            this.txtNombres.Size = new System.Drawing.Size(174, 20);
+            this.txtNombres.TabIndex = 1;
             // 
             // txtNumeroCita
             // 
@@ -105,22 +105,23 @@
             // 
             this.txtNumeroCita.Border.Class = "TextBoxBorder";
             this.txtNumeroCita.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNumeroCita.Location = new System.Drawing.Point(156, 32);
+            this.txtNumeroCita.Location = new System.Drawing.Point(141, 32);
             this.txtNumeroCita.Name = "txtNumeroCita";
-            this.txtNumeroCita.Size = new System.Drawing.Size(147, 20);
-            this.txtNumeroCita.TabIndex = 11;
+            this.txtNumeroCita.Size = new System.Drawing.Size(162, 20);
+            this.txtNumeroCita.TabIndex = 0;
             // 
             // comboServicios
             // 
             this.comboServicios.DisplayMember = "Text";
             this.comboServicios.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboServicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboServicios.FormattingEnabled = true;
             this.comboServicios.ItemHeight = 14;
-            this.comboServicios.Location = new System.Drawing.Point(455, 75);
+            this.comboServicios.Location = new System.Drawing.Point(428, 75);
             this.comboServicios.Name = "comboServicios";
-            this.comboServicios.Size = new System.Drawing.Size(147, 20);
+            this.comboServicios.Size = new System.Drawing.Size(174, 20);
             this.comboServicios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboServicios.TabIndex = 10;
+            this.comboServicios.TabIndex = 3;
             // 
             // btnBuscar
             // 
@@ -270,10 +271,10 @@
             // 
             this.txtApellidoPaterno.Border.Class = "TextBoxBorder";
             this.txtApellidoPaterno.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(156, 75);
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(141, 75);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(147, 20);
-            this.txtApellidoPaterno.TabIndex = 11;
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(162, 20);
+            this.txtApellidoPaterno.TabIndex = 2;
             // 
             // idCita
             // 
