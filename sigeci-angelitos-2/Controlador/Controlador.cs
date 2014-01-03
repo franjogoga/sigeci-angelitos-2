@@ -1284,8 +1284,32 @@ namespace Controlador
         }
     }
 
+    public class ControladorCita
+    {
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private List<Cita> citas;
+        static ControladorCita controladorCita = null;
+
+        private ControladorCita()
+        {
+            citas = new List<Cita>();
+        }
+
+        static public ControladorCita Instancia()
+        {
+            if (controladorCita == null)
+                controladorCita = new ControladorCita();
+            return controladorCita;
+        }
+
+        public List<Cita> getListaCitas(string strNumeroCita, string nombres, string apellidoPaterno, string txtApellidoPaterno, string nombreServicio, string strFecha)
+        {
 
 
+
+            return citas;
+        }
+    }
 
 
 

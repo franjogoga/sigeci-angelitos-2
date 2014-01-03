@@ -375,7 +375,7 @@ namespace Modelo
         private Persona _paciente;
         private DateTime _fechaCita;
         private DateTime _horaCita;
-        private int _idServicio;
+        private Servicio _servicio;
         private string _estado;
         private DateTime _fechaRegistro;
         private float _pago;
@@ -402,10 +402,10 @@ namespace Modelo
             get { return _horaCita; }
             set { _horaCita = value;}
         }
-        public int idServicio
+        public Servicio servicio
         {
-            get { return _idServicio; }
-            set { _idServicio = value;}
+            get { return _servicio; }
+            set { _servicio = value;}
         }
         public string estado
         {
