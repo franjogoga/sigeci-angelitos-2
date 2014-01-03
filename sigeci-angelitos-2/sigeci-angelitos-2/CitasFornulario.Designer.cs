@@ -34,15 +34,20 @@
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
+            this.txtEvaluacion = new System.Windows.Forms.TextBox();
             this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.btnBuscarPaciente = new DevComponents.DotNetBar.ButtonX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtNumeroHistoria = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboModalidad = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboTerapeuta = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboTurno = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboServicios = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
@@ -59,13 +64,8 @@
             this.pageNavigator1 = new DevComponents.DotNetBar.Controls.PageNavigator();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.comboServicios = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboTerapeuta = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboTurno = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboModalidad = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
-            this.btnBuscarPaciente = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,15 +78,15 @@
             this.groupBox1.Controls.Add(this.labelX10);
             this.groupBox1.Controls.Add(this.labelX5);
             this.groupBox1.Controls.Add(this.labelX3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtApellidoMaterno);
+            this.groupBox1.Controls.Add(this.txtEvaluacion);
+            this.groupBox1.Controls.Add(this.txtDNI);
+            this.groupBox1.Controls.Add(this.txtApellidoPaterno);
             this.groupBox1.Controls.Add(this.labelX2);
-            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtNombres);
             this.groupBox1.Controls.Add(this.btnBuscarPaciente);
             this.groupBox1.Controls.Add(this.labelX1);
-            this.groupBox1.Controls.Add(this.txtDNI);
+            this.groupBox1.Controls.Add(this.txtNumeroHistoria);
             this.groupBox1.Location = new System.Drawing.Point(19, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(653, 148);
@@ -146,37 +146,37 @@
             this.labelX3.TabIndex = 12;
             this.labelX3.Text = "Apellido Paterno :";
             // 
-            // textBox2
+            // txtApellidoMaterno
             // 
-            this.textBox2.Location = new System.Drawing.Point(440, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(189, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(440, 68);
+            this.txtApellidoMaterno.Name = "txtApellidoMaterno";
+            this.txtApellidoMaterno.ReadOnly = true;
+            this.txtApellidoMaterno.Size = new System.Drawing.Size(189, 20);
+            this.txtApellidoMaterno.TabIndex = 11;
             // 
-            // textBox4
+            // txtEvaluacion
             // 
-            this.textBox4.Location = new System.Drawing.Point(440, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(189, 20);
-            this.textBox4.TabIndex = 11;
+            this.txtEvaluacion.Location = new System.Drawing.Point(440, 107);
+            this.txtEvaluacion.Name = "txtEvaluacion";
+            this.txtEvaluacion.ReadOnly = true;
+            this.txtEvaluacion.Size = new System.Drawing.Size(189, 20);
+            this.txtEvaluacion.TabIndex = 11;
             // 
-            // textBox3
+            // txtDNI
             // 
-            this.textBox3.Location = new System.Drawing.Point(125, 108);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(182, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtDNI.Location = new System.Drawing.Point(125, 108);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.ReadOnly = true;
+            this.txtDNI.Size = new System.Drawing.Size(182, 20);
+            this.txtDNI.TabIndex = 11;
             // 
-            // textBox1
+            // txtApellidoPaterno
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(182, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(125, 68);
+            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
+            this.txtApellidoPaterno.ReadOnly = true;
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(182, 20);
+            this.txtApellidoPaterno.TabIndex = 11;
             // 
             // labelX2
             // 
@@ -191,13 +191,26 @@
             this.labelX2.TabIndex = 10;
             this.labelX2.Text = "Nombres :";
             // 
-            // txtNombre
+            // txtNombres
             // 
-            this.txtNombre.Location = new System.Drawing.Point(440, 32);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(189, 20);
-            this.txtNombre.TabIndex = 9;
+            this.txtNombres.Location = new System.Drawing.Point(440, 32);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.ReadOnly = true;
+            this.txtNombres.Size = new System.Drawing.Size(189, 20);
+            this.txtNombres.TabIndex = 9;
+            // 
+            // btnBuscarPaciente
+            // 
+            this.btnBuscarPaciente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBuscarPaciente.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBuscarPaciente.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
+            this.btnBuscarPaciente.ImageFixedSize = new System.Drawing.Size(17, 17);
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(278, 29);
+            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(29, 20);
+            this.btnBuscarPaciente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBuscarPaciente.TabIndex = 8;
+            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
             // 
             // labelX1
             // 
@@ -212,13 +225,13 @@
             this.labelX1.TabIndex = 7;
             this.labelX1.Text = "Historia Clinica :";
             // 
-            // txtDNI
+            // txtNumeroHistoria
             // 
-            this.txtDNI.Location = new System.Drawing.Point(125, 29);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.ReadOnly = true;
-            this.txtDNI.Size = new System.Drawing.Size(147, 20);
-            this.txtDNI.TabIndex = 6;
+            this.txtNumeroHistoria.Location = new System.Drawing.Point(125, 29);
+            this.txtNumeroHistoria.Name = "txtNumeroHistoria";
+            this.txtNumeroHistoria.ReadOnly = true;
+            this.txtNumeroHistoria.Size = new System.Drawing.Size(147, 20);
+            this.txtNumeroHistoria.TabIndex = 6;
             // 
             // groupBox2
             // 
@@ -236,6 +249,59 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Servicio";
+            // 
+            // comboModalidad
+            // 
+            this.comboModalidad.DisplayMember = "Text";
+            this.comboModalidad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboModalidad.FormattingEnabled = true;
+            this.comboModalidad.ItemHeight = 14;
+            this.comboModalidad.Location = new System.Drawing.Point(438, 73);
+            this.comboModalidad.Name = "comboModalidad";
+            this.comboModalidad.Size = new System.Drawing.Size(191, 20);
+            this.comboModalidad.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboModalidad.TabIndex = 16;
+            // 
+            // comboTerapeuta
+            // 
+            this.comboTerapeuta.DisplayMember = "Text";
+            this.comboTerapeuta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTerapeuta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTerapeuta.FormattingEnabled = true;
+            this.comboTerapeuta.ItemHeight = 14;
+            this.comboTerapeuta.Location = new System.Drawing.Point(122, 73);
+            this.comboTerapeuta.Name = "comboTerapeuta";
+            this.comboTerapeuta.Size = new System.Drawing.Size(182, 20);
+            this.comboTerapeuta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboTerapeuta.TabIndex = 16;
+            // 
+            // comboTurno
+            // 
+            this.comboTurno.DisplayMember = "Text";
+            this.comboTurno.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTurno.FormattingEnabled = true;
+            this.comboTurno.ItemHeight = 14;
+            this.comboTurno.Location = new System.Drawing.Point(438, 27);
+            this.comboTurno.Name = "comboTurno";
+            this.comboTurno.Size = new System.Drawing.Size(191, 20);
+            this.comboTurno.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboTurno.TabIndex = 16;
+            // 
+            // comboServicios
+            // 
+            this.comboServicios.DisplayMember = "Text";
+            this.comboServicios.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboServicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboServicios.FormattingEnabled = true;
+            this.comboServicios.ItemHeight = 14;
+            this.comboServicios.Location = new System.Drawing.Point(124, 27);
+            this.comboServicios.Name = "comboServicios";
+            this.comboServicios.Size = new System.Drawing.Size(182, 20);
+            this.comboServicios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboServicios.TabIndex = 16;
+            this.comboServicios.SelectedIndexChanged += new System.EventHandler(this.comboServicios_SelectedIndexChanged);
             // 
             // labelX11
             // 
@@ -402,58 +468,6 @@
             this.labelX9.TabIndex = 14;
             this.labelX9.Text = "Fecha :";
             // 
-            // comboServicios
-            // 
-            this.comboServicios.DisplayMember = "Text";
-            this.comboServicios.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboServicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboServicios.FormattingEnabled = true;
-            this.comboServicios.ItemHeight = 14;
-            this.comboServicios.Location = new System.Drawing.Point(124, 27);
-            this.comboServicios.Name = "comboServicios";
-            this.comboServicios.Size = new System.Drawing.Size(182, 20);
-            this.comboServicios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboServicios.TabIndex = 16;
-            // 
-            // comboTerapeuta
-            // 
-            this.comboTerapeuta.DisplayMember = "Text";
-            this.comboTerapeuta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboTerapeuta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTerapeuta.FormattingEnabled = true;
-            this.comboTerapeuta.ItemHeight = 14;
-            this.comboTerapeuta.Location = new System.Drawing.Point(122, 73);
-            this.comboTerapeuta.Name = "comboTerapeuta";
-            this.comboTerapeuta.Size = new System.Drawing.Size(182, 20);
-            this.comboTerapeuta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboTerapeuta.TabIndex = 16;
-            // 
-            // comboTurno
-            // 
-            this.comboTurno.DisplayMember = "Text";
-            this.comboTurno.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTurno.FormattingEnabled = true;
-            this.comboTurno.ItemHeight = 14;
-            this.comboTurno.Location = new System.Drawing.Point(438, 27);
-            this.comboTurno.Name = "comboTurno";
-            this.comboTurno.Size = new System.Drawing.Size(191, 20);
-            this.comboTurno.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboTurno.TabIndex = 16;
-            // 
-            // comboModalidad
-            // 
-            this.comboModalidad.DisplayMember = "Text";
-            this.comboModalidad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboModalidad.FormattingEnabled = true;
-            this.comboModalidad.ItemHeight = 14;
-            this.comboModalidad.Location = new System.Drawing.Point(438, 73);
-            this.comboModalidad.Name = "comboModalidad";
-            this.comboModalidad.Size = new System.Drawing.Size(191, 20);
-            this.comboModalidad.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.comboModalidad.TabIndex = 16;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -466,6 +480,7 @@
             this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -479,19 +494,6 @@
             this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
-            // 
-            // btnBuscarPaciente
-            // 
-            this.btnBuscarPaciente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnBuscarPaciente.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnBuscarPaciente.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
-            this.btnBuscarPaciente.ImageFixedSize = new System.Drawing.Size(17, 17);
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(278, 29);
-            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
-            this.btnBuscarPaciente.Size = new System.Drawing.Size(29, 20);
-            this.btnBuscarPaciente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnBuscarPaciente.TabIndex = 8;
-            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
             // 
             // CitasFornulario
             // 
@@ -523,16 +525,16 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtNumeroHistoria;
         private DevComponents.DotNetBar.ButtonX btnBuscarPaciente;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtApellidoMaterno;
+        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtApellidoPaterno;
         private DevComponents.DotNetBar.LabelX labelX2;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.GroupBox groupBox2;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX8;
@@ -543,7 +545,7 @@
         private DevComponents.DotNetBar.LabelX labelX9;
         private System.Windows.Forms.DataGridView dataGridView1;
         private DevComponents.DotNetBar.LabelX labelX10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEvaluacion;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.ButtonX btnCancelar;
         private DevComponents.DotNetBar.ButtonX btnAceptar;

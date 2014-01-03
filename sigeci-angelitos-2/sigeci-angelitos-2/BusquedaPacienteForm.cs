@@ -18,10 +18,12 @@ namespace sigeci_angelitos_2
     {
         private ControladorPaciente controladorPaciente = ControladorPaciente.Instancia();
         private List<Paciente> pacientes;
+        private CitasFornulario padre;
 
-        public BusquedaPacienteForm()
+        public BusquedaPacienteForm(CitasFornulario citasFormulario)
         {
             InitializeComponent();
+            this.padre = citasFormulario;
         }
 
         public void llenarPacientes(string strHistoriaClinica, string strDNI, string nombres, string apellidoPaterno, string apellidoMaterno)
@@ -53,6 +55,36 @@ namespace sigeci_angelitos_2
                 }
             }
             return paciente;
+        }
+
+        private void seleccionaPaciente()
+        {
+            try
+            {
+                Paciente paciente = buscarPaciente(int.Parse(dgvPacientes.CurrentRow.Cells[0].Value.ToString()));
+                padre.llenarPaciente(paciente);
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("No ha seleccionado un paciente");
+            }
+        }
+
+        private void dgvPacientes_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            seleccionaPaciente();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            seleccionaPaciente();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
 
 
