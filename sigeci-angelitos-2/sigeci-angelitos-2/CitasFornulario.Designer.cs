@@ -40,25 +40,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.btnBuscarPaciente = new DevComponents.DotNetBar.ButtonX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pageNavigator1 = new DevComponents.DotNetBar.Controls.PageNavigator();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
-            this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
             this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +56,16 @@
             this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pageNavigator1 = new DevComponents.DotNetBar.Controls.PageNavigator();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.comboServicios = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboTerapeuta = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboTurno = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboModalidad = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
+            this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
+            this.btnBuscarPaciente = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -159,7 +159,7 @@
             this.textBox4.Location = new System.Drawing.Point(440, 107);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(182, 20);
+            this.textBox4.Size = new System.Drawing.Size(189, 20);
             this.textBox4.TabIndex = 11;
             // 
             // textBox3
@@ -199,19 +199,6 @@
             this.txtNombre.Size = new System.Drawing.Size(189, 20);
             this.txtNombre.TabIndex = 9;
             // 
-            // btnBuscarPaciente
-            // 
-            this.btnBuscarPaciente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnBuscarPaciente.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnBuscarPaciente.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
-            this.btnBuscarPaciente.ImageFixedSize = new System.Drawing.Size(17, 17);
-            this.btnBuscarPaciente.Location = new System.Drawing.Point(278, 29);
-            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
-            this.btnBuscarPaciente.Size = new System.Drawing.Size(29, 20);
-            this.btnBuscarPaciente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnBuscarPaciente.TabIndex = 8;
-            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
-            // 
             // labelX1
             // 
             // 
@@ -229,18 +216,19 @@
             // 
             this.txtDNI.Location = new System.Drawing.Point(125, 29);
             this.txtDNI.Name = "txtDNI";
+            this.txtDNI.ReadOnly = true;
             this.txtDNI.Size = new System.Drawing.Size(147, 20);
             this.txtDNI.TabIndex = 6;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.comboModalidad);
+            this.groupBox2.Controls.Add(this.comboTerapeuta);
+            this.groupBox2.Controls.Add(this.comboTurno);
+            this.groupBox2.Controls.Add(this.comboServicios);
             this.groupBox2.Controls.Add(this.labelX11);
             this.groupBox2.Controls.Add(this.labelX7);
-            this.groupBox2.Controls.Add(this.comboBox3);
             this.groupBox2.Controls.Add(this.labelX8);
-            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.labelX6);
             this.groupBox2.Location = new System.Drawing.Point(19, 166);
             this.groupBox2.Name = "groupBox2";
@@ -248,22 +236,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Servicio";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(439, 72);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(189, 21);
-            this.comboBox4.TabIndex = 15;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(439, 29);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(189, 21);
-            this.comboBox2.TabIndex = 15;
             // 
             // labelX11
             // 
@@ -291,14 +263,6 @@
             this.labelX7.TabIndex = 14;
             this.labelX7.Text = "Turno :";
             // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(125, 72);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(181, 21);
-            this.comboBox3.TabIndex = 15;
-            // 
             // labelX8
             // 
             // 
@@ -311,14 +275,6 @@
             this.labelX8.Size = new System.Drawing.Size(107, 23);
             this.labelX8.TabIndex = 14;
             this.labelX8.Text = "Terapeuta :";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(125, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 21);
-            this.comboBox1.TabIndex = 15;
             // 
             // labelX6
             // 
@@ -365,70 +321,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(629, 166);
             this.dataGridView1.TabIndex = 18;
             // 
-            // pageNavigator1
-            // 
-            // 
-            // 
-            // 
-            this.pageNavigator1.BackgroundStyle.Class = "";
-            this.pageNavigator1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pageNavigator1.Location = new System.Drawing.Point(310, 32);
-            this.pageNavigator1.Name = "pageNavigator1";
-            this.pageNavigator1.NextPageTooltip = "Día Siguiente";
-            this.pageNavigator1.PreviousPageTooltip = "Día Anterior";
-            this.pageNavigator1.Size = new System.Drawing.Size(69, 20);
-            this.pageNavigator1.TabIndex = 17;
-            this.pageNavigator1.Text = "pageNavigator1";
-            this.pageNavigator1.TodayTooltip = "Hoy";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 32);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(180, 20);
-            this.dateTimePicker1.TabIndex = 16;
-            // 
-            // labelX9
-            // 
-            // 
-            // 
-            // 
-            this.labelX9.BackgroundStyle.Class = "";
-            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX9.Location = new System.Drawing.Point(8, 29);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(107, 23);
-            this.labelX9.TabIndex = 14;
-            this.labelX9.Text = "Fecha :";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancelar.Image = global::sigeci_angelitos_2.Properties.Resources.borrar;
-            this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnCancelar.Location = new System.Drawing.Point(363, 549);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(123, 32);
-            this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Cancelar";
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAceptar.Image = global::sigeci_angelitos_2.Properties.Resources.aceptar;
-            this.btnAceptar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnAceptar.Location = new System.Drawing.Point(212, 549);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(123, 32);
-            this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAceptar.TabIndex = 10;
-            this.btnAceptar.Text = "Aceptar";
-            // 
             // horaCita
             // 
             this.horaCita.HeaderText = "Hora";
@@ -472,6 +364,135 @@
             this.sabado.Name = "sabado";
             this.sabado.ReadOnly = true;
             // 
+            // pageNavigator1
+            // 
+            // 
+            // 
+            // 
+            this.pageNavigator1.BackgroundStyle.Class = "";
+            this.pageNavigator1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.pageNavigator1.Location = new System.Drawing.Point(310, 32);
+            this.pageNavigator1.Name = "pageNavigator1";
+            this.pageNavigator1.NextPageTooltip = "Día Siguiente";
+            this.pageNavigator1.PreviousPageTooltip = "Día Anterior";
+            this.pageNavigator1.Size = new System.Drawing.Size(69, 20);
+            this.pageNavigator1.TabIndex = 17;
+            this.pageNavigator1.Text = "pageNavigator1";
+            this.pageNavigator1.TodayTooltip = "Hoy";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 32);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePicker1.TabIndex = 16;
+            // 
+            // labelX9
+            // 
+            // 
+            // 
+            // 
+            this.labelX9.BackgroundStyle.Class = "";
+            this.labelX9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX9.Location = new System.Drawing.Point(8, 29);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(107, 23);
+            this.labelX9.TabIndex = 14;
+            this.labelX9.Text = "Fecha :";
+            // 
+            // comboServicios
+            // 
+            this.comboServicios.DisplayMember = "Text";
+            this.comboServicios.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboServicios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboServicios.FormattingEnabled = true;
+            this.comboServicios.ItemHeight = 14;
+            this.comboServicios.Location = new System.Drawing.Point(124, 27);
+            this.comboServicios.Name = "comboServicios";
+            this.comboServicios.Size = new System.Drawing.Size(182, 20);
+            this.comboServicios.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboServicios.TabIndex = 16;
+            // 
+            // comboTerapeuta
+            // 
+            this.comboTerapeuta.DisplayMember = "Text";
+            this.comboTerapeuta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTerapeuta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTerapeuta.FormattingEnabled = true;
+            this.comboTerapeuta.ItemHeight = 14;
+            this.comboTerapeuta.Location = new System.Drawing.Point(122, 73);
+            this.comboTerapeuta.Name = "comboTerapeuta";
+            this.comboTerapeuta.Size = new System.Drawing.Size(182, 20);
+            this.comboTerapeuta.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboTerapeuta.TabIndex = 16;
+            // 
+            // comboTurno
+            // 
+            this.comboTurno.DisplayMember = "Text";
+            this.comboTurno.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTurno.FormattingEnabled = true;
+            this.comboTurno.ItemHeight = 14;
+            this.comboTurno.Location = new System.Drawing.Point(438, 27);
+            this.comboTurno.Name = "comboTurno";
+            this.comboTurno.Size = new System.Drawing.Size(191, 20);
+            this.comboTurno.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboTurno.TabIndex = 16;
+            // 
+            // comboModalidad
+            // 
+            this.comboModalidad.DisplayMember = "Text";
+            this.comboModalidad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboModalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboModalidad.FormattingEnabled = true;
+            this.comboModalidad.ItemHeight = 14;
+            this.comboModalidad.Location = new System.Drawing.Point(438, 73);
+            this.comboModalidad.Name = "comboModalidad";
+            this.comboModalidad.Size = new System.Drawing.Size(191, 20);
+            this.comboModalidad.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.comboModalidad.TabIndex = 16;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCancelar.Image = global::sigeci_angelitos_2.Properties.Resources.borrar;
+            this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnCancelar.Location = new System.Drawing.Point(363, 549);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(123, 32);
+            this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.Text = "Cancelar";
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnAceptar.Image = global::sigeci_angelitos_2.Properties.Resources.aceptar;
+            this.btnAceptar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnAceptar.Location = new System.Drawing.Point(212, 549);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(123, 32);
+            this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnAceptar.TabIndex = 10;
+            this.btnAceptar.Text = "Aceptar";
+            // 
+            // btnBuscarPaciente
+            // 
+            this.btnBuscarPaciente.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBuscarPaciente.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBuscarPaciente.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
+            this.btnBuscarPaciente.ImageFixedSize = new System.Drawing.Size(17, 17);
+            this.btnBuscarPaciente.Location = new System.Drawing.Point(278, 29);
+            this.btnBuscarPaciente.Name = "btnBuscarPaciente";
+            this.btnBuscarPaciente.Size = new System.Drawing.Size(29, 20);
+            this.btnBuscarPaciente.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBuscarPaciente.TabIndex = 8;
+            this.btnBuscarPaciente.Click += new System.EventHandler(this.btnBuscarPaciente_Click);
+            // 
             // CitasFornulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,6 +505,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CitasFornulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -512,11 +534,8 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private DevComponents.DotNetBar.LabelX labelX7;
-        private System.Windows.Forms.ComboBox comboBox3;
         private DevComponents.DotNetBar.LabelX labelX8;
-        private System.Windows.Forms.ComboBox comboBox1;
         private DevComponents.DotNetBar.LabelX labelX6;
         private System.Windows.Forms.GroupBox groupBox3;
         private DevComponents.DotNetBar.Controls.PageNavigator pageNavigator1;
@@ -525,7 +544,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private DevComponents.DotNetBar.LabelX labelX10;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox4;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.ButtonX btnCancelar;
         private DevComponents.DotNetBar.ButtonX btnAceptar;
@@ -536,5 +554,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jueves;
         private System.Windows.Forms.DataGridViewTextBoxColumn viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn sabado;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboModalidad;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboTerapeuta;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboTurno;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx comboServicios;
     }
 }

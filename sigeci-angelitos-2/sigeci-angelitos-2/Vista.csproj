@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusquedaPacienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusquedaPacienteForm.Designer.cs">
+      <DependentUpon>BusquedaPacienteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CitasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     <Compile Include="UsuariosFormulario.Designer.cs">
       <DependentUpon>UsuariosFormulario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BusquedaPacienteForm.resx">
+      <DependentUpon>BusquedaPacienteForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CitasForm.resx">
       <DependentUpon>CitasForm.cs</DependentUpon>
     </EmbeddedResource>
