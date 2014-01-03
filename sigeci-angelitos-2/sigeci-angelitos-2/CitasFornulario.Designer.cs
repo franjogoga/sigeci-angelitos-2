@@ -54,6 +54,11 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pageNavigator1 = new DevComponents.DotNetBar.Controls.PageNavigator();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
+            this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
             this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,11 +66,6 @@
             this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pageNavigator1 = new DevComponents.DotNetBar.Controls.PageNavigator();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
-            this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -365,48 +365,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(629, 166);
             this.dataGridView1.TabIndex = 18;
             // 
-            // horaCita
-            // 
-            this.horaCita.HeaderText = "Hora";
-            this.horaCita.Name = "horaCita";
-            this.horaCita.ReadOnly = true;
-            // 
-            // lunes
-            // 
-            this.lunes.HeaderText = "Lunes";
-            this.lunes.Name = "lunes";
-            this.lunes.ReadOnly = true;
-            // 
-            // martes
-            // 
-            this.martes.HeaderText = "Martes";
-            this.martes.Name = "martes";
-            this.martes.ReadOnly = true;
-            // 
-            // miercoles
-            // 
-            this.miercoles.HeaderText = "Miércoles";
-            this.miercoles.Name = "miercoles";
-            this.miercoles.ReadOnly = true;
-            // 
-            // jueves
-            // 
-            this.jueves.HeaderText = "Jueves";
-            this.jueves.Name = "jueves";
-            this.jueves.ReadOnly = true;
-            // 
-            // viernes
-            // 
-            this.viernes.HeaderText = "Viernes";
-            this.viernes.Name = "viernes";
-            this.viernes.ReadOnly = true;
-            // 
-            // sabado
-            // 
-            this.sabado.HeaderText = "Sabado";
-            this.sabado.Name = "sabado";
-            this.sabado.ReadOnly = true;
-            // 
             // pageNavigator1
             // 
             // 
@@ -471,6 +429,49 @@
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             // 
+            // horaCita
+            // 
+            this.horaCita.HeaderText = "Hora";
+            this.horaCita.Name = "horaCita";
+            this.horaCita.ReadOnly = true;
+            this.horaCita.Width = 50;
+            // 
+            // lunes
+            // 
+            this.lunes.HeaderText = "Lunes";
+            this.lunes.Name = "lunes";
+            this.lunes.ReadOnly = true;
+            // 
+            // martes
+            // 
+            this.martes.HeaderText = "Martes";
+            this.martes.Name = "martes";
+            this.martes.ReadOnly = true;
+            // 
+            // miercoles
+            // 
+            this.miercoles.HeaderText = "Miércoles";
+            this.miercoles.Name = "miercoles";
+            this.miercoles.ReadOnly = true;
+            // 
+            // jueves
+            // 
+            this.jueves.HeaderText = "Jueves";
+            this.jueves.Name = "jueves";
+            this.jueves.ReadOnly = true;
+            // 
+            // viernes
+            // 
+            this.viernes.HeaderText = "Viernes";
+            this.viernes.Name = "viernes";
+            this.viernes.ReadOnly = true;
+            // 
+            // sabado
+            // 
+            this.sabado.HeaderText = "Sábado";
+            this.sabado.Name = "sabado";
+            this.sabado.ReadOnly = true;
+            // 
             // CitasFornulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,6 +527,8 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.ComboBox comboBox4;
         private DevComponents.DotNetBar.LabelX labelX11;
+        private DevComponents.DotNetBar.ButtonX btnCancelar;
+        private DevComponents.DotNetBar.ButtonX btnAceptar;
         private System.Windows.Forms.DataGridViewTextBoxColumn horaCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn lunes;
         private System.Windows.Forms.DataGridViewTextBoxColumn martes;
@@ -533,7 +536,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jueves;
         private System.Windows.Forms.DataGridViewTextBoxColumn viernes;
         private System.Windows.Forms.DataGridViewTextBoxColumn sabado;
-        private DevComponents.DotNetBar.ButtonX btnCancelar;
-        private DevComponents.DotNetBar.ButtonX btnAceptar;
     }
 }

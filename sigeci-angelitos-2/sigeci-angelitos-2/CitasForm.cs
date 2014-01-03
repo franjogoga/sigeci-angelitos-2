@@ -16,11 +16,14 @@ namespace sigeci_angelitos_2
     public partial class CitasForm : Office2007Form
     {
         private ControladorCita controladorCita = ControladorCita.Instancia();
+        private ControladorServicio controladorServicio = ControladorServicio.Instancia();
         private List<Cita> citas;
-
+        public List<Servicio> servicios;
+            
         public CitasForm()
         {
             InitializeComponent();
+            llenarServicios();
         }
 
         private void CitasForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -30,8 +33,23 @@ namespace sigeci_angelitos_2
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            CitasFornulario citasFormulario = new CitasFornulario(this, 0, null);
+            CitasFornulario citasFormulario = new CitasFornulario();
             citasFormulario.ShowDialog();
+        }
+
+        public void llenarServicios()
+        {
+            servicios = controladorServicio.getListaServicios("");
+            Servicio servicio = new Servicio();
+            servicio.idServicio = 0;
+            servicio.nombreServicio = "-";
+            servicios.Add(servicio);
+
+            comboServicios.DataSource = servicios;
+            comboServicios.DisplayMember = "nombreServicio";
+            comboServicios.ValueMember = "idServicio";
+            comboServicios.SelectedText = servicios[servicios.Count-1].nombreServicio;
+            comboServicios.SelectedValue = servicios[servicios.Count-1].idServicio;
         }
 
         public void llenarCitas(string strNumeroCita, string nombres, string apellidoPaterno, string nombreServicio, string strFecha)
@@ -48,7 +66,7 @@ namespace sigeci_angelitos_2
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            llenarCitas(txtNumeroCita.Text, txtNombres.Text, txtApellidoPaterno.Text, comboServicios.SelectedItem.ToString(), dateFechaCita.Text);
+            llenarCitas(txtNumeroCita.Text, txtNombres.Text, txtApellidoPaterno.Text, comboServicios.SelectedValue.ToString(), dateFechaCita.Text);
         }
 
 
