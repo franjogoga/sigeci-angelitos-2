@@ -433,4 +433,21 @@ namespace Modelo
             set { _terapeuta = value; }
         }
     }
+
+    public class Turno
+    {
+        private int _idTurno;
+        private string _nombreTurno;
+
+        public int idTurno
+        {
+            get { return _idTurno; }
+            set { _idTurno = value; }
+        }
+        public string nombreTurno
+        {
+            get { return _nombreTurno; }
+            set { _nombreTurno = value; }
+        }
+    }
 }

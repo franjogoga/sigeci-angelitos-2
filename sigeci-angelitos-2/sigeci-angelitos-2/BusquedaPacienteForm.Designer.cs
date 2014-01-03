@@ -47,6 +47,7 @@
             this.apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoCasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
             this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
@@ -202,6 +203,7 @@
             this.dgvPacientes.ReadOnly = true;
             this.dgvPacientes.Size = new System.Drawing.Size(689, 183);
             this.dgvPacientes.TabIndex = 3;
+            this.dgvPacientes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvPacientes_MouseDoubleClick);
             // 
             // numHistoria
             // 
@@ -243,26 +245,41 @@
             this.telefonoCasa.Name = "telefonoCasa";
             this.telefonoCasa.ReadOnly = true;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCancelar.Image = global::sigeci_angelitos_2.Properties.Resources.borrar;
+            this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnCancelar.Location = new System.Drawing.Point(367, 364);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(123, 32);
+            this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // btnAceptar
             // 
             this.btnAceptar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAceptar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnAceptar.Image = global::sigeci_angelitos_2.Properties.Resources.aceptar;
-            this.btnAceptar.ImageFixedSize = new System.Drawing.Size(23, 23);
-            this.btnAceptar.Location = new System.Drawing.Point(301, 364);
+            this.btnAceptar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnAceptar.Location = new System.Drawing.Point(216, 364);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 32);
+            this.btnAceptar.Size = new System.Drawing.Size(123, 32);
             this.btnAceptar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnAceptar.TabIndex = 4;
+            this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // BusquedaPacienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(711, 400);
+            this.ClientSize = new System.Drawing.Size(711, 403);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvPacientes);
@@ -299,6 +316,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoCasa;
+        private DevComponents.DotNetBar.ButtonX btnCancelar;
         private DevComponents.DotNetBar.ButtonX btnAceptar;
     }
 }
