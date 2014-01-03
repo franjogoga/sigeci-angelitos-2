@@ -27,6 +27,7 @@ namespace sigeci_angelitos_2
             InitializeComponent();
             llenarServicios();
             llenarTurnos();
+            llenarTerapeutas(servicios[0].idServicio);
         }
 
         private void btnBuscarPaciente_Click(object sender, EventArgs e)
@@ -80,9 +81,22 @@ namespace sigeci_angelitos_2
             this.Dispose();
         }
 
+        private void llenarTerapeutas(int idServicio)
+        {
+            terapeutas = controladorTerapeuta.getListaTerapeutasxServicio(idServicio);
+            
+            comboTerapeuta.DisplayMember = "nombres";
+            comboTerapeuta.ValueMember = "idPersona";
+
+            foreach (Terapeuta t in terapeutas)
+            {
+                comboTerapeuta.Items.Add(new { nombres = t.persona.nombres+" "+t.persona.apellidoPaterno+" "+t.persona.apellidoMaterno, idPersona = t.persona.idPersona });
+            }
+        }
+
         private void comboServicios_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            llenarTerapeutas(int.Parse(comboTerapeuta.SelectedValue.ToString()));
         }
 
     }
