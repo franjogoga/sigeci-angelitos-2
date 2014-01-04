@@ -17,17 +17,18 @@ namespace sigeci_angelitos_2
     {
         private ControladorServicio controladorServicio = ControladorServicio.Instancia();
         private ControladorTerapeuta controladorTerapeuta = ControladorTerapeuta.Instancia();
+        private ControladorModalidad controladorModalidad = ControladorModalidad.Instancia();
         private List<Terapeuta> terapeutas;
         private List<Servicio> servicios;
         private List<Turno> turnos;
+        private List<Modalidad> modalidades;
         private Paciente paciente; 
 
         public CitasFornulario()
         {
             InitializeComponent();
             llenarServicios();
-            llenarTurnos();
-            llenarTerapeutas(servicios[0].idServicio);
+            llenarTurnos();            
         }
 
         private void btnBuscarPaciente_Click(object sender, EventArgs e)
@@ -41,9 +42,7 @@ namespace sigeci_angelitos_2
             servicios = controladorServicio.getListaServicios("");            
             comboServicios.DataSource = servicios;
             comboServicios.DisplayMember = "nombreServicio";
-            comboServicios.ValueMember = "idServicio";
-            comboServicios.SelectedText = servicios[0].nombreServicio;
-            comboServicios.SelectedValue = servicios[0].idServicio;
+            comboServicios.ValueMember = "idServicio";            
         }
 
         public void llenarPaciente(Paciente paciente)
@@ -71,9 +70,7 @@ namespace sigeci_angelitos_2
 
             comboTurno.DataSource = turnos;
             comboTurno.DisplayMember = "nombreTurno";
-            comboTurno.ValueMember = "idTurno";
-            comboTurno.SelectedText = turnos[0].nombreTurno;
-            comboTurno.SelectedValue = turnos[0].idTurno;
+            comboTurno.ValueMember = "idTurno";            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -84,19 +81,35 @@ namespace sigeci_angelitos_2
         private void llenarTerapeutas(int idServicio)
         {
             terapeutas = controladorTerapeuta.getListaTerapeutasxServicio(idServicio);
-            
+            comboTerapeuta.Items.Clear();
             comboTerapeuta.DisplayMember = "nombres";
             comboTerapeuta.ValueMember = "idPersona";
 
             foreach (Terapeuta t in terapeutas)
             {
                 comboTerapeuta.Items.Add(new { nombres = t.persona.nombres+" "+t.persona.apellidoPaterno+" "+t.persona.apellidoMaterno, idPersona = t.persona.idPersona });
+            }            
+        }
+
+        private void llenarModalidades(int idServicio)
+        {
+            modalidades = controladorModalidad.getListaModalidadesxServicio("", idServicio);
+            comboModalidad.Items.Clear();                        
+            comboModalidad.DisplayMember = "nombreModalidad";
+            comboModalidad.ValueMember = "idModalidad";
+
+            foreach (Modalidad m in modalidades)
+            {
+                comboModalidad.Items.Add(new { nombreModalidad = m.nombreModalidad, idModalidad=m.idModalidad});
             }
         }
 
         private void comboServicios_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            llenarTerapeutas(int.Parse(comboTerapeuta.SelectedValue.ToString()));
+        {            
+            Servicio s = new Servicio();
+            s = comboServicios.SelectedItem as Servicio;
+            llenarTerapeutas(s.idServicio);            
+            llenarModalidades(s.idServicio);
         }
 
     }
