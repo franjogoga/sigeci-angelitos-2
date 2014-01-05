@@ -1478,7 +1478,7 @@ namespace Controlador
             return controladorCita;
         }
 
-        public List<Cita> getListaCitas(string strNumeroCita, string nombres, string apellidoPaterno, string strIdServicio, string strFecha)
+        public List<Cita> getListaCitas(string strNumeroCita, string nombres, string apellidoPaterno, string strIdServicio, DateTime strFecha)
         {
             string cit = "", servi="";
             int idCita = 0, idServicio=0, idP=0, idT=0;
@@ -1506,7 +1506,7 @@ namespace Controlador
             {
                 new OleDbParameter("@nombres","%"+nombres+"%"),               
                 new OleDbParameter("@apellidoPaterno","%"+apellidoPaterno+"%"),
-                new OleDbParameter("@fechaCita",Convert.ToDateTime(strFecha)),
+                new OleDbParameter("@fechaCita",strFecha.Date),
             });
 
             if (!strNumeroCita.Equals(""))
