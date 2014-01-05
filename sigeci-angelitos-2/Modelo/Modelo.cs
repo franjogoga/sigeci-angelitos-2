@@ -369,25 +369,63 @@ namespace Modelo
         }
     }
 
+    public class Pago
+    {
+        private int _idPago;
+        private int _idCita;
+        private float _monto;
+        private DateTime _fecha;
+        private string _estado;
+
+        public int idPago
+        {
+            get { return _idPago; }
+            set { _idPago = value; }
+        }
+        public int idCita
+        {
+            get { return _idCita; }
+            set { _idCita = value; }
+        }
+        public float monto
+        {
+            get { return _monto; }
+            set { _monto = value; }
+        }
+        public DateTime fecha
+        {
+            get { return _fecha; }
+            set { _fecha = value; }
+        }
+        public string estado
+        {
+            get { return _estado; }
+            set { _estado = value; }
+        }
+    }
+
     public class Cita
     {
         private int _idCita;
-        private Persona _paciente;
+        private Paciente _paciente;
         private DateTime _fechaCita;
         private DateTime _horaCita;
         private Servicio _servicio;
+        private Modalidad _modalidad;
         private string _estado;
         private DateTime _fechaRegistro;
-        private float _pago;
+        private float _costo;
+        private float _descuento;
         private string _estadoEvaluacion;
-        private Persona _terapeuta;
+        private Terapeuta _terapeuta;
+        private List<Pago> _pagos;
 
         public int idCita
         {
             get { return _idCita; }
             set { _idCita = value;}
         }
-        public Persona paciente
+        public Paciente paciente
         {
             get { return _paciente; }
             set { _paciente = value;}
@@ -407,6 +445,11 @@ namespace Modelo
             get { return _servicio; }
             set { _servicio = value;}
         }
+        public Modalidad modalidad
+        {
+            get { return _modalidad; }
+            set { _modalidad = value; }
+        }
         public string estado
         {
             get { return _estado; }
@@ -417,20 +460,30 @@ namespace Modelo
             get { return _fechaRegistro; }
             set { _fechaRegistro = value; }
         }
-        public float pago
+        public float costo
         {
-            get { return _pago; }
-            set { _pago = value; }
+            get { return _costo; }
+            set { _costo = value; }
+        }
+        public float descuento
+        {
+            get { return _descuento; }
+            set { _descuento = value; }
         }
         public string estadoEvaluacion
         {
             get { return _estadoEvaluacion; }
             set { _estadoEvaluacion = value; }
         }
-        public Persona terapeuta
+        public Terapeuta terapeuta
         {
             get { return _terapeuta; }
             set { _terapeuta = value; }
+        }
+        public List<Pago> pagos
+        {
+            get { return _pagos; }
+            set { _pagos = value; }
         }
     }
 

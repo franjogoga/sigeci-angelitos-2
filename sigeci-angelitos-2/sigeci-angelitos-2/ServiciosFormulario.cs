@@ -97,7 +97,6 @@ namespace sigeci_angelitos_2
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-        
+        }        
     }
 }
