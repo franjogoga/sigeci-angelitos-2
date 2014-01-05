@@ -112,6 +112,11 @@ namespace sigeci_angelitos_2
             llenarModalidades(s.idServicio);
         }
 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 

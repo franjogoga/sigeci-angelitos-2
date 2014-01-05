@@ -1360,10 +1360,74 @@ namespace Controlador
 
         public List<Cita> getListaCitas(string strNumeroCita, string nombres, string apellidoPaterno, string txtApellidoPaterno, string nombreServicio, string strFecha)
         {
+            string dn = "";
+            int dni = 0;
+            terapeutas.Clear();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
+            if (!strDNI.Equals(""))
+            {
+                dn = " and persona.dni = @dni";
+                dni = int.Parse(strDNI);
+            }
 
+            OleDbCommand comando = new OleDbCommand("select * from persona, terapeuta where persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and persona.apellidoMaterno like @apellidoMaterno and persona.estado='activo' and " + dn + " persona.idPersona = terapeuta.persona_idPersona order by persona.idPersona ASC");
 
-            return citas;
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombres","%"+nombres+"%"),               
+                new OleDbParameter("@apellidoPaterno","%"+apellidoPaterno+"%"),
+                new OleDbParameter("@apellidoMaterno","%"+apellidoMaterno+"%"),                
+            });
+
+            if (!strDNI.Equals(""))
+            {
+                comando.Parameters.AddWithValue("@dni", dni);
+            }
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Persona persona = new Persona();
+                    List<Servicio> serviciosxTerapeuta = new List<Servicio>();
+                    List<HorarioTerapeuta> horariosxTerapeuta = new List<HorarioTerapeuta>();
+                    ControladorServicio controladorServicio = ControladorServicio.Instancia();
+                    ControladorHorarioTerapeuta controladorHorarioTerapeuta = ControladorHorarioTerapeuta.Instancia();
+                    persona.idPersona = r.GetInt32(0);
+                    serviciosxTerapeuta = controladorServicio.getListaServiciosxTerapeuta(persona.idPersona);
+                    horariosxTerapeuta = controladorHorarioTerapeuta.getListaHorariosxTerapeuta(persona.idPersona);
+                    persona.nombres = r.GetString(1);
+                    persona.apellidoPaterno = r.GetString(2);
+                    persona.apellidoMaterno = r.GetString(3);
+                    persona.dni = r.GetInt32(4);
+                    persona.estado = r.GetString(5);
+                    Terapeuta terapeuta = new Terapeuta();
+                    terapeuta.persona = persona;
+                    terapeuta.fechaNacimiento = r.GetDateTime(7);
+                    terapeuta.telefono = r.GetString(8);
+                    terapeuta.servicios = serviciosxTerapeuta;
+                    terapeuta.horarioTerapeuta = horariosxTerapeuta;
+
+                    terapeutas.Add(terapeuta);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return terapeutas;
+            
         }
     }
 

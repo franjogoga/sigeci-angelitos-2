@@ -32,11 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CitasForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateFechaCita = new System.Windows.Forms.DateTimePicker();
+            this.txtApellidoPaterno = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNombres = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNumeroCita = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.comboServicios = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -45,13 +47,14 @@
             this.btnConfirmar = new DevComponents.DotNetBar.ButtonX();
             this.btnReservar = new DevComponents.DotNetBar.ButtonX();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.txtApellidoPaterno = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
@@ -85,6 +88,18 @@
             this.dateFechaCita.Name = "dateFechaCita";
             this.dateFechaCita.Size = new System.Drawing.Size(162, 20);
             this.dateFechaCita.TabIndex = 4;
+            // 
+            // txtApellidoPaterno
+            // 
+            // 
+            // 
+            // 
+            this.txtApellidoPaterno.Border.Class = "TextBoxBorder";
+            this.txtApellidoPaterno.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(141, 75);
+            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(162, 20);
+            this.txtApellidoPaterno.TabIndex = 2;
             // 
             // txtNombres
             // 
@@ -150,6 +165,19 @@
             this.labelX4.TabIndex = 8;
             this.labelX4.Text = "Servicio :";
             // 
+            // labelX5
+            // 
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.Class = "";
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Location = new System.Drawing.Point(43, 75);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(107, 23);
+            this.labelX5.TabIndex = 6;
+            this.labelX5.Text = "Apellido Paterno :";
+            // 
             // labelX3
             // 
             // 
@@ -200,6 +228,9 @@
             this.horaCita,
             this.servicio,
             this.paciente,
+            this.costo,
+            this.descuento,
+            this.pagado,
             this.estado});
             this.dgvCitas.Location = new System.Drawing.Point(12, 182);
             this.dgvCitas.Name = "dgvCitas";
@@ -251,31 +282,6 @@
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
             // 
-            // labelX5
-            // 
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(43, 75);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(107, 23);
-            this.labelX5.TabIndex = 6;
-            this.labelX5.Text = "Apellido Paterno :";
-            // 
-            // txtApellidoPaterno
-            // 
-            // 
-            // 
-            // 
-            this.txtApellidoPaterno.Border.Class = "TextBoxBorder";
-            this.txtApellidoPaterno.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(141, 75);
-            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(162, 20);
-            this.txtApellidoPaterno.TabIndex = 2;
-            // 
             // idCita
             // 
             this.idCita.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -313,8 +319,30 @@
             this.paciente.ReadOnly = true;
             this.paciente.Width = 170;
             // 
+            // costo
+            // 
+            this.costo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.costo.HeaderText = "Costo";
+            this.costo.Name = "costo";
+            this.costo.ReadOnly = true;
+            // 
+            // descuento
+            // 
+            this.descuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descuento.HeaderText = "Dcto";
+            this.descuento.Name = "descuento";
+            this.descuento.ReadOnly = true;
+            // 
+            // pagado
+            // 
+            this.pagado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pagado.HeaderText = "Pagado";
+            this.pagado.Name = "pagado";
+            this.pagado.ReadOnly = true;
+            // 
             // estado
             // 
+            this.estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
@@ -367,6 +395,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn horaCita;
         private System.Windows.Forms.DataGridViewTextBoxColumn servicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn paciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pagado;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }
