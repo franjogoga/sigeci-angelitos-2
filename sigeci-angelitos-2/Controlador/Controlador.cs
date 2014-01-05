@@ -235,6 +235,73 @@ namespace Controlador
             return controladorPaciente;
         }
 
+        public Paciente getPaciente(int idPaciente)
+        {
+            Paciente p = new Paciente();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("select * from persona, paciente, menorEdad, mayorEdad, cita where persona.idPersona = paciente.persona_idPersona and paciente.persona_idPersona = menorEdad.paciente_persona_idPersona and paciente.persona_idPersona = mayorEdad.paciente_persona_idPersona and paciente.persona_idPersona = @idPaciente order by paciente.numeroHistoria ASC");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {                
+                new OleDbParameter("@idPaciente",idPaciente),                
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Persona persona = new Persona();
+                    persona.idPersona = r.GetInt32(0);
+                    persona.nombres = r.GetString(1);
+                    persona.apellidoPaterno = r.GetString(2);
+                    persona.apellidoMaterno = r.GetString(3);
+                    persona.dni = r.GetInt32(4);
+                    persona.estado = r.GetString(5);                    
+                    p.numeroHistoria = r.GetInt32(7);
+                    p.fechaNacimiento = r.GetDateTime(8);
+                    p.lugarNacimiento = r.GetString(9);
+                    p.domicilio = r.GetString(10);
+                    p.distrito = r.GetString(11);
+                    p.telefonoCasa = r.GetString(12);
+                    p.correo = r.GetString(13);
+                    p.comoEntero = r.GetString(14);
+                    p.observacion = r.GetString(15);
+                    MenorEdad menorEdad = new MenorEdad();
+                    menorEdad.nombreMadre = r.GetString(17);
+                    menorEdad.nombrePadre = r.GetString(18);
+                    menorEdad.celularMadre = r.GetString(19);
+                    menorEdad.celularPadre = r.GetString(20);
+                    menorEdad.escolaridad = r.GetString(21);
+                    menorEdad.nombreColegio = r.GetString(22);
+                    menorEdad.ubicacionColegio = r.GetString(23);
+                    MayorEdad mayorEdad = new MayorEdad();
+                    mayorEdad.celular = r.GetString(25);
+                    mayorEdad.ocupacion = r.GetString(26);
+                    mayorEdad.gradoInstruccion = r.GetString(27);
+                    mayorEdad.lugarLaboral = r.GetString(28);
+                    p.persona = persona;
+                    p.menorEdad = menorEdad;
+                    p.mayorEdad = mayorEdad;                    
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return p;
+        }
+
         public List<Paciente> getListaPacientes(string strHistoria, string strDNI, string nombres, string apellidoPaterno, string apellidoMaterno)
         {
             pacientes.Clear();
@@ -565,6 +632,59 @@ namespace Controlador
             if (controladorTerapeuta == null)
                 controladorTerapeuta = new ControladorTerapeuta();
             return controladorTerapeuta;
+        }
+
+        public Terapeuta getTerapeuta(int idTerapeuta)
+        {
+            Terapeuta t = new Terapeuta();
+            OleDbDataReader r = null;
+            ControladorServicio controladorServicio = ControladorServicio.Instancia();
+            ControladorHorarioTerapeuta controladorHorarioTerapeuta = ControladorHorarioTerapeuta.Instancia();
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("select * from persona, terapeuta where persona.idPersona = terapeuta.persona_idPersona and terapeuta.persona_idPersona = @idTerapeuta order by persona.idPersona ASC");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@idTerapeuta",idTerapeuta),
+            });            
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Persona persona = new Persona();
+                    List<Servicio> serviciosxTerapeuta = new List<Servicio>();
+                    List<HorarioTerapeuta> horariosxTerapeuta = new List<HorarioTerapeuta>();                    
+                    persona.idPersona = r.GetInt32(0);
+                    serviciosxTerapeuta = controladorServicio.getListaServiciosxTerapeuta(persona.idPersona);
+                    horariosxTerapeuta = controladorHorarioTerapeuta.getListaHorariosxTerapeuta(persona.idPersona);
+                    persona.nombres = r.GetString(1);
+                    persona.apellidoPaterno = r.GetString(2);
+                    persona.apellidoMaterno = r.GetString(3);
+                    persona.dni = r.GetInt32(4);
+                    persona.estado = r.GetString(5);                    
+                    t.persona = persona;
+                    t.fechaNacimiento = r.GetDateTime(7);
+                    t.telefono = r.GetString(8);
+                    t.servicios = serviciosxTerapeuta;
+                    t.horarioTerapeuta = horariosxTerapeuta;                    
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return t;
         }
 
         public List<Terapeuta> getListaTerapeutas(string nombres, string apellidoPaterno, string apellidoMaterno, string strDNI)
@@ -1342,7 +1462,7 @@ namespace Controlador
 
     public class ControladorCita
     {
-        //private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
         private List<Cita> citas;
         static ControladorCita controladorCita = null;
 
@@ -1358,80 +1478,167 @@ namespace Controlador
             return controladorCita;
         }
 
-        public List<Cita> getListaCitas(string strNumeroCita, string nombres, string apellidoPaterno, string txtApellidoPaterno, string nombreServicio, string strFecha)
+        public List<Cita> getListaCitas(string strNumeroCita, string nombres, string apellidoPaterno, string strIdServicio, string strFecha)
         {
-            //string dn = "";
-            //int dni = 0;
-            //terapeutas.Clear();
-            //OleDbDataReader r = null;
-            //OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+            string cit = "", servi="";
+            int idCita = 0, idServicio=0, idP=0, idT=0;
+            ControladorPaciente controladorPaciente = ControladorPaciente.Instancia();
+            ControladorTerapeuta controladorTerapeuta = ControladorTerapeuta.Instancia();
+            ControladorPago controladorPago = ControladorPago.Instancia();
+            citas.Clear();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
 
-            //if (!strDNI.Equals(""))
-            //{
-            //    dn = " and persona.dni = @dni";
-            //    dni = int.Parse(strDNI);
-            //}
+            if (!strNumeroCita.Equals(""))
+            {
+                cit = " and cita.idCita = @idCita ";
+                idCita = int.Parse(strNumeroCita);
+            }
+            if (!strIdServicio.Equals("0"))
+            {
+                servi = " and servicio.idServicio = @idServicio ";
+                idServicio = int.Parse(strIdServicio);
+            }
 
-            //OleDbCommand comando = new OleDbCommand("select * from persona, terapeuta where persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and persona.apellidoMaterno like @apellidoMaterno and persona.estado='activo' and " + dn + " persona.idPersona = terapeuta.persona_idPersona order by persona.idPersona ASC");
+            OleDbCommand comando = new OleDbCommand("SELECT * from cita, servicio, modalidad, persona where servicio.idServicio = cita.servicio_idServicio and modalidad.idModalidad = cita.modalidad_idModalidad and cita.paciente_persona_idPersona = persona.idPersona and persona.nombres like @nombres and persona.apellidoPaterno like @apellidoPaterno and cita.fechaCita = @fechaCita " + cit + servi + " order by cita.idCita asc");
 
-            //comando.Parameters.AddRange(new OleDbParameter[]
-            //{
-            //    new OleDbParameter("@nombres","%"+nombres+"%"),               
-            //    new OleDbParameter("@apellidoPaterno","%"+apellidoPaterno+"%"),
-            //    new OleDbParameter("@apellidoMaterno","%"+apellidoMaterno+"%"),                
-            //});
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombres","%"+nombres+"%"),               
+                new OleDbParameter("@apellidoPaterno","%"+apellidoPaterno+"%"),
+                new OleDbParameter("@fechaCita",Convert.ToDateTime(strFecha)),
+            });
 
-            //if (!strDNI.Equals(""))
-            //{
-            //    comando.Parameters.AddWithValue("@dni", dni);
-            //}
+            if (!strNumeroCita.Equals(""))
+            {
+                comando.Parameters.AddWithValue("@idCita", idCita);
+            }
+            if (!strIdServicio.Equals("0"))
+            {
+                comando.Parameters.AddWithValue("@idServicio",idServicio);
+            }
 
-            //comando.Connection = conexion;
+            comando.Connection = conexion;
 
-            //try
-            //{
-            //    conexion.Open();
-            //    r = comando.ExecuteReader();
-            //    while (r.Read())
-            //    {
-            //        Persona persona = new Persona();
-            //        List<Servicio> serviciosxTerapeuta = new List<Servicio>();
-            //        List<HorarioTerapeuta> horariosxTerapeuta = new List<HorarioTerapeuta>();
-            //        ControladorServicio controladorServicio = ControladorServicio.Instancia();
-            //        ControladorHorarioTerapeuta controladorHorarioTerapeuta = ControladorHorarioTerapeuta.Instancia();
-            //        persona.idPersona = r.GetInt32(0);
-            //        serviciosxTerapeuta = controladorServicio.getListaServiciosxTerapeuta(persona.idPersona);
-            //        horariosxTerapeuta = controladorHorarioTerapeuta.getListaHorariosxTerapeuta(persona.idPersona);
-            //        persona.nombres = r.GetString(1);
-            //        persona.apellidoPaterno = r.GetString(2);
-            //        persona.apellidoMaterno = r.GetString(3);
-            //        persona.dni = r.GetInt32(4);
-            //        persona.estado = r.GetString(5);
-            //        Terapeuta terapeuta = new Terapeuta();
-            //        terapeuta.persona = persona;
-            //        terapeuta.fechaNacimiento = r.GetDateTime(7);
-            //        terapeuta.telefono = r.GetString(8);
-            //        terapeuta.servicios = serviciosxTerapeuta;
-            //        terapeuta.horarioTerapeuta = horariosxTerapeuta;
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Cita cita = new Cita();
+                    cita.idCita = r.GetInt32(0);
+                    idP = r.GetInt32(1);
+                    Paciente p = new Paciente();
+                    p = controladorPaciente.getPaciente(idP);
+                    cita.fechaCita = r.GetDateTime(2);
+                    cita.horaCita = r.GetDateTime(3);                    
+                    cita.estado = r.GetString(6);
+                    cita.fechaRegistro = r.GetDateTime(7);
+                    cita.costo = r.GetFloat(8);
+                    cita.descuento = r.GetFloat(9);
+                    cita.estadoEvaluacion = r.GetString(10);
+                    idT = r.GetInt32(11);
+                    Terapeuta t = new Terapeuta();
+                    t = controladorTerapeuta.getTerapeuta(idT);
+                    Servicio s = new Servicio();
+                    s.idServicio = r.GetInt32(12);
+                    s.nombreServicio = r.GetString(13);
+                    s.intervaloHora = r.GetInt32(14);
+                    s.costo = r.GetFloat(15);
+                    s.maximoPacientes = r.GetInt32(16);
+                    s.estado = r.GetString(17);
+                    Modalidad m = new Modalidad();
+                    m.idModalidad = r.GetInt32(18);
+                    m.nombreModalidad = r.GetString(19);
+                    m.idServicio = r.GetInt32(20);
+                    m.estado = r.GetString(21);
+                    cita.servicio = s;
+                    cita.modalidad = m;
+                    cita.paciente = p;
+                    cita.terapeuta = t;
+                    List<Pago> pagos = new List<Pago>();
+                    pagos = controladorPago.getListaPagosxCita(cita.idCita);
+                    cita.pagos = pagos;
 
-            //        terapeutas.Add(terapeuta);
-            //    }
-            //}
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine(e.ToString());
-            //}
-            //finally
-            //{
-            //    r.Close();
-            //    conexion.Close();
-            //}
-            return citas;
-            
+                    citas.Add(cita);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return citas;            
         }
     }
 
+    public class ControladorPago
+    {
+        private string cadenaConexion = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./Data/terapiaDB_desarrollo.accdb;Persist Security Info=True";
+        private List<Pago> pagos;
+        static ControladorPago controladorPago = null;
 
+        private ControladorPago()
+        {
+            pagos = new List<Pago>();
+        }
+
+        static public ControladorPago Instancia()
+        {
+            if (controladorPago == null)
+                controladorPago = new ControladorPago();
+            return controladorPago;
+        }
+
+        public List<Pago> getListaPagosxCita(int idCita)
+        {
+            pagos.Clear();
+            OleDbDataReader r = null;
+            OleDbConnection conexion = new OleDbConnection(cadenaConexion);
+
+            OleDbCommand comando = new OleDbCommand("select * from pago where pago.cita_idCita = @idCita order by pago.idPago asc");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@idCita", idCita),                          
+            });
+
+            comando.Connection = conexion;
+
+            try
+            {
+                conexion.Open();
+                r = comando.ExecuteReader();
+                while (r.Read())
+                {
+                    Pago pago = new Pago();
+                    pago.idPago = r.GetInt32(0);
+                    pago.idCita = r.GetInt32(1);
+                    pago.monto = r.GetFloat(2);
+                    pago.fecha = r.GetDateTime(3);
+                    pago.estado = r.GetString(4);
+
+                    pagos.Add(pago);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                r.Close();
+                conexion.Close();
+            }
+            return pagos;
+        }
+
+    }
 
 
 
