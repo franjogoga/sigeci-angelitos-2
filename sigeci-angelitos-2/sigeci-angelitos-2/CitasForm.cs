@@ -52,7 +52,7 @@ namespace sigeci_angelitos_2
             comboServicios.SelectedValue = servicios[servicios.Count-1].idServicio;
         }
 
-        public void llenarCitas(string strNumeroCita, string nombres, string apellidoPaterno, string strIdServicio, string strFecha)
+        public void llenarCitas(string strNumeroCita, string nombres, string apellidoPaterno, string strIdServicio, DateTime strFecha)
         {
             string[] fila;
             citas = controladorCita.getListaCitas(strNumeroCita, nombres, apellidoPaterno, strIdServicio, strFecha);
@@ -71,7 +71,7 @@ namespace sigeci_angelitos_2
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            llenarCitas(txtNumeroCita.Text, txtNombres.Text, txtApellidoPaterno.Text, comboServicios.SelectedValue.ToString(), dateFechaCita.Text);
+            llenarCitas(txtNumeroCita.Text, txtNombres.Text, txtApellidoPaterno.Text, comboServicios.SelectedValue.ToString(), dateFechaCita.Value);
         }
 
 
