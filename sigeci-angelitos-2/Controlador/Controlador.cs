@@ -1535,7 +1535,7 @@ namespace Controlador
                     cita.horaCita = r.GetDateTime(3);                    
                     cita.estado = r.GetString(6);
                     cita.fechaRegistro = r.GetDateTime(7);
-                    cita.costo = r.GetFloat(8);
+                    cita.costo = float.Parse(r.GetValue(8).ToString());
                     cita.descuento = r.GetFloat(9);
                     cita.estadoEvaluacion = r.GetString(10);
                     idT = r.GetInt32(11);
