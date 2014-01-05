@@ -52,10 +52,10 @@ namespace sigeci_angelitos_2
             comboServicios.SelectedValue = servicios[servicios.Count-1].idServicio;
         }
 
-        public void llenarCitas(string strNumeroCita, string nombres, string apellidoPaterno, string nombreServicio, string strFecha)
+        public void llenarCitas(string strNumeroCita, string nombres, string apellidoPaterno, string strIdServicio, string strFecha)
         {
             string[] fila;
-            citas = controladorCita.getListaCitas(strNumeroCita, nombres, apellidoPaterno, apellidoPaterno, nombreServicio, strFecha);
+            citas = controladorCita.getListaCitas(strNumeroCita, nombres, apellidoPaterno, strIdServicio, strFecha);
             dgvCitas.Rows.Clear();
             foreach (Cita cita in citas)
             {
