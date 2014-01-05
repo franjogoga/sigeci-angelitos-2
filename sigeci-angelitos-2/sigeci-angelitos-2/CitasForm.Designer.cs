@@ -53,7 +53,6 @@
             this.servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -229,7 +228,6 @@
             this.servicio,
             this.paciente,
             this.costo,
-            this.descuento,
             this.pagado,
             this.estado});
             this.dgvCitas.Location = new System.Drawing.Point(12, 182);
@@ -284,11 +282,10 @@
             // 
             // idCita
             // 
-            this.idCita.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idCita.HeaderText = "N° Cita";
             this.idCita.Name = "idCita";
             this.idCita.ReadOnly = true;
-            this.idCita.Width = 65;
+            this.idCita.Width = 63;
             // 
             // fechaCita
             // 
@@ -322,16 +319,9 @@
             // costo
             // 
             this.costo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.costo.HeaderText = "Costo";
+            this.costo.HeaderText = "Costo Final";
             this.costo.Name = "costo";
             this.costo.ReadOnly = true;
-            // 
-            // descuento
-            // 
-            this.descuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descuento.HeaderText = "Dcto";
-            this.descuento.Name = "descuento";
-            this.descuento.ReadOnly = true;
             // 
             // pagado
             // 
@@ -396,7 +386,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn servicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn paciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagado;
         private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }

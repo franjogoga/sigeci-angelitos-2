@@ -59,7 +59,12 @@ namespace sigeci_angelitos_2
             dgvCitas.Rows.Clear();
             foreach (Cita cita in citas)
             {
-                fila = new string[] { ""+cita.idCita, ""+cita.fechaCita, ""+cita.horaCita, cita.servicio.nombreServicio, cita.paciente.nombres + " "+cita.paciente.apellidoPaterno+""+cita.paciente.apellidoMaterno, cita.estado};
+                float suma = 0;
+                foreach (Pago p in cita.pagos)
+                {
+                    suma += p.monto;
+                }
+                fila = new string[] { ""+cita.idCita, ""+cita.fechaCita, ""+cita.horaCita, cita.servicio.nombreServicio, cita.paciente.persona.nombres + " "+cita.paciente.persona.apellidoPaterno+""+cita.paciente.persona.apellidoMaterno, ""+cita.costo,""+suma, cita.estado};
                 dgvCitas.Rows.Add(fila);
             }
         }

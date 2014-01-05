@@ -565,7 +565,7 @@
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(87, 23);
             this.labelX13.TabIndex = 16;
-            this.labelX13.Text = "Descuento (%) :";
+            this.labelX13.Text = "Descuento (S/.) :";
             // 
             // textBox2
             // 
