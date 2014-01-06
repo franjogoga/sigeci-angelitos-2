@@ -88,7 +88,7 @@ namespace sigeci_angelitos_2
             foreach (Terapeuta t in terapeutas)
             {
                 comboTerapeuta.Items.Add(new { nombres = t.persona.nombres+" "+t.persona.apellidoPaterno+" "+t.persona.apellidoMaterno, idPersona = t.persona.idPersona });
-            }            
+            }
         }
 
         private void llenarModalidades(int idServicio)
