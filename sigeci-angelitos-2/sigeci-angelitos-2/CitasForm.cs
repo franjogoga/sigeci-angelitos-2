@@ -69,6 +69,20 @@ namespace sigeci_angelitos_2
             }
         }
 
+        private Cita buscarCita(int id)
+        {
+            Cita cita = null;
+            foreach (Cita c in citas)
+            {
+                if (id == c.idCita)
+                {
+                    cita = c;
+                    break;
+                }
+            }
+            return cita;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             llenarCitas(txtNumeroCita.Text, txtNombres.Text, txtApellidoPaterno.Text, comboServicios.SelectedValue.ToString(), dateFechaCita.Value);
