@@ -18,11 +18,14 @@ namespace sigeci_angelitos_2
         private ControladorServicio controladorServicio = ControladorServicio.Instancia();
         private ControladorTerapeuta controladorTerapeuta = ControladorTerapeuta.Instancia();
         private ControladorModalidad controladorModalidad = ControladorModalidad.Instancia();
+        private ControladorCita controladorCita = ControladorCita.Instancia();
+        private List<Cita> citasLunes, citasMartes, citasMiercoles, citasJueves, citasViernes, citasSabado;        
         private List<Terapeuta> terapeutas;
         private List<Servicio> servicios;
         private List<Turno> turnos;
         private List<Modalidad> modalidades;
-        private Paciente paciente; 
+        private Paciente paciente;
+        private DateTime fechaLunes, fechaMartes, fechaMiercoles, fechaJueves, fechaViernes, fechaSabado;
 
         public CitasFornulario()
         {
@@ -43,7 +46,6 @@ namespace sigeci_angelitos_2
             comboServicios.DataSource = servicios;
             comboServicios.DisplayMember = "nombreServicio";
             comboServicios.ValueMember = "idServicio";
-
         }
 
         public void llenarPaciente(Paciente paciente)
@@ -138,7 +140,69 @@ namespace sigeci_angelitos_2
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Monday"))
+            {
+                fechaLunes = dateFechaCita.Value;
+                fechaMartes = dateFechaCita.Value.AddDays(1);
+                fechaMiercoles = dateFechaCita.Value.AddDays(2);
+                fechaJueves = dateFechaCita.Value.AddDays(3);
+                fechaViernes = dateFechaCita.Value.AddDays(4);
+                fechaSabado = dateFechaCita.Value.AddDays(5);
+            }
+            else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Tuesday"))
+            {
+                fechaLunes = dateFechaCita.Value.AddDays(-1);
+                fechaMartes = dateFechaCita.Value;
+                fechaMiercoles = dateFechaCita.Value.AddDays(1);
+                fechaJueves = dateFechaCita.Value.AddDays(2);
+                fechaViernes = dateFechaCita.Value.AddDays(3);
+                fechaSabado = dateFechaCita.Value.AddDays(4);
+            }
+            else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Wednesday"))
+            {
+                fechaLunes = dateFechaCita.Value.AddDays(-2);
+                fechaMartes = dateFechaCita.Value.AddDays(-1);
+                fechaMiercoles = dateFechaCita.Value;
+                fechaJueves = dateFechaCita.Value.AddDays(1);
+                fechaViernes = dateFechaCita.Value.AddDays(2);
+                fechaSabado = dateFechaCita.Value.AddDays(3);                
+            }
+            else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Thursday"))
+            {
+                fechaLunes = dateFechaCita.Value.AddDays(-3);
+                fechaMartes = dateFechaCita.Value.AddDays(-2);
+                fechaMiercoles = dateFechaCita.Value.AddDays(-1);
+                fechaJueves = dateFechaCita.Value;
+                fechaViernes = dateFechaCita.Value.AddDays(1);
+                fechaSabado = dateFechaCita.Value.AddDays(2);
+            }
+            else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Friday"))
+            {
+                fechaLunes = dateFechaCita.Value.AddDays(-4);
+                fechaMartes = dateFechaCita.Value.AddDays(-3);
+                fechaMiercoles = dateFechaCita.Value.AddDays(-2);
+                fechaJueves = dateFechaCita.Value.AddDays(-1);
+                fechaViernes = dateFechaCita.Value;
+                fechaSabado = dateFechaCita.Value.AddDays(1);
+            }
+            else if (dateFechaCita.Value.DayOfWeek.ToString().Equals("Saturday"))
+            {
+                fechaLunes = dateFechaCita.Value.AddDays(-5);
+                fechaMartes = dateFechaCita.Value.AddDays(-4);
+                fechaMiercoles = dateFechaCita.Value.AddDays(-3);
+                fechaJueves = dateFechaCita.Value.AddDays(-2);
+                fechaViernes = dateFechaCita.Value.AddDays(-1);
+                fechaSabado = dateFechaCita.Value;
+            }
+            
+            citasLunes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaLunes);
+            citasMartes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMartes);
+            citasMiercoles = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaMiercoles);
+            citasJueves = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaJueves);
+            citasViernes = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaViernes);
+            citasSabado = controladorCita.getListaCitas("", "", "", (comboServicios.SelectedItem as Servicio).idServicio.ToString(), fechaSabado);
 
+            
         }
 
         private void navFecha_NavigateToday(object sender, EventArgs e)
@@ -155,6 +219,7 @@ namespace sigeci_angelitos_2
         {
             dateFechaCita.Text = "" + dateFechaCita.Value.AddDays(-7);
         }
+
 
     }
 }
