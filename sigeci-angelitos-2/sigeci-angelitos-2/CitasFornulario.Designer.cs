@@ -54,7 +54,24 @@
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.navFecha = new DevComponents.DotNetBar.Controls.PageNavigator();
+            this.dateFechaCita = new System.Windows.Forms.DateTimePicker();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
+            this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.labelX14 = new DevComponents.DotNetBar.LabelX();
+            this.txtCostoFinal = new System.Windows.Forms.TextBox();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.txtSaldoRestante = new System.Windows.Forms.TextBox();
+            this.txtDescuento = new System.Windows.Forms.TextBox();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.txtAdelanto = new System.Windows.Forms.TextBox();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.txtCosto = new System.Windows.Forms.TextBox();
             this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,27 +79,11 @@
             this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pageNavigator1 = new DevComponents.DotNetBar.Controls.PageNavigator();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
-            this.btnAceptar = new DevComponents.DotNetBar.ButtonX();
-            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.labelX14 = new DevComponents.DotNetBar.LabelX();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -371,9 +372,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
-            this.groupBox3.Controls.Add(this.pageNavigator1);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.btnBuscar);
+            this.groupBox3.Controls.Add(this.dgvCitas);
+            this.groupBox3.Controls.Add(this.navFecha);
+            this.groupBox3.Controls.Add(this.dateFechaCita);
             this.groupBox3.Controls.Add(this.labelX9);
             this.groupBox3.Location = new System.Drawing.Point(19, 282);
             this.groupBox3.Name = "groupBox3";
@@ -382,12 +384,12 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cita";
             // 
-            // dataGridView1
+            // dgvCitas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCitas.AllowUserToAddRows = false;
+            this.dgvCitas.AllowUserToDeleteRows = false;
+            this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.horaCita,
             this.lunes,
             this.martes,
@@ -395,79 +397,39 @@
             this.jueves,
             this.viernes,
             this.sabado});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(629, 166);
-            this.dataGridView1.TabIndex = 18;
+            this.dgvCitas.Location = new System.Drawing.Point(11, 60);
+            this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.ReadOnly = true;
+            this.dgvCitas.Size = new System.Drawing.Size(629, 166);
+            this.dgvCitas.TabIndex = 18;
             // 
-            // horaCita
-            // 
-            this.horaCita.HeaderText = "Hora";
-            this.horaCita.Name = "horaCita";
-            this.horaCita.ReadOnly = true;
-            this.horaCita.Width = 50;
-            // 
-            // lunes
-            // 
-            this.lunes.HeaderText = "Lunes";
-            this.lunes.Name = "lunes";
-            this.lunes.ReadOnly = true;
-            // 
-            // martes
-            // 
-            this.martes.HeaderText = "Martes";
-            this.martes.Name = "martes";
-            this.martes.ReadOnly = true;
-            // 
-            // miercoles
-            // 
-            this.miercoles.HeaderText = "Miércoles";
-            this.miercoles.Name = "miercoles";
-            this.miercoles.ReadOnly = true;
-            // 
-            // jueves
-            // 
-            this.jueves.HeaderText = "Jueves";
-            this.jueves.Name = "jueves";
-            this.jueves.ReadOnly = true;
-            // 
-            // viernes
-            // 
-            this.viernes.HeaderText = "Viernes";
-            this.viernes.Name = "viernes";
-            this.viernes.ReadOnly = true;
-            // 
-            // sabado
-            // 
-            this.sabado.HeaderText = "Sábado";
-            this.sabado.Name = "sabado";
-            this.sabado.ReadOnly = true;
-            // 
-            // pageNavigator1
+            // navFecha
             // 
             // 
             // 
             // 
-            this.pageNavigator1.BackgroundStyle.Class = "";
-            this.pageNavigator1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.pageNavigator1.Location = new System.Drawing.Point(310, 27);
-            this.pageNavigator1.Name = "pageNavigator1";
-            this.pageNavigator1.NextPageTooltip = "Día Siguiente";
-            this.pageNavigator1.PreviousPageTooltip = "Día Anterior";
-            this.pageNavigator1.Size = new System.Drawing.Size(69, 20);
-            this.pageNavigator1.TabIndex = 17;
-            this.pageNavigator1.Text = "pageNavigator1";
-            this.pageNavigator1.TodayTooltip = "Hoy";
+            this.navFecha.BackgroundStyle.Class = "";
+            this.navFecha.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.navFecha.Location = new System.Drawing.Point(310, 27);
+            this.navFecha.Name = "navFecha";
+            this.navFecha.NextPageTooltip = "Día Siguiente";
+            this.navFecha.PreviousPageTooltip = "Día Anterior";
+            this.navFecha.Size = new System.Drawing.Size(69, 20);
+            this.navFecha.TabIndex = 17;
+            this.navFecha.Text = "Navegador";
+            this.navFecha.TodayTooltip = "Hoy";
+            this.navFecha.NavigateNextPage += new System.EventHandler(this.navFecha_NavigateNextPage);
+            this.navFecha.NavigateToday += new System.EventHandler(this.navFecha_NavigateToday);
+            this.navFecha.NavigatePreviousPage += new System.EventHandler(this.navFecha_NavigatePreviousPage);
             // 
-            // dateTimePicker1
+            // dateFechaCita
             // 
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 27);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(180, 20);
-            this.dateTimePicker1.TabIndex = 16;
+            this.dateFechaCita.Checked = false;
+            this.dateFechaCita.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFechaCita.Location = new System.Drawing.Point(124, 27);
+            this.dateFechaCita.Name = "dateFechaCita";
+            this.dateFechaCita.Size = new System.Drawing.Size(180, 20);
+            this.dateFechaCita.TabIndex = 16;
             // 
             // labelX9
             // 
@@ -517,72 +479,21 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.labelX14);
-            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.txtCostoFinal);
             this.groupBox4.Controls.Add(this.labelX16);
             this.groupBox4.Controls.Add(this.labelX13);
-            this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.txtSaldoRestante);
+            this.groupBox4.Controls.Add(this.txtDescuento);
             this.groupBox4.Controls.Add(this.labelX15);
-            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.txtAdelanto);
             this.groupBox4.Controls.Add(this.labelX12);
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.txtCosto);
             this.groupBox4.Location = new System.Drawing.Point(19, 523);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(650, 105);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pago";
-            // 
-            // labelX12
-            // 
-            // 
-            // 
-            // 
-            this.labelX12.BackgroundStyle.Class = "";
-            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX12.Location = new System.Drawing.Point(10, 26);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(61, 23);
-            this.labelX12.TabIndex = 14;
-            this.labelX12.Text = "Costo (S/.):";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(89, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(86, 20);
-            this.textBox1.TabIndex = 13;
-            // 
-            // labelX13
-            // 
-            // 
-            // 
-            // 
-            this.labelX13.BackgroundStyle.Class = "";
-            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX13.Location = new System.Drawing.Point(195, 26);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(87, 23);
-            this.labelX13.TabIndex = 16;
-            this.labelX13.Text = "Descuento (S/.) :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(313, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(86, 20);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.Text = "0";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(518, 30);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(86, 20);
-            this.textBox3.TabIndex = 15;
-            this.textBox3.Text = "0";
             // 
             // labelX14
             // 
@@ -597,12 +508,59 @@
             this.labelX14.TabIndex = 16;
             this.labelX14.Text = "Costo Final (S/.) :";
             // 
-            // textBox4
+            // txtCostoFinal
             // 
-            this.textBox4.Location = new System.Drawing.Point(89, 68);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(86, 20);
-            this.textBox4.TabIndex = 13;
+            this.txtCostoFinal.Location = new System.Drawing.Point(518, 30);
+            this.txtCostoFinal.Name = "txtCostoFinal";
+            this.txtCostoFinal.ReadOnly = true;
+            this.txtCostoFinal.Size = new System.Drawing.Size(86, 20);
+            this.txtCostoFinal.TabIndex = 15;
+            this.txtCostoFinal.Text = "0";
+            this.txtCostoFinal.TextChanged += new System.EventHandler(this.txtCostoFinal_TextChanged);
+            // 
+            // labelX16
+            // 
+            // 
+            // 
+            // 
+            this.labelX16.BackgroundStyle.Class = "";
+            this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX16.Location = new System.Drawing.Point(196, 65);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(111, 23);
+            this.labelX16.TabIndex = 16;
+            this.labelX16.Text = "Saldo Restante (S/.) :";
+            // 
+            // labelX13
+            // 
+            // 
+            // 
+            // 
+            this.labelX13.BackgroundStyle.Class = "";
+            this.labelX13.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX13.Location = new System.Drawing.Point(195, 26);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(87, 23);
+            this.labelX13.TabIndex = 16;
+            this.labelX13.Text = "Descuento (S/.) :";
+            // 
+            // txtSaldoRestante
+            // 
+            this.txtSaldoRestante.Location = new System.Drawing.Point(313, 69);
+            this.txtSaldoRestante.Name = "txtSaldoRestante";
+            this.txtSaldoRestante.ReadOnly = true;
+            this.txtSaldoRestante.Size = new System.Drawing.Size(86, 20);
+            this.txtSaldoRestante.TabIndex = 15;
+            this.txtSaldoRestante.Text = "0";
+            // 
+            // txtDescuento
+            // 
+            this.txtDescuento.Location = new System.Drawing.Point(313, 27);
+            this.txtDescuento.Name = "txtDescuento";
+            this.txtDescuento.Size = new System.Drawing.Size(86, 20);
+            this.txtDescuento.TabIndex = 15;
+            this.txtDescuento.Text = "0";
+            this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
             // 
             // labelX15
             // 
@@ -617,27 +575,92 @@
             this.labelX15.TabIndex = 14;
             this.labelX15.Text = "Adelanto (S/.):";
             // 
-            // textBox5
+            // txtAdelanto
             // 
-            this.textBox5.Location = new System.Drawing.Point(313, 69);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(86, 20);
-            this.textBox5.TabIndex = 15;
-            this.textBox5.Text = "0";
+            this.txtAdelanto.Location = new System.Drawing.Point(89, 68);
+            this.txtAdelanto.Name = "txtAdelanto";
+            this.txtAdelanto.Size = new System.Drawing.Size(86, 20);
+            this.txtAdelanto.TabIndex = 13;
+            this.txtAdelanto.Text = "0";
+            this.txtAdelanto.TextChanged += new System.EventHandler(this.txtAdelanto_TextChanged);
             // 
-            // labelX16
-            // 
-            // 
+            // labelX12
             // 
             // 
-            this.labelX16.BackgroundStyle.Class = "";
-            this.labelX16.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX16.Location = new System.Drawing.Point(196, 65);
-            this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(111, 23);
-            this.labelX16.TabIndex = 16;
-            this.labelX16.Text = "Saldo Restante (S/.) :";
+            // 
+            // 
+            this.labelX12.BackgroundStyle.Class = "";
+            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX12.Location = new System.Drawing.Point(10, 26);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(61, 23);
+            this.labelX12.TabIndex = 14;
+            this.labelX12.Text = "Costo (S/.):";
+            // 
+            // txtCosto
+            // 
+            this.txtCosto.Location = new System.Drawing.Point(89, 28);
+            this.txtCosto.Name = "txtCosto";
+            this.txtCosto.ReadOnly = true;
+            this.txtCosto.Size = new System.Drawing.Size(86, 20);
+            this.txtCosto.TabIndex = 13;
+            // 
+            // horaCita
+            // 
+            this.horaCita.HeaderText = "Hora";
+            this.horaCita.Name = "horaCita";
+            this.horaCita.ReadOnly = true;
+            this.horaCita.Width = 50;
+            // 
+            // lunes
+            // 
+            this.lunes.HeaderText = "Lun";
+            this.lunes.Name = "lunes";
+            this.lunes.ReadOnly = true;
+            // 
+            // martes
+            // 
+            this.martes.HeaderText = "Mar";
+            this.martes.Name = "martes";
+            this.martes.ReadOnly = true;
+            // 
+            // miercoles
+            // 
+            this.miercoles.HeaderText = "Mie";
+            this.miercoles.Name = "miercoles";
+            this.miercoles.ReadOnly = true;
+            // 
+            // jueves
+            // 
+            this.jueves.HeaderText = "Jue";
+            this.jueves.Name = "jueves";
+            this.jueves.ReadOnly = true;
+            // 
+            // viernes
+            // 
+            this.viernes.HeaderText = "Vie";
+            this.viernes.Name = "viernes";
+            this.viernes.ReadOnly = true;
+            // 
+            // sabado
+            // 
+            this.sabado.HeaderText = "Sab";
+            this.sabado.Name = "sabado";
+            this.sabado.ReadOnly = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBuscar.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
+            this.btnBuscar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnBuscar.Location = new System.Drawing.Point(440, 22);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(123, 32);
+            this.btnBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // CitasFornulario
             // 
@@ -661,7 +684,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
@@ -687,22 +710,15 @@
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.LabelX labelX6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private DevComponents.DotNetBar.Controls.PageNavigator pageNavigator1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private DevComponents.DotNetBar.Controls.PageNavigator navFecha;
+        private System.Windows.Forms.DateTimePicker dateFechaCita;
         private DevComponents.DotNetBar.LabelX labelX9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCitas;
         private DevComponents.DotNetBar.LabelX labelX10;
         private System.Windows.Forms.TextBox txtEvaluacion;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.ButtonX btnCancelar;
         private DevComponents.DotNetBar.ButtonX btnAceptar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horaCita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lunes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn martes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn miercoles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jueves;
-        private System.Windows.Forms.DataGridViewTextBoxColumn viernes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sabado;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboModalidad;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboTerapeuta;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboTurno;
@@ -710,14 +726,22 @@
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private System.Windows.Forms.GroupBox groupBox4;
         private DevComponents.DotNetBar.LabelX labelX13;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescuento;
         private DevComponents.DotNetBar.LabelX labelX12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCosto;
         private DevComponents.DotNetBar.LabelX labelX14;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCostoFinal;
         private DevComponents.DotNetBar.LabelX labelX16;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSaldoRestante;
         private DevComponents.DotNetBar.LabelX labelX15;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtAdelanto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horaCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lunes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn martes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miercoles;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jueves;
+        private System.Windows.Forms.DataGridViewTextBoxColumn viernes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sabado;
+        private DevComponents.DotNetBar.ButtonX btnBuscar;
     }
 }

@@ -42,7 +42,8 @@ namespace sigeci_angelitos_2
             servicios = controladorServicio.getListaServicios("");            
             comboServicios.DataSource = servicios;
             comboServicios.DisplayMember = "nombreServicio";
-            comboServicios.ValueMember = "idServicio";            
+            comboServicios.ValueMember = "idServicio";
+
         }
 
         public void llenarPaciente(Paciente paciente)
@@ -110,11 +111,49 @@ namespace sigeci_angelitos_2
             s = comboServicios.SelectedItem as Servicio;
             llenarTerapeutas(s.idServicio);            
             llenarModalidades(s.idServicio);
+            txtCosto.Text = ""+s.costo;
+            txtCostoFinal.Text = (float.Parse(txtCosto.Text) - float.Parse(txtDescuento.Text)).ToString();
+            txtSaldoRestante.Text = (float.Parse(txtCostoFinal.Text) - float.Parse(txtAdelanto.Text)).ToString();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtDescuento_TextChanged(object sender, EventArgs e)
+        {
+            txtCostoFinal.Text = (float.Parse(txtCosto.Text) - float.Parse(txtDescuento.Text)).ToString();
+        }
+
+        private void txtAdelanto_TextChanged(object sender, EventArgs e)
+        {
+            txtSaldoRestante.Text = (float.Parse(txtCostoFinal.Text) - float.Parse(txtAdelanto.Text)).ToString();
+        }
+
+        private void txtCostoFinal_TextChanged(object sender, EventArgs e)
+        {
+            txtSaldoRestante.Text = (float.Parse(txtCostoFinal.Text) - float.Parse(txtAdelanto.Text)).ToString();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void navFecha_NavigateToday(object sender, EventArgs e)
+        {
+            dateFechaCita.Text = ""+DateTime.Now;
+        }        
+
+        private void navFecha_NavigateNextPage(object sender, EventArgs e)
+        {
+            dateFechaCita.Text = ""+dateFechaCita.Value.AddDays(7);
+        }
+
+        private void navFecha_NavigatePreviousPage(object sender, EventArgs e)
+        {
+            dateFechaCita.Text = "" + dateFechaCita.Value.AddDays(-7);
         }
 
     }
