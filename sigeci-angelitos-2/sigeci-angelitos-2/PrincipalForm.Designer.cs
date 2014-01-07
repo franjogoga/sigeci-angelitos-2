@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalForm));
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.btnReportes = new DevComponents.DotNetBar.ButtonX();
@@ -171,7 +170,6 @@
             this.Controls.Add(this.btnCitas);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PrincipalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Gestión Angelitos de Jesus";

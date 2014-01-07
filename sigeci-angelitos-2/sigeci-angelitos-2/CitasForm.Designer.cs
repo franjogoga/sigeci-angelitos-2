@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CitasForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateFechaCita = new System.Windows.Forms.DateTimePicker();
             this.txtApellidoPaterno = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -43,10 +42,6 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
-            this.btnConfirmar = new DevComponents.DotNetBar.ButtonX();
-            this.btnReservar = new DevComponents.DotNetBar.ButtonX();
-            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +50,10 @@
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelar = new DevComponents.DotNetBar.ButtonX();
+            this.btnConfirmar = new DevComponents.DotNetBar.ButtonX();
+            this.btnReservar = new DevComponents.DotNetBar.ButtonX();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
@@ -236,50 +235,6 @@
             this.dgvCitas.Size = new System.Drawing.Size(647, 160);
             this.dgvCitas.TabIndex = 2;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCancelar.Image = global::sigeci_angelitos_2.Properties.Resources.cancelarcita;
-            this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnCancelar.Location = new System.Drawing.Point(440, 360);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(123, 32);
-            this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnCancelar.TabIndex = 13;
-            this.btnCancelar.Text = "Cancelar";
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnConfirmar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnConfirmar.Image = global::sigeci_angelitos_2.Properties.Resources.aceptar;
-            this.btnConfirmar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnConfirmar.Location = new System.Drawing.Point(248, 360);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(123, 32);
-            this.btnConfirmar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnConfirmar.TabIndex = 12;
-            this.btnConfirmar.Text = "Confirmar";
-            // 
-            // btnReservar
-            // 
-            this.btnReservar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnReservar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnReservar.Image = global::sigeci_angelitos_2.Properties.Resources.reloj;
-            this.btnReservar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnReservar.Location = new System.Drawing.Point(57, 360);
-            this.btnReservar.Name = "btnReservar";
-            this.btnReservar.Size = new System.Drawing.Size(123, 32);
-            this.btnReservar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnReservar.TabIndex = 11;
-            this.btnReservar.Text = "Reservar";
-            this.btnReservar.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // styleManager1
-            // 
-            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
-            // 
             // idCita
             // 
             this.idCita.HeaderText = "N° Cita";
@@ -337,6 +292,50 @@
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCancelar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCancelar.Image = global::sigeci_angelitos_2.Properties.Resources.cancelarcita;
+            this.btnCancelar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnCancelar.Location = new System.Drawing.Point(440, 360);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(123, 32);
+            this.btnCancelar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnConfirmar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnConfirmar.Image = global::sigeci_angelitos_2.Properties.Resources.aceptar;
+            this.btnConfirmar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnConfirmar.Location = new System.Drawing.Point(248, 360);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(123, 32);
+            this.btnConfirmar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnConfirmar.TabIndex = 12;
+            this.btnConfirmar.Text = "Confirmar";
+            // 
+            // btnReservar
+            // 
+            this.btnReservar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnReservar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnReservar.Image = global::sigeci_angelitos_2.Properties.Resources.reloj;
+            this.btnReservar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnReservar.Location = new System.Drawing.Point(57, 360);
+            this.btnReservar.Name = "btnReservar";
+            this.btnReservar.Size = new System.Drawing.Size(123, 32);
+            this.btnReservar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnReservar.TabIndex = 11;
+            this.btnReservar.Text = "Reservar";
+            this.btnReservar.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Silver;
+            // 
             // CitasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,7 +349,6 @@
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CitasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citas";
