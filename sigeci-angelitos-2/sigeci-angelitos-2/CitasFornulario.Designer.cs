@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CitasFornulario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
@@ -54,7 +53,15 @@
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.navFecha = new DevComponents.DotNetBar.Controls.PageNavigator();
             this.dateFechaCita = new System.Windows.Forms.DateTimePicker();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
@@ -72,14 +79,6 @@
             this.txtAdelanto = new System.Windows.Forms.TextBox();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.txtCosto = new System.Windows.Forms.TextBox();
-            this.horaCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBuscar = new DevComponents.DotNetBar.ButtonX();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -384,6 +383,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cita";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnBuscar.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
+            this.btnBuscar.ImageFixedSize = new System.Drawing.Size(25, 25);
+            this.btnBuscar.Location = new System.Drawing.Point(440, 22);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(123, 32);
+            this.btnBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // dgvCitas
             // 
             this.dgvCitas.AllowUserToAddRows = false;
@@ -402,6 +415,49 @@
             this.dgvCitas.ReadOnly = true;
             this.dgvCitas.Size = new System.Drawing.Size(629, 166);
             this.dgvCitas.TabIndex = 18;
+            // 
+            // horaCita
+            // 
+            this.horaCita.HeaderText = "Hora";
+            this.horaCita.Name = "horaCita";
+            this.horaCita.ReadOnly = true;
+            this.horaCita.Width = 50;
+            // 
+            // lunes
+            // 
+            this.lunes.HeaderText = "Lun";
+            this.lunes.Name = "lunes";
+            this.lunes.ReadOnly = true;
+            // 
+            // martes
+            // 
+            this.martes.HeaderText = "Mar";
+            this.martes.Name = "martes";
+            this.martes.ReadOnly = true;
+            // 
+            // miercoles
+            // 
+            this.miercoles.HeaderText = "Mie";
+            this.miercoles.Name = "miercoles";
+            this.miercoles.ReadOnly = true;
+            // 
+            // jueves
+            // 
+            this.jueves.HeaderText = "Jue";
+            this.jueves.Name = "jueves";
+            this.jueves.ReadOnly = true;
+            // 
+            // viernes
+            // 
+            this.viernes.HeaderText = "Vie";
+            this.viernes.Name = "viernes";
+            this.viernes.ReadOnly = true;
+            // 
+            // sabado
+            // 
+            this.sabado.HeaderText = "Sab";
+            this.sabado.Name = "sabado";
+            this.sabado.ReadOnly = true;
             // 
             // navFecha
             // 
@@ -605,63 +661,6 @@
             this.txtCosto.Size = new System.Drawing.Size(86, 20);
             this.txtCosto.TabIndex = 13;
             // 
-            // horaCita
-            // 
-            this.horaCita.HeaderText = "Hora";
-            this.horaCita.Name = "horaCita";
-            this.horaCita.ReadOnly = true;
-            this.horaCita.Width = 50;
-            // 
-            // lunes
-            // 
-            this.lunes.HeaderText = "Lun";
-            this.lunes.Name = "lunes";
-            this.lunes.ReadOnly = true;
-            // 
-            // martes
-            // 
-            this.martes.HeaderText = "Mar";
-            this.martes.Name = "martes";
-            this.martes.ReadOnly = true;
-            // 
-            // miercoles
-            // 
-            this.miercoles.HeaderText = "Mie";
-            this.miercoles.Name = "miercoles";
-            this.miercoles.ReadOnly = true;
-            // 
-            // jueves
-            // 
-            this.jueves.HeaderText = "Jue";
-            this.jueves.Name = "jueves";
-            this.jueves.ReadOnly = true;
-            // 
-            // viernes
-            // 
-            this.viernes.HeaderText = "Vie";
-            this.viernes.Name = "viernes";
-            this.viernes.ReadOnly = true;
-            // 
-            // sabado
-            // 
-            this.sabado.HeaderText = "Sab";
-            this.sabado.Name = "sabado";
-            this.sabado.ReadOnly = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnBuscar.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnBuscar.Image = global::sigeci_angelitos_2.Properties.Resources.buscar;
-            this.btnBuscar.ImageFixedSize = new System.Drawing.Size(25, 25);
-            this.btnBuscar.Location = new System.Drawing.Point(440, 22);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(123, 32);
-            this.btnBuscar.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnBuscar.TabIndex = 19;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // CitasFornulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -676,7 +675,6 @@
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CitasFornulario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citas";
