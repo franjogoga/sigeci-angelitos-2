@@ -45,6 +45,7 @@ namespace Modelo
             get { return _estado; }
             set { _estado = value; }
         }
+
     }
 
     public class Usuario
