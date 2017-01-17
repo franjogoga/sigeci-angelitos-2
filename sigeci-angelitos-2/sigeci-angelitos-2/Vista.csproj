@@ -316,6 +316,10 @@
     <None Include="Resources\reloj.png" />
     <None Include="Resources\aceptar.png" />
     <Content Include="angelico.ico" />
+    <Content Include="Librerias\DevComponents.DotNetBar.Design.dll" />
+    <Content Include="Librerias\DevComponents.DotNetBar2.dll" />
+    <Content Include="Librerias\DevComponents.Instrumentation.Design.dll" />
+    <Content Include="Librerias\DevComponents.Instrumentation.dll" />
     <Content Include="Resources\angelico.ico" />
     <Content Include="Resources\angelpng.png" />
   </ItemGroup>
